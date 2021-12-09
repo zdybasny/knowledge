@@ -1,2 +1,3 @@
-# knowladgebase
-My knowladge base build in Obsidian.md®
+# knowledgebase
+
+My **knowledge base** built in *Obsidian.md®*
