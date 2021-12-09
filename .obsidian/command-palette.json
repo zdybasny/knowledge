@@ -1,6 +1,6 @@
 {
   "pinned": [
-    "markdown-prettifier:markdown-prettifier-run",
-    "insert-template"
+    "insert-template",
+    "markdown-prettifier:markdown-prettifier-run"
   ]
 }

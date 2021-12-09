@@ -2,7 +2,9 @@
   "triggerChar": "\\",
   "sidePaneSideLeft": false,
   "savedColors": [
-    "#ff0000"
+    "#ff0000",
+    "#008200",
+    "#000082"
   ],
   "aviabileRegions": [
     "textEdit",
@@ -41,7 +43,7 @@
     {
       "name": "colors",
       "active": true,
-      "visible": false
+      "visible": true
     }
   ]
 }
