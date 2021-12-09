@@ -1,0 +1,125 @@
+{
+  "main": {
+    "id": "24496802f748cefb",
+    "type": "split",
+    "children": [
+      {
+        "id": "211809baeb88aa08",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c007d7ccf3b09f86",
+    "type": "split",
+    "children": [
+      {
+        "id": "b656dc4b213dbaf4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cfc0449c6654a39e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6f962233089ef0d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#dfs",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 345
+  },
+  "right": {
+    "id": "5bbda9cdbf768808",
+    "type": "split",
+    "children": [
+      {
+        "id": "86a5a1461d26a476",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "92ac7fb7d92959ce",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "3ca1b5537678d40d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "1d4411df6d8557e6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 296
+  },
+  "active": "211809baeb88aa08",
+  "lastOpenFiles": [
+    "README.md",
+    "devops/unlinked files output.md",
+    "aws/VPC Subnet.md",
+    "aws/VPC Route table.md",
+    "aws/Network ACL.md",
+    "aws/VPC.md",
+    "network/CIDR.md",
+    "attachments/VPC Tracing.png",
+    "attachments/VPC CIDR.png",
+    "attachments/Pasted image 20211208185234.png"
+  ]
+}
