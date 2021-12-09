@@ -1,6 +1,6 @@
 {
-  "collapse-filter": false,
-  "search": "",
+  "collapse-filter": true,
+  "search": "path:devops",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -8,7 +8,7 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "tag:#TODO",
+      "query": "tag:#TODO path:devops/aws",
       "color": {
         "a": 1,
         "rgb": 16711680
@@ -31,14 +31,14 @@
   ],
   "collapse-display": true,
   "showArrow": true,
-  "textFadeMultiplier": 0.3,
-  "nodeSizeMultiplier": 0.937606837606838,
-  "lineSizeMultiplier": 0.728205128205128,
-  "collapse-forces": false,
+  "textFadeMultiplier": -0.1,
+  "nodeSizeMultiplier": 1.10512820512821,
+  "lineSizeMultiplier": 0.895726495726496,
+  "collapse-forces": true,
   "centerStrength": 0.495726495726496,
   "repelStrength": 7.00854700854701,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1,
+  "scale": 0.6459934996402391,
   "close": false
 }
