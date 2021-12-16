@@ -4,43 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "1a0c6472e90874a4",
-        "type": "leaf",
-        "state": {
-          "type": "empty",
-          "state": {}
-        }
-      },
-      {
-        "id": "c1f26b4ff29eba2e",
+        "id": "2f22e1cb76c7c8c5",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "unlinked files output.md",
-            "mode": "source"
+            "file": "devops/aws/VPC Route table.md",
+            "mode": "preview"
           }
         }
       },
       {
-        "id": "61664867e28da2d7",
+        "id": "1273af35363ba803",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "unresolved links output.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "8f02b4d5cef17321",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "files without tags.md",
-            "mode": "source"
+            "file": "devops/aws/Elastic Load Balancing.md",
+            "mode": "preview"
           }
         }
       }
@@ -54,7 +35,7 @@
       {
         "id": "b656dc4b213dbaf4",
         "type": "tabs",
-        "dimension": 46.728971962616825,
+        "dimension": 55.023364485981304,
         "children": [
           {
             "id": "cfc0449c6654a39e",
@@ -70,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#dfs",
+                "query": "trac",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,7 +65,7 @@
       {
         "id": "a46c7e129a2dea2f",
         "type": "tabs",
-        "dimension": 53.271028037383175,
+        "dimension": 44.976635514018696,
         "children": [
           {
             "id": "211809baeb88aa08",
@@ -98,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 571
+    "width": 314
   },
   "right": {
     "id": "5bbda9cdbf768808",
@@ -114,10 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< Updated upstream
-=======
-                "file": "files without tags.md",
->>>>>>> Stashed changes
+                "file": "devops/aws/Elastic Load Balancing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,12 +112,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< Updated upstream
-=======
-                "file": "files without tags.md",
->>>>>>> Stashed changes
+                "file": "devops/aws/Elastic Load Balancing.md",
                 "linksCollapsed": true,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -162,36 +137,24 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 296
+    "width": 316,
+    "collapsed": true
   },
-<<<<<<< Updated upstream
-  "active": "1a0c6472e90874a4",
+  "active": "1273af35363ba803",
   "lastOpenFiles": [
-=======
-  "active": "8f02b4d5cef17321",
-  "lastOpenFiles": [
-    "files without tags.md",
-    "unresolved links output.md",
-    "unlinked files output.md",
->>>>>>> Stashed changes
-    "devops/aws/VPC Flow Logs.md",
+    "devops/aws/Elastic Load Balancing.md",
+    "devops/attachments/ALB components.png",
+    "devops/attachments/VPC CIDR.png",
+    "devops/attachments/VPC diagram.png",
+    "devops/attachments/VPC Tracing.png",
+    "devops/aws/Elastic network interface.md",
+    "devops/aws/Elastic IP.md",
     "devops/aws/VPC Route table.md",
-    "devops/aws/VPC Subnet.md",
     "devops/aws/VPC.md",
-    "devops/aws/Security group.md",
-    "devops/aws/S3.md",
-<<<<<<< Updated upstream
-    "devops/aws/Network ACL.md",
-    "devops/aws/NAT devices.md",
-    "devops/aws/Internet Gateway.md",
-    "devops/aws/Elastic network interface.md"
-=======
-    "devops/aws/Network ACL.md"
->>>>>>> Stashed changes
+    "devops/aws/Reoute 53.md"
   ]
 }
