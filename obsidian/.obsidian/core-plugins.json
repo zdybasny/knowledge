@@ -4,11 +4,16 @@
   "switcher",
   "graph",
   "backlink",
+  "outgoing-link",
+  "tag-pane",
   "page-preview",
+  "templates",
   "note-composer",
   "command-palette",
   "markdown-importer",
   "word-count",
   "open-with-default-app",
-  "file-recovery"
+  "workspaces",
+  "file-recovery",
+  "sync"
 ]

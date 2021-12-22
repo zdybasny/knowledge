@@ -1,44 +1,29 @@
 {
   "main": {
-    "id": "24496802f748cefb",
+    "id": "667d07a91ccd2ac0",
     "type": "split",
     "children": [
       {
-        "id": "2f22e1cb76c7c8c5",
+        "id": "baabab0afeb69905",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "devops/aws/VPC Route table.md",
-            "mode": "preview"
-          }
-        }
-      },
-      {
-        "id": "1273af35363ba803",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "devops/aws/Elastic Load Balancing.md",
-            "mode": "preview"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "c007d7ccf3b09f86",
+    "id": "8a081b157b60f5b3",
     "type": "split",
     "children": [
       {
-        "id": "b656dc4b213dbaf4",
+        "id": "82ed9f0c255d75ac",
         "type": "tabs",
-        "dimension": 55.023364485981304,
         "children": [
           {
-            "id": "cfc0449c6654a39e",
+            "id": "c8dec4b6a019422d",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -46,12 +31,12 @@
             }
           },
           {
-            "id": "6f962233089ef0d2",
+            "id": "9af261e89e1b3591",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "trac",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,100 +46,44 @@
             }
           }
         ]
-      },
-      {
-        "id": "a46c7e129a2dea2f",
-        "type": "tabs",
-        "dimension": 44.976635514018696,
-        "children": [
-          {
-            "id": "211809baeb88aa08",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          }
-        ]
       }
     ],
     "direction": "horizontal",
-    "width": 314
+    "width": 300
   },
   "right": {
-    "id": "5bbda9cdbf768808",
+    "id": "061b7e3629116120",
     "type": "split",
     "children": [
       {
-        "id": "86a5a1461d26a476",
+        "id": "413c1eb1c44e8bf7",
         "type": "tabs",
         "children": [
           {
-            "id": "92ac7fb7d92959ce",
+            "id": "e67681b5c7ea7c96",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/Elastic Load Balancing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
-            "id": "3ca1b5537678d40d",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "devops/aws/Elastic Load Balancing.md",
-                "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
-            }
-          },
-          {
-            "id": "1d4411df6d8557e6",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "28226938e1ffbc6f",
-            "type": "leaf",
-            "state": {
-              "type": "side-panel-control-view",
-              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 316,
+    "width": 300,
     "collapsed": true
   },
-  "active": "1273af35363ba803",
+  "active": "baabab0afeb69905",
   "lastOpenFiles": [
-    "devops/aws/Elastic Load Balancing.md",
-    "devops/attachments/ALB components.png",
-    "devops/attachments/VPC CIDR.png",
-    "devops/attachments/VPC diagram.png",
-    "devops/attachments/VPC Tracing.png",
-    "devops/aws/Elastic network interface.md",
-    "devops/aws/Elastic IP.md",
-    "devops/aws/VPC Route table.md",
-    "devops/aws/VPC.md",
-    "devops/aws/Reoute 53.md"
+    "books/devops-swiatowej-klasy-zwinnosc-niezawodnosc-i-bezpieczenstwo.pdf"
   ]
 }
