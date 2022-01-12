@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "obsidian/devops/aws/Elastic Load Balancing.md",
+            "file": "obsidian/devops/aws/SQS.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "obsidian/devops/aws/Elastic Load Balancing.md",
+                "file": "obsidian/devops/aws/SQS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "obsidian/devops/aws/Elastic Load Balancing.md",
+                "file": "obsidian/devops/aws/SQS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,14 +120,15 @@
   },
   "active": "d421711397c4fd7e",
   "lastOpenFiles": [
+    "obsidian/devops/aws/SQS.md",
+    "obsidian/devops/aws/SNS.md",
+    "obsidian/devops/aws/Security group.md",
     "obsidian/devops/aws/Elastic Load Balancing.md",
     "obsidian/devops/aws/EC2.md",
     "devops/aws/EC2.md",
     "devops/aws/VPC.md",
     "devops/aws/NAT devices.md",
     "devops/aws/Network ACL.md",
-    "devops/aws/AWS locations.md",
-    "devops/aws/Elastic network interface.md",
-    "devops/aws/CloudWatch.md"
+    "devops/aws/AWS locations.md"
   ]
 }
