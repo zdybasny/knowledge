@@ -1,8 +1,10 @@
 #AWS #network
 
-Jednym z aspektów skalowalności (elastycznoći) jest sposób, w jaki kierujemy użytkowników do odpowiedniej infrastruktury, za co odpowiedzialny jest Elastic Load Balancing. ELB umożliwia dystrybucję ruchu do wielu miejsc docelowych, np. oparciu o obciążenie każdego z dostępnych serwerów. Obsługuje jedną lub więcej [[AWS locations#Availability zone|Availaility zone]]s w ramach [[AWS locations#Region|regionu]].
+Jednym z aspektów skalowalności (elastycznoći) jest sposób, w jaki kierujemy użytkowników do odpowiedniej infrastruktury, za co odpowiedzialny jest Elastic Load Balancing. ELB umożliwia dystrybucję ruchu do wielu miejsc docelowych, np. oparciu o obciążenie każdego z dostępnych serwerów. Obsługuje jedną lub więcej [[AWS locations#Availability zone|Availaility zone]]s w ramach [[AWS locations#Region|regionu]]. 
 
 Domyślnie integruje się z [[EC2]], [[Elastic Container Services]].
+
+> Load balancer działa jako pojedynczy punkt kontaktu dla całego ruchu przychodzącego z sieci do [[EC2#Auto Scaling group|Auto Scaling group]]. Chociaż Elastic Load Balancing i [[EC2#Amazon EC2 Auto Scaling|Amazon EC2 Auto Scaling]] są oddzielnymi usługami, współpracują one ze sobą, aby zapewnić wysoką wydajność i dostępność aplikacji działających w Amazon EC2. 
 
 Istnieją trzy rodzaje load balancerów:
 

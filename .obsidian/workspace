@@ -1,29 +1,33 @@
 {
   "main": {
-    "id": "667d07a91ccd2ac0",
+    "id": "b4078dd31446afe7",
     "type": "split",
     "children": [
       {
-        "id": "baabab0afeb69905",
+        "id": "d421711397c4fd7e",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "obsidian/devops/aws/Elastic Load Balancing.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "8a081b157b60f5b3",
+    "id": "3ab39905b3b67840",
     "type": "split",
     "children": [
       {
-        "id": "82ed9f0c255d75ac",
+        "id": "30532a7598f8df55",
         "type": "tabs",
         "children": [
           {
-            "id": "c8dec4b6a019422d",
+            "id": "9594c5e46a63ccab",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +35,7 @@
             }
           },
           {
-            "id": "9af261e89e1b3591",
+            "id": "95dffd36e6011bb9",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -52,19 +56,20 @@
     "width": 300
   },
   "right": {
-    "id": "061b7e3629116120",
+    "id": "0fb50714a1f98d18",
     "type": "split",
     "children": [
       {
-        "id": "413c1eb1c44e8bf7",
+        "id": "2c4859b7917b293d",
         "type": "tabs",
         "children": [
           {
-            "id": "e67681b5c7ea7c96",
+            "id": "9ff6bf3dad3009aa",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "obsidian/devops/aws/Elastic Load Balancing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -74,16 +79,55 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "f4b958a4d764cee5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "obsidian/devops/aws/Elastic Load Balancing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e8b8c5cd20752f47",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "69c04160fa332c52",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "baabab0afeb69905",
+  "active": "d421711397c4fd7e",
   "lastOpenFiles": [
-    "books/devops-swiatowej-klasy-zwinnosc-niezawodnosc-i-bezpieczenstwo.pdf"
+    "obsidian/devops/aws/Elastic Load Balancing.md",
+    "obsidian/devops/aws/EC2.md",
+    "devops/aws/EC2.md",
+    "devops/aws/VPC.md",
+    "devops/aws/NAT devices.md",
+    "devops/aws/Network ACL.md",
+    "devops/aws/AWS locations.md",
+    "devops/aws/Elastic network interface.md",
+    "devops/aws/CloudWatch.md"
   ]
 }

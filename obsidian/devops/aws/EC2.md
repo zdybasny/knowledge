@@ -96,3 +96,32 @@ Pozwala na wykorzystanie nadmiaru mocy obliczeniowej EC2, które mogą istnieć 
 ## Dedicated Host
 
 Dostarcza dedykowany serwer fizyczny w centrum danych (data centre). Jest to najdroższa opcja. Przykładowym przypadkiem jego zapotrzebowania jest pewność przestrzegania warunków licencji per-serwer, per-core, per-VM, per-cocket.
+
+# Amazon EC2 Auto Scaling
+
+Amazon EC2 Auto Scaling umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
+
+W ramach Amazon EC2 Auto Scaling, możesz użyć dwóch podejść:
+
+- **skalowania dynamicznego** (_Dynamic scaling_) - reaguje na zmieniające się zapotrzebowanie
+- **skalowania predykcyjnego** (_Predictive scaling_) - automatycznie zaplanuje odpowiednią liczbę instancji Amazon EC2 na podstawie przewidywanego zapotrzebowania.
+
+>W celu przyśpieszenia skalowania, można łączyć oba rozwiązania
+
+Typy skalowania dzieli się na:
+
+- pionowe - **vertical (scaing up)**
+
+Skalujemy nasz typ instancji do większego typu instancji z dodatkowymi zasobami. Jednak, jeśli to zrobimy, będziemy musieli wyłączyć nasz serwer. To zazwyczaj nienajlepszy sposób.
+
+ - poziome - **horizontal (scaling out)**
+
+Jest to dodanie dodatkowych instancji przy użyciu [[Elastic Load Balancing]], aby faktycznie obsłużyć proces przekierowywania naszych użytkowników do właściwego serwera.
+
+## Auto Scaling group
+
+Kiedy tworzysz grupę Auto Scaling, możesz ustawić:
+- **minimum capacity** - minimalna liczba EC2, które uruchamiają się natychmiast po utworzeniu grupy Auto Scaling,
+- **desired capacity** - mimo iż aplikacja może potrzebować mniejszej liczy EC2 do działania (*domyślnie równe minimum capacity*),
+- **maximum capacity** - aby zużywać zbyt dużej ilości zasobów podczas zwiększonego zapotrzebowania.
+
