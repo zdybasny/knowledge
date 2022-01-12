@@ -1,1 +1,15 @@
-{}
+{
+  "spellcheck": false,
+  "showLineNumber": false,
+  "tabSize": 3,
+  "promptDelete": true,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "attachments",
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "trashOption": "local",
+  "newFileLocation": "current",
+  "legacyEditor": false,
+  "livePreview": true
+}
