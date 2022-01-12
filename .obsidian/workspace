@@ -1,63 +1,29 @@
 {
   "main": {
-    "id": "24496802f748cefb",
+    "id": "667d07a91ccd2ac0",
     "type": "split",
     "children": [
       {
-        "id": "1a0c6472e90874a4",
+        "id": "baabab0afeb69905",
         "type": "leaf",
         "state": {
           "type": "empty",
           "state": {}
-        }
-      },
-      {
-        "id": "c1f26b4ff29eba2e",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "unlinked files output.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "61664867e28da2d7",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "unresolved links output.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "8f02b4d5cef17321",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "files without tags.md",
-            "mode": "source"
-          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "c007d7ccf3b09f86",
+    "id": "8a081b157b60f5b3",
     "type": "split",
     "children": [
       {
-        "id": "b656dc4b213dbaf4",
+        "id": "82ed9f0c255d75ac",
         "type": "tabs",
-        "dimension": 46.728971962616825,
         "children": [
           {
-            "id": "cfc0449c6654a39e",
+            "id": "c8dec4b6a019422d",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -65,12 +31,12 @@
             }
           },
           {
-            "id": "6f962233089ef0d2",
+            "id": "9af261e89e1b3591",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#dfs",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -80,118 +46,44 @@
             }
           }
         ]
-      },
-      {
-        "id": "a46c7e129a2dea2f",
-        "type": "tabs",
-        "dimension": 53.271028037383175,
-        "children": [
-          {
-            "id": "211809baeb88aa08",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          }
-        ]
       }
     ],
     "direction": "horizontal",
-    "width": 571
+    "width": 300
   },
   "right": {
-    "id": "5bbda9cdbf768808",
+    "id": "061b7e3629116120",
     "type": "split",
     "children": [
       {
-        "id": "86a5a1461d26a476",
+        "id": "413c1eb1c44e8bf7",
         "type": "tabs",
         "children": [
           {
-            "id": "92ac7fb7d92959ce",
+            "id": "e67681b5c7ea7c96",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< Updated upstream
-=======
-                "file": "files without tags.md",
->>>>>>> Stashed changes
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
-            }
-          },
-          {
-            "id": "3ca1b5537678d40d",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-<<<<<<< Updated upstream
-=======
-                "file": "files without tags.md",
->>>>>>> Stashed changes
-                "linksCollapsed": true,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
-            "id": "1d4411df6d8557e6",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "28226938e1ffbc6f",
-            "type": "leaf",
-            "state": {
-              "type": "side-panel-control-view",
-              "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 296
+    "width": 300,
+    "collapsed": true
   },
-<<<<<<< Updated upstream
-  "active": "1a0c6472e90874a4",
+  "active": "baabab0afeb69905",
   "lastOpenFiles": [
-=======
-  "active": "8f02b4d5cef17321",
-  "lastOpenFiles": [
-    "files without tags.md",
-    "unresolved links output.md",
-    "unlinked files output.md",
->>>>>>> Stashed changes
-    "devops/aws/VPC Flow Logs.md",
-    "devops/aws/VPC Route table.md",
-    "devops/aws/VPC Subnet.md",
-    "devops/aws/VPC.md",
-    "devops/aws/Security group.md",
-    "devops/aws/S3.md",
-<<<<<<< Updated upstream
-    "devops/aws/Network ACL.md",
-    "devops/aws/NAT devices.md",
-    "devops/aws/Internet Gateway.md",
-    "devops/aws/Elastic network interface.md"
-=======
-    "devops/aws/Network ACL.md"
->>>>>>> Stashed changes
+    "books/devops-swiatowej-klasy-zwinnosc-niezawodnosc-i-bezpieczenstwo.pdf"
   ]
 }

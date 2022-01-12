@@ -9,7 +9,5 @@
   "foldHeading": true,
   "foldIndent": true,
   "trashOption": "local",
-  "newFileLocation": "current",
-  "legacyEditor": false,
-  "livePreview": true
+  "newFileLocation": "current"
 }
