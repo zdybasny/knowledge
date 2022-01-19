@@ -87,7 +87,7 @@ Scheduled Reserved Instance opłaca się w przypadku obciążeń zmiennych, ale 
 
 ## Savings Plan
 
-Podobny do instancji zarezerwowanych, z tą różnicą, że nie ogranicza się tylko do EC2. Obsługuje również [[Fargate]] i [[AWS Lambda]]. W przeciwieństwie do Reserved Instances nie rezerwuje pojemności.
+Podobny do instancji zarezerwowanych, z tą różnicą, że nie ogranicza się tylko do EC2. Obsługuje również [[Fargate]] i [[Lambda]]. W przeciwieństwie do Reserved Instances nie rezerwuje pojemności.
 
 ## Spot
 

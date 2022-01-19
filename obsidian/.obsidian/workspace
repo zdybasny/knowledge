@@ -7,9 +7,11 @@
         "id": "cd8b4fe630f2295f",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "devops/attachments/IAM components.png"
+            "file": "devops/aws/AWS WAF.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/attachments/IAM components.png",
+                "file": "devops/aws/AWS WAF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/attachments/IAM components.png",
+                "file": "devops/aws/AWS WAF.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -133,8 +135,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -143,15 +144,15 @@
   },
   "active": "cd8b4fe630f2295f",
   "lastOpenFiles": [
-    "devops/attachments/IAM components.png",
-    "devops/aws/IAM.md",
-    "devops/aws/Internet Gateway.md",
-    "devops/aws/VPC Flow Logs.md",
-    "devops/aws/VPC.md",
-    "devops/aws/Network ACL.md",
-    "devops/aws/NAT devices.md",
+    "devops/aws/AWS WAF.md",
     "devops/aws/Elastic Load Balancing.md",
-    "devops/aws/Elastic IP.md",
-    "devops/aws/EC2.md"
+    "AWS Lambda.md",
+    "devops/aws/EC2.md",
+    "Lambda.md",
+    "devops/aws/Elastic Container Services.md",
+    "devops/aws/Lambda function.md",
+    "devops/aws/Fargate.md",
+    "devops/aws/Target.md",
+    "devops/attachments/IAM components.png"
   ]
 }
