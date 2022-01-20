@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "cd8b4fe630f2295f",
+        "id": "29b83f698269e18c",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/AWS WAF.md",
+            "file": "devops/aws/EC2.md",
             "mode": "source",
-            "source": false
+            "source": true
           }
         }
       }
@@ -85,14 +85,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/AWS WAF.md",
-                "collapseAll": false,
+                "file": "devops/aws/EC2.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -102,8 +102,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/AWS WAF.md",
-                "linksCollapsed": true,
+                "file": "devops/aws/EC2.md",
+                "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
@@ -135,24 +135,25 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 316,
     "collapsed": true
   },
-  "active": "cd8b4fe630f2295f",
+  "active": "29b83f698269e18c",
   "lastOpenFiles": [
-    "devops/aws/AWS WAF.md",
-    "devops/aws/Elastic Load Balancing.md",
-    "AWS Lambda.md",
     "devops/aws/EC2.md",
-    "Lambda.md",
     "devops/aws/Elastic Container Services.md",
-    "devops/aws/Lambda function.md",
-    "devops/aws/Fargate.md",
-    "devops/aws/Target.md",
-    "devops/attachments/IAM components.png"
+    "devops/templates/ToC Regex.md",
+    "devops/aws/VPC.md",
+    "devops/aws/Network ACL.md",
+    "devops/aws/Security group.md",
+    "devops/aws/Elastic Load Balancing.md",
+    "devops/aws/IAM.md",
+    "devops/aws/Lambda.md",
+    "devops/aws/AWS WAF.md"
   ]
 }

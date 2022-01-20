@@ -2,6 +2,31 @@
 
 Amazon Elastic Compute Cloud (Amazon EC2) oferuje platformę obliczeniową, z instancjami i wyborem  procesora, pamięci masowej, sieci, systemu operacyjnego i modelu zakupu.
 
+##### Table of content
+
+- [[#Typy instancji]]
+	- [[#Ogólnego zastosowania [t, m]]]
+	- [[#Zoptymalizowana pod kątem obliczeń (compute) [c]]]
+	- [[#Zoptymalizowana pod kątem pamięci (memory) [r, x, z]]]
+	- [[#Zoptymalizowana pod kątem pamięci masowej (storage) [i, d, h]]]
+	- [[#Ze wsparciem sprzętowym]]
+- [[#Opcje kupna]]
+	- [[#on-demand]]
+	- [[#Reserved Instances]]
+		- [[#Standard]]
+		- [[#Convertible]]
+		- [[#Scheduled]]
+	- [[#Savings Plan]]
+	- [[#Spot]]
+		- [[#Spot Fleets]]
+	- [[#Dedicated Hosts]]
+		- [[#AWS License Manager]]
+		- [[#Deticated Instances vs Deticated Hosts]]
+- [[#EC2 User Data]]
+- [[#Amazon EC2 Auto Scaling]]
+	- [[#Auto Scaling group]]
+- [[#See also:]]
+
 # Typy instancji
 
 Typy instancji Amazon EC2 są zoptymalizowane do różnych zadań. Wybierając typ instancji, weź pod uwagę specyficzne potrzeby Twoich obciążeń i aplikacji.
@@ -13,7 +38,7 @@ Może to obejmować wymagania dotyczące:
 
 **Typy instancji:**
 
-## Ogólnego zastosowania
+## Ogólnego zastosowania [t, m]
 
 Ddostarcza zbalansowane zasoby (CPU, RAM, dysk, sieciowe) przeznaczona dla aplikacji, które nie potrzebują optymalizacji pod kątem żadnego konretnego zasobu
 Zastosowanie:
@@ -22,14 +47,14 @@ Zastosowanie:
 - serwery do gier,
 - małe i średnie bazy danych.
 
-## Zoptymalizowana pod kątem obliczeń (compute)
+## Zoptymalizowana pod kątem obliczeń (compute) [c]
 
 Dostarczają wysoko wydajne procesory.
 Zastosowanie:
 
 - aplikacje i serwery, które wymagają wiele obliczeń lub przetwarzania wielu transakcji.
 
-## Zoptymalizowana pod kątem pamięci (momory)
+## Zoptymalizowana pod kątem pamięci (memory) [r, x, z]
 
 Zapewnia szybką wydajność dla obciążeń, które przetwarzają duże zbiory danych w pamięci.
 Zastosowanie:
@@ -37,7 +62,7 @@ Zastosowanie:
 - obciążenia wygmagające załadowania dużej ilości danych przed uruchomieniem lub w trakcie działania plikacji,
 - bazy danych przetwarzające duże ilości danych w czasie rzeczywistym.
 
-## Zoptymalizowana pod kątem pamięci masowej (storage)
+## Zoptymalizowana pod kątem pamięci masowej (storage) [i, d, h]
 
 Zastosowanie:
 
@@ -65,7 +90,13 @@ Instancje na żądanie pozwalają Ci płacić za moc obliczeniową za godzinę l
 
 ## Reserved Instances
 
-Zapewnia zniżki w stosunku do modelu On-Demand, gdy możesz zobowiązać się do określonego okresu (1 lub 3 lata). Dodatkowo, gwarantuje on również rezerwację pojemności dla określonego typu instancji. na cały wykupiony okres.
+Zapewnia zniżki w stosunku do modelu On-Demand, gdy możesz zobowiązać się do określonego okresu (1 lub 3 lata).
+Dodatkowo, gwarantuje on również rezerwację pojemności dla określonego typu instancji. na cały wykupiony okres.
+Można opłacać:
+
+- całość z góry (_all upfront_)
+- częsciowo z góry (_partial upfront_)
+- miesięcznie (_no upront_)
 
 Dostępne są 3 plany rezerwacji instancji:
 
@@ -83,7 +114,7 @@ Pozwala na konwersję niektórych atrybutów, jeśli będzie to miało taką sam
 
 ### Scheduled
 
-Scheduled Reserved Instance opłaca się w przypadku obciążeń zmiennych, ale przewidywalnych, np. wzmożony ruch w okresie świątecznym.
+Scheduled Reserved Instance opłaca się w przypadku obciążeń zmiennych, ale przewidywalnych, np. wzmożony ruch w okresie świątecznym lub w określonych godzinach.
 
 ## Savings Plan
 
@@ -93,9 +124,61 @@ Podobny do instancji zarezerwowanych, z tą różnicą, że nie ogranicza się t
 
 Pozwala na wykorzystanie nadmiaru mocy obliczeniowej EC2, które mogą istnieć w [[AWS locations#Availability zone|Availability zone]]. Pozwala uzyskać nawet 90% zniżki. Istnieje cena rynkowa dla typów instancji na strefę dostępności i jest to tzw. **cena spot** (spot prise). Jeśli twoja oferta jest wyższa niż cena spot, będziesz mógł uruchomić swoje instancje. Jeśli cena spot przekroczy twoją ofertę, wtedy twoja instancja zostanie zamknięta w ciągu 2 minut. Z tego powodu nadaje się w przypadku obciążeń, które mogą się uruchamiać i zamykać bez negatywnego wpływu na system.
 
-## Dedicated Host
+Nadaje szczególnie do:
+
+- bartch jobs,
+- rozproszonych obciążeń,
+- obciążeń z elastycznym czasem startu i końca,
+- analizy danych,
+- przetwarzanie obrazu.
+
+**Nie** nadaje się do:
+
+- krytycznych zadań,
+- baz danych.
+
+### Spot Fleets
+
+#ENG
+The Spot Fleet will try to meet the target capacity with price constraints
+
+- Define possible launch pools: instance type (m5.large), OS, Availability Zone
+- Can have multiple launch pools, so that the fleet can choose
+- Spot Fleet stops launching instances when reaching capacity or max cost
+
+Strategies to allocate Spot Instances:
+
+- lowestPrice: from the pool with the lowest price (cost optimization, short workload)
+- diversified: distributed across all pools (great for availability, long workloads)
+- capacityOptimized: pool with the optimal capacity for the number of instances
+
+## Dedicated Hosts
 
 Dostarcza dedykowany serwer fizyczny w centrum danych (data centre). Jest to najdroższa opcja. Przykładowym przypadkiem jego zapotrzebowania jest pewność przestrzegania warunków licencji per-serwer, per-core, per-VM, per-cocket.
+
+### AWS License Manager
+
+Dedicated Host jest zintegrowany z **AWS License Manager**.
+
+![[AWS License Manager.png]]
+
+### Deticated Instances vs Deticated Hosts
+
+#ENG
+You can use Dedicated Hosts and Dedicated instances to launch Amazon EC2 instances on physical servers that are dedicated for your use. An important difference between a Dedicated Host and a Dedicated instance is that a Dedicated Host gives you additional visibility and control over how instances are placed on a physical server, and you can consistently deploy your instances to the same physical server over time. As a result, Dedicated Hosts enable you to use your existing server-bound software licenses and address corporate compliance and regulatory requirements.
+
+![[EC2 Dedicated instances vs host.png]]
+
+# EC2 User Data
+
+EC2 User Data uruchamia zdefiniowany skrypt tylko raz, kiedy EC2 się uruchamia pierwszy raz.
+Przykładowe zadania, które można tak wykonać:
+
+- instalacja aktualizacja software'u
+- pobranie kodu lub plików
+- cokolwiek
+
+Skrypt ten uruchamiany jest przez użytkownika root.
 
 # Amazon EC2 Auto Scaling
 
@@ -106,7 +189,7 @@ W ramach Amazon EC2 Auto Scaling, możesz użyć dwóch podejść:
 - **skalowania dynamicznego** (_Dynamic scaling_) - reaguje na zmieniające się zapotrzebowanie
 - **skalowania predykcyjnego** (_Predictive scaling_) - automatycznie zaplanuje odpowiednią liczbę instancji Amazon EC2 na podstawie przewidywanego zapotrzebowania.
 
->W celu przyśpieszenia skalowania, można łączyć oba rozwiązania
+> W celu przyśpieszenia skalowania, można łączyć oba rozwiązania
 
 Typy skalowania dzieli się na:
 
@@ -114,14 +197,23 @@ Typy skalowania dzieli się na:
 
 Skalujemy nasz typ instancji do większego typu instancji z dodatkowymi zasobami. Jednak, jeśli to zrobimy, będziemy musieli wyłączyć nasz serwer. To zazwyczaj nienajlepszy sposób.
 
- - poziome - **horizontal (scaling out)**
+- poziome - **horizontal (scaling out)**
 
 Jest to dodanie dodatkowych instancji przy użyciu [[Elastic Load Balancing]], aby faktycznie obsłużyć proces przekierowywania naszych użytkowników do właściwego serwera.
 
 ## Auto Scaling group
 
 Kiedy tworzysz grupę Auto Scaling, możesz ustawić:
+
 - **minimum capacity** - minimalna liczba EC2, które uruchamiają się natychmiast po utworzeniu grupy Auto Scaling,
-- **desired capacity** - mimo iż aplikacja może potrzebować mniejszej liczy EC2 do działania (*domyślnie równe minimum capacity*),
+- **desired capacity** - mimo iż aplikacja może potrzebować mniejszej liczy EC2 do działania (_domyślnie równe minimum capacity_),
 - **maximum capacity** - aby zużywać zbyt dużej ilości zasobów podczas zwiększonego zapotrzebowania.
 
+---
+
+# See also:
+
+- [[#[#\\\[Security group]]]]
+- [[#[#\\\[Elastic IP]]]]
+- [[#[#\\\[Network ACL]]]]
+- [[#[#\\\[NAT devices]]]]
