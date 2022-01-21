@@ -71,3 +71,4 @@ Snapshoty służą głównie do tworzenia back-up'ów, poprzez robienie zrzutu s
 # See also
 
 - [[EC2 Instance Store]]
+- [[Elastic File System]]

@@ -14,3 +14,4 @@ Instance Store składa się z jednego lub więcej woluminów, wystawionych jako 
 # See also
 
 - [[Elastic Block Store]]
+- [[Elastic File System]]

@@ -4,24 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "7cbb2bb92fe79844",
+        "id": "8d6e060fea808e62",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/Elastic Block Store.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "04cf925b867ee615",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "devops/aws/Elastic Block Store.md",
+            "file": "devops/aws/Elastic File System.md",
             "mode": "source",
             "source": false
           }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/Elastic Block Store.md",
+                "file": "devops/aws/Elastic File System.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/Elastic Block Store.md",
+                "file": "devops/aws/Elastic File System.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,17 +143,17 @@
     "width": 316,
     "collapsed": true
   },
-  "active": "7cbb2bb92fe79844",
+  "active": "8d6e060fea808e62",
   "lastOpenFiles": [
-    "devops/aws/Elastic Block Store.md",
-    "devops/aws/Key Management Service.md",
-    "devops/aws/EC2.md",
-    "devops/aws/EC2 Instance Store.md",
-    "devops/aws/Elastic Load Balancing.md",
-    "devops/aws/AWS locations.md",
-    "devops/aws/CloudWatch.md",
-    "devops/aws/Elastic IP.md",
+    "devops/aws/Elastic File System.md",
     "devops/aws/Elastic network interface.md",
-    "devops/aws/Elastic Container Services.md"
+    "devops/aws/EC2 Instance Store.md",
+    "devops/aws/Elastic Block Store.md",
+    "devops/templates/SeeAlso.md",
+    "devops/templates/ToC Regex.md",
+    "devops/aws/Elastic Load Balancing.md",
+    "devops/network/NAT.md",
+    "devops/aws/Key Management Service.md",
+    "devops/aws/EC2.md"
   ]
 }
