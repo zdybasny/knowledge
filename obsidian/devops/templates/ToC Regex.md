@@ -2,8 +2,8 @@
 2. Replace the ToC with Regex: 
 
 Regex:
->(.*- )\[(.*)\].*
+(.*- )\[(.*)\].*
 
 Replacement:
->$1[[#$2]]
+$1[[#$2]]
 

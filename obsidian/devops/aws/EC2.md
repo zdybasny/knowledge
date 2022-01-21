@@ -2,31 +2,32 @@
 
 Amazon Elastic Compute Cloud (Amazon EC2) oferuje platformę obliczeniową, z instancjami i wyborem  procesora, pamięci masowej, sieci, systemu operacyjnego i modelu zakupu.
 
-##### Table of content
+##### Spis treści
 
 - [[#Typy instancji]]
-	- [[#Ogólnego zastosowania [t, m]]]
-	- [[#Zoptymalizowana pod kątem obliczeń (compute) [c]]]
-	- [[#Zoptymalizowana pod kątem pamięci (memory) [r, x, z]]]
-	- [[#Zoptymalizowana pod kątem pamięci masowej (storage) [i, d, h]]]
-	- [[#Ze wsparciem sprzętowym]]
+  - [[#Ogólnego zastosowania - t, m]]
+  - [[#Zoptymalizowana pod kątem obliczeń (compute) - c]]
+  - [[#Zoptymalizowana pod kątem pamięci (memory) - r, x, z]]
+  - [[#Zoptymalizowana pod kątem pamięci masowej (storage) - i, d, h]]
+  - [[#Ze wsparciem sprzętowym]]
 - [[#Opcje kupna]]
-	- [[#on-demand]]
-	- [[#Reserved Instances]]
-		- [[#Standard]]
-		- [[#Convertible]]
-		- [[#Scheduled]]
-	- [[#Savings Plan]]
-	- [[#Spot]]
-		- [[#Spot Fleets]]
-	- [[#Dedicated Hosts]]
-		- [[#AWS License Manager]]
-		- [[#Deticated Instances vs Deticated Hosts]]
+  - [[#on-demand]]
+  - [[#Reserved Instances]]
+    - [[#Standard]]
+    - [[#Convertible]]
+    - [[#Scheduled]]
+  - [[#Savings Plan]]
+  - [[#Spot]]
+    - [[#Spot Fleets]]
+  - [[#Dedicated Hosts]]
+    - [[#AWS License Manager]]
+    - [[#Deticated Instances vs Deticated Hosts]]
+- [[#Placement Group]]
 - [[#EC2 User Data]]
+- [[#Storage]]
 - [[#Amazon EC2 Auto Scaling]]
-	- [[#Auto Scaling group]]
-- [[#See also:]]
-
+  - [[#Auto Scaling group]]
+- [[#See also]]
 # Typy instancji
 
 Typy instancji Amazon EC2 są zoptymalizowane do różnych zadań. Wybierając typ instancji, weź pod uwagę specyficzne potrzeby Twoich obciążeń i aplikacji.
@@ -38,7 +39,7 @@ Może to obejmować wymagania dotyczące:
 
 **Typy instancji:**
 
-## Ogólnego zastosowania [t, m]
+## Ogólnego zastosowania - t, m
 
 Ddostarcza zbalansowane zasoby (CPU, RAM, dysk, sieciowe) przeznaczona dla aplikacji, które nie potrzebują optymalizacji pod kątem żadnego konretnego zasobu
 Zastosowanie:
@@ -47,14 +48,14 @@ Zastosowanie:
 - serwery do gier,
 - małe i średnie bazy danych.
 
-## Zoptymalizowana pod kątem obliczeń (compute) [c]
+## Zoptymalizowana pod kątem obliczeń (compute) - c
 
 Dostarczają wysoko wydajne procesory.
 Zastosowanie:
 
 - aplikacje i serwery, które wymagają wiele obliczeń lub przetwarzania wielu transakcji.
 
-## Zoptymalizowana pod kątem pamięci (memory) [r, x, z]
+## Zoptymalizowana pod kątem pamięci (memory) - r, x, z
 
 Zapewnia szybką wydajność dla obciążeń, które przetwarzają duże zbiory danych w pamięci.
 Zastosowanie:
@@ -62,7 +63,7 @@ Zastosowanie:
 - obciążenia wygmagające załadowania dużej ilości danych przed uruchomieniem lub w trakcie działania plikacji,
 - bazy danych przetwarzające duże ilości danych w czasie rzeczywistym.
 
-## Zoptymalizowana pod kątem pamięci masowej (storage) [i, d, h]
+## Zoptymalizowana pod kątem pamięci masowej (storage) - i, d, h
 
 Zastosowanie:
 
@@ -169,6 +170,28 @@ You can use Dedicated Hosts and Dedicated instances to launch Amazon EC2 instanc
 
 ![[EC2 Dedicated instances vs host.png]]
 
+# Placement Group
+
+[źródło](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html)
+
+Placement group pozwalają na określenie strategi rozmieszczenia EC2. Dostępne są następujące strategie:
+
+- **Cluster**  - grupuje EC2 razem w jednej [[AWS locations#Availability zone|AZ]].
+  - Zastosowane:
+    - uzyskanie wysokiej wydajności sieci,
+    - bazy danych.
+
+- **Spread** - rozmieszcza każdą EC2 w osobnych fizycznych urządzeniach, które posiadają własną sieć i źródło zasilania. Max. 7 EC2 na [[AWS locations#Availability zone|AZ]]
+  - Zastosowane:
+    - zapewnienie izolacji dla krytycznych obciążeń,
+    - aplikacje wymagające bardzo wysokiej dostępności.
+
+- **Partition** - rozmieszcza EC2 w osobnych partycjach, ktore które bazują na osobnych urządzeniach wewnątrz [[AWS locations#Availability zone|AZ]].
+  - Zastosowanie:
+    - w dużych rozproszonych i powtarzalnych obciążeń, np. Hadoop, Cassandra, Kafka.
+
+-
+
 # EC2 User Data
 
 EC2 User Data uruchamia zdefiniowany skrypt tylko raz, kiedy EC2 się uruchamia pierwszy raz.
@@ -180,7 +203,20 @@ Przykładowe zadania, które można tak wykonać:
 
 Skrypt ten uruchamiany jest przez użytkownika root.
 
+# Storage
+#storage 
+
+Podczas tworzenia EC2 przypinany jest do nie volumen pamięci masowej typu [[Elastic Block Store]] o nazwie *Root*. Domyślnie jest on ustawiony z atrybutem *Delete on Termination*. Można przypiąć do EC2 dodatkowe valuminy, które domyślnie nie usuwają się z końcem cyklu życia danej instancji.
+
+![[EC2 EBS.png]]
+
+Dostępne typy voluminów dla EC2 to:
+- [[Elastic Block Store|EBS]]
+- [[EC2 Instance Store|Instance Store]]
+- ...
+
 # Amazon EC2 Auto Scaling
+#autoscaling
 
 Amazon EC2 Auto Scaling umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
 
@@ -211,9 +247,10 @@ Kiedy tworzysz grupę Auto Scaling, możesz ustawić:
 
 ---
 
-# See also:
+# See also
 
-- [[#[#\\\[Security group]]]]
-- [[#[#\\\[Elastic IP]]]]
-- [[#[#\\\[Network ACL]]]]
-- [[#[#\\\[NAT devices]]]]
+- [[Security group]]
+- [[Elastic IP]]
+- [[Network ACL]]
+- [[NAT devices]]
+- [[Elastic Block Store]]

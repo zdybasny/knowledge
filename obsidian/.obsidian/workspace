@@ -4,14 +4,26 @@
     "type": "split",
     "children": [
       {
-        "id": "29b83f698269e18c",
+        "id": "7cbb2bb92fe79844",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/EC2.md",
+            "file": "devops/aws/Elastic Block Store.md",
             "mode": "source",
-            "source": true
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "04cf925b867ee615",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "devops/aws/Elastic Block Store.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -41,10 +53,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "trac",
+                "query": "elastic block",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/EC2.md",
+                "file": "devops/aws/Elastic Block Store.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/EC2.md",
+                "file": "devops/aws/Elastic Block Store.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,17 +155,17 @@
     "width": 316,
     "collapsed": true
   },
-  "active": "29b83f698269e18c",
+  "active": "7cbb2bb92fe79844",
   "lastOpenFiles": [
+    "devops/aws/Elastic Block Store.md",
+    "devops/aws/Key Management Service.md",
     "devops/aws/EC2.md",
-    "devops/aws/Elastic Container Services.md",
-    "devops/templates/ToC Regex.md",
-    "devops/aws/VPC.md",
-    "devops/aws/Network ACL.md",
-    "devops/aws/Security group.md",
+    "devops/aws/EC2 Instance Store.md",
     "devops/aws/Elastic Load Balancing.md",
-    "devops/aws/IAM.md",
-    "devops/aws/Lambda.md",
-    "devops/aws/AWS WAF.md"
+    "devops/aws/AWS locations.md",
+    "devops/aws/CloudWatch.md",
+    "devops/aws/Elastic IP.md",
+    "devops/aws/Elastic network interface.md",
+    "devops/aws/Elastic Container Services.md"
   ]
 }
