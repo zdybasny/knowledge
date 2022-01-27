@@ -1,0 +1,1 @@
+[[AWS locations#Availability zone|AZ]]

@@ -23,7 +23,7 @@
     {
       "name": "tables",
       "active": true,
-      "visible": false
+      "visible": true
     },
     {
       "name": "html",
