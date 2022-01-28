@@ -15,6 +15,7 @@ Amazon EC2 Auto Scaling jest częścią usługi [[AWS Auto Scaling]], która zap
     - [[#Scaling Policy]]
     - [[#Scaling cooldown]]
     - [[#Skalowanie predykcyjne]]
+- [[#Lifecycle hook]]
 - [[#Auto Scaling Alarm]]
 - [[#Auto Scaling dla ELB]]
 - [[#See also]]
@@ -110,6 +111,17 @@ Cooldown skalowania pomaga uniknąć sytuacji, w której Auto Scaling uruchamia 
 ## Skalowanie predykcyjne
 
 Możesz także połączyć skalowanie predykcyjne i dynamiczne (odpowiednio podejście proaktywne i reaktywne), aby szybciej skalować [[EC2]].
+
+
+# Lifecycle hook
+
+[źródło](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html#lifecycle-hooks-overview)
+
+EC2 Auto Scaling oferuje możliwość dodawania haków cyklu życia do swoich ASG. Te haki pozwalają tworzyć rozwiązania, które są świadome zdarzeń w cyklu życia instancji Auto Scaling, a następnie wykonać niestandardową akcję na instancjach, gdy wystąpi odpowiednie zdarzenie cyklu życia. Hak cyklu życia zapewnia określony czas (domyślnie jedna godzina) oczekiwania na zakończenie akcji, zanim instancja przejdzie do następnego stanu.
+
+![[EC2 AS hook.png]]
+
+Popularnym zastosowaniem haków lifecycle jest kontrola, kiedy instancje są rejestrowane w [[Elastic Load Balancing]]. Dodając **launch lifecycle hook** do ASG, możesz upewnić się, że skrypty startowe zakończyły się sukcesem, a aplikacje na instancjach są gotowe do przyjęcia ruchu, zanim zostaną zarejestrowane do load balancera na końcu lifecycle hook.
 
 # Auto Scaling Alarm
 
