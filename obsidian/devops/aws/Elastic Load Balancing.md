@@ -5,6 +5,7 @@ Jednym z aspektów skalowalności (elastycznoći) jest sposób, w jaki kierujemy
 Domyślnie integruje się z [[EC2]], [[Elastic Container Services]].
 
 > Load balancer działa jako pojedynczy punkt kontaktu dla całego ruchu przychodzącego z sieci do [[EC2#Auto Scaling group|Auto Scaling group]]. Chociaż Elastic Load Balancing i [[EC2#Amazon EC2 Auto Scaling|Amazon EC2 Auto Scaling]] są oddzielnymi usługami, współpracują one ze sobą, aby zapewnić wysoką wydajność i dostępność aplikacji działających w Amazon EC2.
+
 ##### Spis treści
 
 - [[#Typy Load Balancerów]]
@@ -32,6 +33,7 @@ Domyślnie integruje się z [[EC2]], [[Elastic Container Services]].
   - [[#Target group]]
     - [[#Typy target group]]
       - [[#Intanceses vs IP addresses]]
+    - [[#Auto Scaling Group]]
   - [[#Cross-zone load balancing]]
   - [[#Zonal isolation]]
   - [[#Health Check]]
@@ -47,6 +49,7 @@ Domyślnie integruje się z [[EC2]], [[Elastic Container Services]].
   - [[#Deregistration Delay]]
   - [[#Connection Draining]]
 - [[#See also]]
+
 
 # Typy Load Balancerów
 
@@ -353,13 +356,19 @@ Dostępne dla: [[#Application Load Balancer|ALB]], [[#Network Load Balancer|NLB]
 Instances:
 
 - Typ docelowy [[EC2]] jest ograniczony tylko do niektórych instancji. Powinien to być domyślny wybór podczas load balancingu instancji.
-- Na przykład, jeśli masz instancje w [[Autoscaling Group]] (ASG), ASG może automatycznie zarejestrować twoje instancje z twoim load balancerem. Nie możesz tego zrobić dla typów docelowych IP.
+- Na przykład, jeśli masz instancje w [[AWS Auto Scaling#Auto Scaling group|Auto Scaling group]] (ASG), ASG może automatycznie zarejestrować twoje instancje z twoim load balancerem. Nie możesz tego zrobić dla typów docelowych IP.
 
 IP adresses:
 
 - Cel nie musi być instancją - wszystko z prywatnym adresem IP będzie działać, w tym wewnętrzny load balance, prywatna usługa VPC, kontenery Fargate, bazy danych, serwery on-premise przez VPN.
 - Cel może być w innym regionie, tak długo, jak masz cross-region peering między swoimi VPC masz wiele interfejsów sieciowych na swojej instancji, więc możesz rozdzielać ruch pomiędzy nimi, np. różne aplikacje na jednej instancji są przypisane do różnych interfejsów.
 - Każdy interfejs może być powiązany z inną grupą docelową.
+
+### Auto Scaling Group
+
+Po dołączeniu [[#Target group|target grupy]] do [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]], [[EC2 Auto Scaling]] rejestruje swoje cele z [[Elastic Load Balancing#Target group|Target group]] dla Ciebie, gdy je uruchamia, a [[EC2]], które są kończone przez Auto Scaling są automatycznie wyrejestrowywane z load balancera.
+
+**Więcej: [[EC2 Auto Scaling]].**
 
 ## Cross-zone load balancing
 
@@ -490,7 +499,7 @@ Dostępne dla: [[#Application Load Balancer|ALB]], [[#Network Load Balancer|NLB]
 
 Elastic Load Balancing przestaje wysyłać żądania do celów, które się wyrejestrowują. Domyślnie Elastic Load Balancing czeka 300 sekund przed zakończeniem procesu wyrejestrowania, co może pomóc w ukończeniu trwających żądań do celu. Dostępny zakres to **1s - 1h**.
 
-Początkowy stan wyrejestrowującego się celu jest `draining`. Po upływie opóźnienia wyrejestrowania, proces wyrejestrowania kończy się, a stan celu jest nieużywany. Jeśli cel jest częścią [[Autoscaling Group]], może zostać zakończony i zastąpiony.
+Początkowy stan wyrejestrowującego się celu jest `draining`. Po upływie opóźnienia wyrejestrowania, proces wyrejestrowania kończy się, a stan celu jest nieużywany. Jeśli cel jest częścią [[AWS Auto Scaling#Auto Scaling group|ASG]], może zostać zakończony i zastąpiony.
 
 Jeśli wyrejestrowujący się cel nie ma trwających żądań i żadnych aktywnych połączeń, Elastic Load Balancing natychmiast kończy proces wyrejestrowywania, nie czekając na upłynięcie opóźnienia wyrejestrowania. Jednakże, nawet jeśli wyrejestrowanie celu jest zakończone, status celu jest wyświetlany jako opróżniający się do czasu wygaśnięcia limitu czasu opóźnienia wyrejestrowania. Po upływie tego czasu, cel przechodzi do stanu nieużywanego.
 
@@ -508,4 +517,5 @@ Tak nazywa się funkjonalność [[#Deregistration Delay]] dla [[#Classic Load Ba
 
 # See also
 
-- [[Autoscaling Group]]
+- [[AWS Auto Scaling]]
+- [[EC2 Auto Scaling]]

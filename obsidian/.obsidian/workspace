@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "250d187c5d3054d6",
+        "id": "1bdb812f93f4944c",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "devops/aws/Elastic Load Balancing.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -37,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "az",
+                "query": "spot f",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "devops/aws/Elastic Load Balancing.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "devops/aws/Elastic Load Balancing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,17 +142,17 @@
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "250d187c5d3054d6",
+  "active": "1bdb812f93f4944c",
   "lastOpenFiles": [
-    "devops/templates/SeeAlso.md",
-    "templates/SeeAlso.md",
-    "devops/templates/ToC Regex.md",
-    "devops/aws/EC2.md",
-    "devops/aws/IAM.md",
     "devops/aws/Elastic Load Balancing.md",
-    "devops/attachments/GWLB.png",
-    "devops/network/SSL-TLS.md",
-    "devops/aws/AWS Certificate Manager.md",
-    "SSL/TLS.md"
+    "devops/aws/EC2 Auto Scaling.md",
+    "devops/aws/AWS Auto Scaling.md",
+    "Auto Scaling Group.md",
+    "devops/aws/CloudWatch.md",
+    "devops/network/SSH.md",
+    "devops/aws/EC2.md",
+    "devops/aws/AMI.md",
+    "devops/aws/CloudFormation.md",
+    "devops/aws/Aurora.md"
   ]
 }

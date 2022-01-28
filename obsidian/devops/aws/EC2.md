@@ -28,6 +28,7 @@ Amazon Elastic Compute Cloud (Amazon EC2) oferuje platformę obliczeniową, z in
 - [[#Amazon EC2 Auto Scaling]]
   - [[#Auto Scaling group]]
 - [[#See also]]
+
 # Typy instancji
 
 Typy instancji Amazon EC2 są zoptymalizowane do różnych zadań. Wybierając typ instancji, weź pod uwagę specyficzne potrzeby Twoich obciążeń i aplikacji.
