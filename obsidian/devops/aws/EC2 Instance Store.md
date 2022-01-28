@@ -1,6 +1,6 @@
-#AWS #storage 
+#AWS #compute #storage 
 
-[źródło]([Amazon EC2 instance store - Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes))
+[źródło](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes)
 
 **Instancji Store** zapewnia tymczasową pamięć masową na poziomie bloków dla [[EC2]]. Pamięć ta znajduje się na dyskach, które są fizycznie podłączone do komputera hosta. Dzięki temu zapewnia najwyższą tydajność I/O, ale dane są tracone po zatrzymaniu [[EC2]]. 
 

@@ -1,3 +1,3 @@
-#AWS #computing 
+#AWS #containers #compute 
 
 #TODO 

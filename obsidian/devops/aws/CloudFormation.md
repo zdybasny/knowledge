@@ -1,3 +1,3 @@
-#AWS #provisioning
+#AWS #management
 
 #TODO

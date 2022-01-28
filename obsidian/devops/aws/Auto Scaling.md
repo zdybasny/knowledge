@@ -1,4 +1,4 @@
-#AWS  #autoscaling
+#AWS #management #autoscaling
 
 AWS Auto Scaling pozwala budować plany skalowania ([[#Scaling plan]]) dla różnych [[#Autoskalowanie zasobów|zasobów skalowalnych]] AWS, w tym:
 
@@ -14,7 +14,7 @@ AWS Auto Scaling sprawia, że skalowanie jest proste dzięki rekomendacjom, któ
 
 - [[#Scaling plan]]
 - [[#Autoskalowanie zasobów]]
-  - [[#Amazon [[EC2 Auto Scaling]]]]
+  - [[#EC2 Auto Scaling]]
   - [[#Skalowanie Spot Fleet]]
   - [[#Skalowanie Elastic Container Service]]
   - [[#Skalowanie Aurora]]
@@ -30,9 +30,9 @@ Lub, jeśli Twoja infrastruktura chmury zawiera AWS CloudFormation, możesz zdef
 
 # Autoskalowanie zasobów
 
-## Amazon [[EC2 Auto Scaling]]
+## EC2 Auto Scaling
 
-Amazon EC2 Auto Scaling jest częścią usługi [[AWS Auto Scaling]], która zapewnia uruchomienie pożądanej liczby [[EC2]], nawet jeśli jedna z nich ulegnie awarii, oraz umożliwia automatyczne zwiększanie lub zmniejszanie liczby instancji w miarę zmian zapotrzebowania na nie.
+[[EC2 Auto Scaling]] zapewnia uruchomienie pożądanej liczby [[EC2]], nawet jeśli jedna z nich ulegnie awarii, oraz umożliwia automatyczne zwiększanie lub zmniejszanie liczby instancji w miarę zmian zapotrzebowania na nie.
 
 
 ## Skalowanie Spot Fleet

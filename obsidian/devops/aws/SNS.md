@@ -1,5 +1,4 @@
-# Simple Notification Service
-#AWS #messaging #network 
+#AWS #integration
 
 SNS to w pełni zarządzana usługa przesyłania wiadomości zarówno w komunikacji aplikacja-aplikacja (A2A), jak i aplikacja-osoba (A2P).
 

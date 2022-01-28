@@ -1,4 +1,4 @@
-#AWS #observability
+#AWS #management #observability
 
 #TODO
 <https://aws.amazon.com/cloudwatch/>

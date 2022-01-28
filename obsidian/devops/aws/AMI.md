@@ -1,4 +1,4 @@
-#AWS #computing 
+#AWS #compute 
 
 Amazon Machine Images
 

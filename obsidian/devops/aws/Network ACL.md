@@ -1,4 +1,4 @@
-#AWS #network #secutiry 
+#AWS #network #security 
 
 # Przedstawienie
 
@@ -8,7 +8,7 @@ W większości przypadków [[Security group]] zaspokajają potrzeby, ale można 
 
 Każda [[VPC Subnet]] z założenia musi być powiązana z NACL. Każda utworzona [[VPC Subnet]] jest automatycznie kojarzona z domyślnym NACL dla [[VPC]]. Można zmienić to skojarzenie, a także zawartość domyślnej NACL.
 
-Można utworzyć dziennik przepływów ([[VPC Flow Logs]]) w [[VPC]] lub [[VPC Subnet]] w celu przechwytywania ruchu przychodzącego i wychodzącego z interfejsów sieciowych w [[VPC]] lub [[VPC Subnet]]. Można również utworzyć [[VPC Flow Logs]] na pojedynczym [[Elastic network interface]]. Dzienniki przepływów są publikowane w [[CloudWatch#CloudWatch Logs]] lub [[S3]].
+Można utworzyć dziennik przepływów ([[VPC Flow Logs]]) w [[VPC]] lub [[VPC Subnet]] w celu przechwytywania ruchu przychodzącego i wychodzącego z interfejsów sieciowych w [[VPC]] lub [[VPC Subnet]]. Można również utworzyć [[VPC Flow Logs]] na pojedynczym [[Elastic Network Interface]]. Dzienniki przepływów są publikowane w [[CloudWatch#CloudWatch Logs]] lub [[S3]].
 
 # Podstawy
 

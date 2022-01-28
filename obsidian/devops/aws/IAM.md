@@ -1,4 +1,4 @@
-#AWS #secutiry
+#AWS #security
 
 # IAM
 [źródło]([What is IAM? - AWS Identity and Access Management (amazon.com)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html))

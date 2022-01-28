@@ -1,4 +1,4 @@
-#AWS #network #observability
+#AWS #network #management #observability 
 
 #TODO
 

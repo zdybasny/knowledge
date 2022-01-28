@@ -4,7 +4,7 @@ Elastic IP to statyczny adres IPv4[^1] osiągalny z Internetu przeznaczony do dy
 
 Używając adresu Elastic IP, możesz zamaskować awarię [[EC2]] lub oprogramowania poprzez szybkie przemapowanie adresu na inną [[EC2]] na Twoim koncie. Alternatywnie, możesz podać adres Elastic IP w rekordzie [[DNS]] dla swojej domeny, tak aby Twoja domena wskazywała na Twoją [[EC2]].
 
-Aby skorzystać z Elastic IP, należy przypisać go do konta, a następnie skojarzyć z [[EC2]] lub [[Elastic network interface]]. Jeśli jest skojarzony z instancją [[EC2]], jest on również skojarzony z jej głównym interfejsem. Jeśli jest skojarzony z [[Elastic network interface]], który jest dołączony do [[EC2]], jest on również powiązany z tą instancją.
+Aby skorzystać z Elastic IP, należy przypisać go do konta, a następnie skojarzyć z [[EC2]] lub [[Elastic Network Interface]]. Jeśli jest skojarzony z instancją [[EC2]], jest on również skojarzony z jej głównym interfejsem. Jeśli jest skojarzony z [[Elastic Network Interface]], który jest dołączony do [[EC2]], jest on również powiązany z tą instancją.
 
 ##### Spis treści
 

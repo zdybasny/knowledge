@@ -1,3 +1,3 @@
-#AWS #storage
+#AWS #database
 
 #TODO

@@ -1,4 +1,4 @@
-#AWS #network #secutiry 
+#AWS #network #security 
 
 # Przedstawienie
 
@@ -35,7 +35,7 @@ Poniżej przedstawiono charakterystykę security groups:
 
 - [[EC2]] powiązane z security group nie mogą ze sobą rozmawiać, chyba że zostaną dodane reguły zezwalające na ruch (wyjątek: domyślna security group ma takie reguły domyślnie).
 
-- Security groups są powiązane z [[Elastic network interface]]. Po uruchomieniu [[EC2]] możesz zmienić security groups, które są z nią powiązane, co powoduje zmianę security groups powiązanych z podstawowym interfejsem sieciowym (`eth0`). Możesz też określić lub zmienić security groups powiązane z dowolnym innym [[Elastic network interface]]. Domyślnie, gdy tworzysz [[Elastic network interface]], jest on skojarzony z domyślną security group dla [[VPC]], chyba że określisz inną security group.
+- Security groups są powiązane z [[Elastic Network Interface]]. Po uruchomieniu [[EC2]] możesz zmienić security groups, które są z nią powiązane, co powoduje zmianę security groups powiązanych z podstawowym interfejsem sieciowym (`eth0`). Możesz też określić lub zmienić security groups powiązane z dowolnym innym [[Elastic Network Interface]]. Domyślnie, gdy tworzysz [[Elastic Network Interface]], jest on skojarzony z domyślną security group dla [[VPC]], chyba że określisz inną security group.
 
 ## Limity
 

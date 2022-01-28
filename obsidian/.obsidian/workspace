@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/EC2 Auto Scaling.md",
+            "file": "devops/aws/WAF.md",
             "mode": "source",
             "source": false
           }
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "spot f",
+                "query": "#computing",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -85,14 +85,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/EC2 Auto Scaling.md",
+                "file": "devops/aws/WAF.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/EC2 Auto Scaling.md",
+                "file": "devops/aws/WAF.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,15 +144,15 @@
   },
   "active": "1bdb812f93f4944c",
   "lastOpenFiles": [
-    "devops/aws/EC2 Auto Scaling.md",
-    "devops/aws/Elastic Load Balancing.md",
-    "devops/aws/AWS Auto Scaling.md",
-    "Auto Scaling Group.md",
-    "devops/aws/CloudWatch.md",
-    "devops/network/SSH.md",
-    "devops/aws/EC2.md",
-    "devops/aws/AMI.md",
-    "devops/aws/CloudFormation.md",
-    "devops/aws/Aurora.md"
+    "devops/aws/WAF.md",
+    "devops/aws/Auto Scaling.md",
+    "devops/aws/VPC Subnet.md",
+    "devops/aws/VPC Route table.md",
+    "devops/aws/VPC Flow Logs.md",
+    "devops/aws/VPC.md",
+    "devops/aws/SNS.md",
+    "devops/aws/Security group.md",
+    "devops/aws/S3.md",
+    "devops/aws/Reoute 53.md"
   ]
 }

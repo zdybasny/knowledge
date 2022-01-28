@@ -52,7 +52,7 @@ Multi-Attach ułatwia osiągnięcie wyższej dostępności aplikacji w klastrowy
 
 # Szyfrowanie
 
-#secutiry
+#security
 
 Szyfrowany volumin EBS dotyczy danych **podczas transferu** oraz **w spoczynku**. Jest to proces niazuważalny dla użytkownika, ponieważ jest zarządny przez AWS z kluczami (**AES-256**) trzymanymi w [[Key Management Service]] .
 

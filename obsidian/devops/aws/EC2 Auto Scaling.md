@@ -1,6 +1,6 @@
-#AWS  #autoscaling #computing 
+#AWS #management #autoscaling #compute 
 
-Amazon EC2 Auto Scaling jest częścią usługi [[AWS Auto Scaling]], która zapewnia uruchomienie pożądanej liczby [[EC2]], nawet jeśli jedna z nich ulegnie awarii, oraz umożliwia automatyczne zwiększanie lub zmniejszanie liczby instancji w miarę zmian zapotrzebowania na nie.
+EC2 Auto Scaling jest częścią usługi [[Auto Scaling]], która zapewnia uruchomienie pożądanej liczby [[EC2]], nawet jeśli jedna z nich ulegnie awarii, oraz umożliwia automatyczne zwiększanie lub zmniejszanie liczby instancji w miarę zmian zapotrzebowania na nie.
 
 ##### Spis treści
 
@@ -24,7 +24,7 @@ Amazon EC2 Auto Scaling jest częścią usługi [[AWS Auto Scaling]], która zap
 
 [źródło](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html)
 
-ASG zawiera zbiór [[EC2]], które są traktowane jako logiczne zgrupowanie dla celów automatycznego skalowania i zarządzania. ASG umożliwia również korzystanie z funkcji Amazon EC2 Auto Scaling, takich jak zastępowanie kontroli stanu i polityki skalowania. Zarówno utrzymywanie liczby instancji w ASG, jak i automatyczne skalowanie są podstawową funkcjonalnością usługi Amazon EC2 Auto Scaling.
+ASG zawiera zbiór [[EC2]], które są traktowane jako logiczne zgrupowanie dla celów automatycznego skalowania i zarządzania. ASG umożliwia również korzystanie z funkcji EC2 Auto Scaling, takich jak zastępowanie kontroli stanu i polityki skalowania. Zarówno utrzymywanie liczby instancji w ASG, jak i automatyczne skalowanie są podstawową funkcjonalnością usługi EC2 Auto Scaling.
 
 Rozmiar ASG zależy od liczby[[EC2]], którą ustawisz jako pożądaną pojemność (**desired**). Możesz dopasować jej wielkość do zapotrzebowania - ręcznie lub za pomocą automatycznego skalowania.
 
@@ -75,7 +75,7 @@ Dla EC2 Auto Scaling dostępne są następujące plany skalowania:
 
 ## Utrzymanie stałego poziomu
 
-ASG może utrzymywać określoną liczbę działających [[EC2]] przez cały czas. Aby utrzymać aktualny poziom instancji, Amazon EC2 Auto Scaling wykonuje okresowe sprawdzanie stanu uruchomionych instancji w ramach ASG. Gdy Auto Scaling znajdzie niezdrową instancję, kończy jej działanie i uruchamia nową.
+ASG może utrzymywać określoną liczbę działających [[EC2]] przez cały czas. Aby utrzymać aktualny poziom instancji, EC2 Auto Scaling wykonuje okresowe sprawdzanie stanu uruchomionych instancji w ramach ASG. Gdy Auto Scaling znajdzie niezdrową instancję, kończy jej działanie i uruchamia nową.
 
 ## Skalowanie manualne
 
@@ -139,5 +139,5 @@ Jeśli rejestrujesz cele [[Elastic Load Balancing]] według ID [[EC2]], możesz 
 ---
 # See also
 
-- [[AWS Auto Scaling]]
+- [[Auto Scaling]]
 - [[Elastic Load Balancing]]

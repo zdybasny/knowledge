@@ -1,4 +1,4 @@
-#AWS #network
+#AWS #network #compute 
 
 **Elastyczny interfejs sieciowy** jest logicznym komponentem sieciowym w [[VPC]], który reprezentuje wirtualną kartę sieciową. Możesz tworzyć i konfigurować interfejsy sieciowe oraz dołączać, odłączać i przepinać je do [[EC2]] w tej samej [[AWS locations#Availability zone|Availability zone]].
 

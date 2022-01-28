@@ -1,4 +1,4 @@
-#AWS #computing
+#AWS #compute
 
 Amazon Elastic Compute Cloud (Amazon EC2) oferuje platformę obliczeniową, z instancjami i wyborem  procesora, pamięci masowej, sieci, systemu operacyjnego i modelu zakupu.
 
@@ -25,7 +25,7 @@ Amazon Elastic Compute Cloud (Amazon EC2) oferuje platformę obliczeniową, z in
 - [[#Placement Group]]
 - [[#EC2 User Data]]
 - [[#Storage]]
-- [[#Amazon EC2 Auto Scaling]]
+- [[#EC2 Auto Scaling]]
   - [[#Auto Scaling group]]
 - [[#See also]]
 
@@ -216,12 +216,12 @@ Dostępne typy voluminów dla EC2 to:
 - [[EC2 Instance Store|Instance Store]]
 - ...
 
-# Amazon EC2 Auto Scaling
+# EC2 Auto Scaling
 #autoscaling
 
-Amazon EC2 Auto Scaling umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
+EC2 Auto Scaling umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
 
-W ramach Amazon EC2 Auto Scaling, możesz użyć dwóch podejść:
+W ramach EC2 Auto Scaling, możesz użyć dwóch podejść:
 
 - **skalowania dynamicznego** (_Dynamic scaling_) - reaguje na zmieniające się zapotrzebowanie
 - **skalowania predykcyjnego** (_Predictive scaling_) - automatycznie zaplanuje odpowiednią liczbę instancji Amazon EC2 na podstawie przewidywanego zapotrzebowania.

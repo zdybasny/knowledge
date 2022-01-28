@@ -1,6 +1,4 @@
-# Simple Queue Service
-
-#AWS #messaging #network
+#AWS #integration 
 
 (**SQS** to w pełni zarządzana usługa kolejkowania wiadomości, która umożliwia oddzielanie i skalowanie mikroserwisów, systemów rozproszonych i aplikacji serverless. **SQS** eliminuje złożoność i koszty związane z zarządzaniem i obsługą middleware zorientowanego na komunikaty. Korzystając z **SQS**, można wysyłać, przechowywać i odbierać wiadomości między komponentami oprogramowania o dowolnej objętości, bez utraty wiadomości lub wymagania dostępności innych usług.
 

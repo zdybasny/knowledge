@@ -4,7 +4,7 @@ Jednym z aspektów skalowalności (elastycznoći) jest sposób, w jaki kierujemy
 
 Domyślnie integruje się z [[EC2]], [[Elastic Container Services]].
 
-> Load balancer działa jako pojedynczy punkt kontaktu dla całego ruchu przychodzącego z sieci do [[EC2#Auto Scaling group|Auto Scaling group]]. Chociaż Elastic Load Balancing i [[EC2#Amazon EC2 Auto Scaling|Amazon EC2 Auto Scaling]] są oddzielnymi usługami, współpracują one ze sobą, aby zapewnić wysoką wydajność i dostępność aplikacji działających w Amazon EC2.
+> Load balancer działa jako pojedynczy punkt kontaktu dla całego ruchu przychodzącego z sieci do [[EC2#Auto Scaling group|Auto Scaling group]]. Chociaż Elastic Load Balancing i [[EC2#EC2 Auto Scaling|EC2 Auto Scaling]] są oddzielnymi usługami, współpracują one ze sobą, aby zapewnić wysoką wydajność i dostępność aplikacji działających w Amazon EC2.
 
 ##### Spis treści
 
@@ -149,7 +149,7 @@ Należy wybrać co najmniej dwie [[VPC Subnet]]. Obowiązują następujące ogra
 
 Można określić jedną lub więcej [[VPC Subnet]] strefy [[AWS locations#Local zone|lokalnej]]. Obowiązują następujące ograniczenia:
 
-- Nie możesz używać [[AWS WAF]] z load balancerem.
+- Nie możesz używać [[WAF]] z load balancerem.
 
 - Nie można używać funkcji [[Lambda]] jako celu.
 
@@ -292,7 +292,7 @@ Gdy warunki dla danej reguły są spełnione, wówczas wykonywane są jej akcje.
 
 ## Certyfikaty SSL dla ELB
 
-#secutiry
+#security
 
 [źródło](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html)
 
@@ -312,7 +312,7 @@ Aby użyć [[#Listener]] HTTPS, musisz wdrożyć co najmniej jeden certyfikat X.
 
 - Można określić dodatkowe certyfikaty na **liście certyfikatów** do obsługi wielu domen. W takim przypadku domyślny certyfikat jest używany tylko wtedy, gdy klient łączy się bez użycia protokołu [[SSL-TLS#Server Name Indication|SNI]] do określenia nazwy hosta lub gdy na liście certyfikatów nie ma pasujących certyfikatów.
 
-> Zaleca się tworzenie certyfikatów dla load balancera za pomocą [[AWS Certificate Manager]] (ACM). ACM integruje się z Elastic Load Balancing, dzięki czemu można wdrożyć certyfikat na load balancerze.
+> Zaleca się tworzenie certyfikatów dla load balancera za pomocą [[Certificate Manager]] (ACM). ACM integruje się z Elastic Load Balancing, dzięki czemu można wdrożyć certyfikat na load balancerze.
 
 > Alternatywnie można użyć narzędzi SSL/TLS do utworzenia żądania podpisania certyfikatu ([[SSL-TLS#CSR|CSR]]), następnie uzyskać podpisanie [[SSL-TLS#CSR|CSR]] przez [[SSL-TLS#CA|CA]] w celu utworzenia certyfikatu, a następnie zaimportować certyfikat do ACM lub przesłać certyfikat do AWS Identity and Access Management ([[IAM]]).
 
@@ -356,7 +356,7 @@ Dostępne dla: [[#Application Load Balancer|ALB]], [[#Network Load Balancer|NLB]
 Instances:
 
 - Typ docelowy [[EC2]] jest ograniczony tylko do niektórych instancji. Powinien to być domyślny wybór podczas load balancingu instancji.
-- Na przykład, jeśli masz instancje w [[AWS Auto Scaling#Auto Scaling group|Auto Scaling group]] (ASG), ASG może automatycznie zarejestrować twoje instancje z twoim load balancerem. Nie możesz tego zrobić dla typów docelowych IP.
+- Na przykład, jeśli masz instancje w [[Auto Scaling#Auto Scaling group|Auto Scaling group]] (ASG), ASG może automatycznie zarejestrować twoje instancje z twoim load balancerem. Nie możesz tego zrobić dla typów docelowych IP.
 
 IP adresses:
 
@@ -499,7 +499,7 @@ Dostępne dla: [[#Application Load Balancer|ALB]], [[#Network Load Balancer|NLB]
 
 Elastic Load Balancing przestaje wysyłać żądania do celów, które się wyrejestrowują. Domyślnie Elastic Load Balancing czeka 300 sekund przed zakończeniem procesu wyrejestrowania, co może pomóc w ukończeniu trwających żądań do celu. Dostępny zakres to **1s - 1h**.
 
-Początkowy stan wyrejestrowującego się celu jest `draining`. Po upływie opóźnienia wyrejestrowania, proces wyrejestrowania kończy się, a stan celu jest nieużywany. Jeśli cel jest częścią [[AWS Auto Scaling#Auto Scaling group|ASG]], może zostać zakończony i zastąpiony.
+Początkowy stan wyrejestrowującego się celu jest `draining`. Po upływie opóźnienia wyrejestrowania, proces wyrejestrowania kończy się, a stan celu jest nieużywany. Jeśli cel jest częścią [[Auto Scaling#Auto Scaling group|ASG]], może zostać zakończony i zastąpiony.
 
 Jeśli wyrejestrowujący się cel nie ma trwających żądań i żadnych aktywnych połączeń, Elastic Load Balancing natychmiast kończy proces wyrejestrowywania, nie czekając na upłynięcie opóźnienia wyrejestrowania. Jednakże, nawet jeśli wyrejestrowanie celu jest zakończone, status celu jest wyświetlany jako opróżniający się do czasu wygaśnięcia limitu czasu opóźnienia wyrejestrowania. Po upływie tego czasu, cel przechodzi do stanu nieużywanego.
 
@@ -517,5 +517,5 @@ Tak nazywa się funkjonalność [[#Deregistration Delay]] dla [[#Classic Load Ba
 
 # See also
 
-- [[AWS Auto Scaling]]
+- [[Auto Scaling]]
 - [[EC2 Auto Scaling]]
