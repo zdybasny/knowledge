@@ -50,7 +50,6 @@ Domyślnie integruje się z [[EC2]], [[Elastic Container Services]].
   - [[#Connection Draining]]
 - [[#See also]]
 
-
 # Typy Load Balancerów
 
 Istnieją 4 rodzaje load balancerów:
@@ -366,6 +365,8 @@ IP adresses:
 
 ### Auto Scaling Group
 
+#autoscaling
+
 Po dołączeniu [[#Target group|target grupy]] do [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]], [[EC2 Auto Scaling]] rejestruje swoje cele z [[Elastic Load Balancing#Target group|Target group]] dla Ciebie, gdy je uruchamia, a [[EC2]], które są kończone przez Auto Scaling są automatycznie wyrejestrowywane z load balancera.
 
 **Więcej: [[EC2 Auto Scaling]].**
@@ -517,5 +518,6 @@ Tak nazywa się funkjonalność [[#Deregistration Delay]] dla [[#Classic Load Ba
 
 # See also
 
+- [[EC2]]
 - [[Auto Scaling]]
 - [[EC2 Auto Scaling]]

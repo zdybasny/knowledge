@@ -205,46 +205,26 @@ Przykładowe zadania, które można tak wykonać:
 Skrypt ten uruchamiany jest przez użytkownika root.
 
 # Storage
-#storage 
 
-Podczas tworzenia EC2 przypinany jest do nie volumen pamięci masowej typu [[Elastic Block Store]] o nazwie *Root*. Domyślnie jest on ustawiony z atrybutem *Delete on Termination*. Można przypiąć do EC2 dodatkowe valuminy, które domyślnie nie usuwają się z końcem cyklu życia danej instancji.
+#storage
+
+Podczas tworzenia EC2 przypinany jest do nie volumen pamięci masowej typu [[Elastic Block Store]] o nazwie _Root_. Domyślnie jest on ustawiony z atrybutem _Delete on Termination_. Można przypiąć do EC2 dodatkowe valuminy, które domyślnie nie usuwają się z końcem cyklu życia danej instancji.
 
 ![[EC2 EBS.png]]
 
 Dostępne typy voluminów dla EC2 to:
+
 - [[Elastic Block Store|EBS]]
 - [[EC2 Instance Store|Instance Store]]
 - ...
 
 # EC2 Auto Scaling
+
 #autoscaling
 
-EC2 Auto Scaling umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
+[[EC2 Auto Scaling]] umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w ramach [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]] w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
 
-W ramach EC2 Auto Scaling, możesz użyć dwóch podejść:
-
-- **skalowania dynamicznego** (_Dynamic scaling_) - reaguje na zmieniające się zapotrzebowanie
-- **skalowania predykcyjnego** (_Predictive scaling_) - automatycznie zaplanuje odpowiednią liczbę instancji Amazon EC2 na podstawie przewidywanego zapotrzebowania.
-
-> W celu przyśpieszenia skalowania, można łączyć oba rozwiązania
-
-Typy skalowania dzieli się na:
-
-- pionowe - **vertical (scaing up)**
-
-Skalujemy nasz typ instancji do większego typu instancji z dodatkowymi zasobami. Jednak, jeśli to zrobimy, będziemy musieli wyłączyć nasz serwer. To zazwyczaj nienajlepszy sposób.
-
-- poziome - **horizontal (scaling out)**
-
-Jest to dodanie dodatkowych instancji przy użyciu [[Elastic Load Balancing]], aby faktycznie obsłużyć proces przekierowywania naszych użytkowników do właściwego serwera.
-
-## Auto Scaling group
-
-Kiedy tworzysz grupę Auto Scaling, możesz ustawić:
-
-- **minimum capacity** - minimalna liczba EC2, które uruchamiają się natychmiast po utworzeniu grupy Auto Scaling,
-- **desired capacity** - mimo iż aplikacja może potrzebować mniejszej liczy EC2 do działania (_domyślnie równe minimum capacity_),
-- **maximum capacity** - aby zużywać zbyt dużej ilości zasobów podczas zwiększonego zapotrzebowania.
+**Więcej: [[EC2 Auto Scaling]]**
 
 ---
 
@@ -255,3 +235,4 @@ Kiedy tworzysz grupę Auto Scaling, możesz ustawić:
 - [[Network ACL]]
 - [[NAT devices]]
 - [[Elastic Block Store]]
+- [[EC2 Auto Scaling]]

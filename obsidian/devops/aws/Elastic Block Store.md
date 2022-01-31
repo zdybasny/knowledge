@@ -8,6 +8,12 @@ Może skalować się do obsługi petabajtów danych, a także obsługiwać wiele
 
 - [[#Volume]]
   - [[#Typy EBS Volume]]
+    - [[#Solid state drive (SSD)]]
+    - [[#General purpose SSB - gp]]
+    - [[#Provisioned IOPS SSD - io]]
+    - [[#Hard disk drive (HDD)]]
+    - [[#Throughput Optimizad HDD - st]]
+    - [[#Cold HDD - sc]]
 - [[#Multi-Attach]]
 - [[#Szyfrowanie]]
 - [[#Snapshot]]
@@ -26,19 +32,31 @@ Opłaty naliczane są z góry za:
 
 ## Typy EBS Volume
 
-Dotępne typu volimunów:
+Dotępne następujące tyly volimunów.
 
-- **Solid state drive (SSD)** - Zoptymalizowany pod kątem obciążeń transakcyjnych obejmujących częste operacje odczytu/zapisu przy niewielkim rozmiarze operacji I/O, gdzie dominującym atrybutem wydajności jest IOPS.
+### Solid state drive (SSD)
 
-  - **General purpose SSB - gp** - Zapewnia równowagę między ceną a wydajnością. Zalecane do większości obciążeń roboczych.
+Zoptymalizowany pod kątem obciążeń transakcyjnych obejmujących częste operacje odczytu/zapisu przy niewielkim rozmiarze operacji I/O, gdzie dominującym atrybutem wydajności jest IOPS.
 
-  - **Provisioned IOPS SSD - io** - Zapewnia wysoką wydajność w przypadku obciążeń o znaczeniu krytycznym, niskich opóźnieniach lub wysokiej przepustowości.
+### General purpose SSB - gp
 
-- **Hard disk drive (HDD)** - Zoptymalizowany dla dużych obciążeń strumieniowych, gdzie dominującym atrybutem wydajności jest przepustowość.
+Zapewnia równowagę między ceną a wydajnością. Zalecane do większości obciążeń roboczych.
 
-  - **Throughput Optimizad HDD - st** - Tani dysk twardy przeznaczony do często używanych, wymagających dużej przepustowości zadań.
+### Provisioned IOPS SSD - io
 
-  - **Cold HDD - sc** - Najtańszy dysk twardy przeznaczony do zastosowań wymagających rzadszego dostępu do danych.
+Zapewnia wysoką wydajność w przypadku obciążeń o znaczeniu krytycznym, niskich opóźnieniach lub wysokiej przepustowości.
+
+### Hard disk drive (HDD)
+
+Zoptymalizowany dla dużych obciążeń strumieniowych, gdzie dominującym atrybutem wydajności jest przepustowość.
+
+### Throughput Optimizad HDD - st
+
+Tani dysk twardy przeznaczony do często używanych, wymagających dużej przepustowości zadań.
+
+### Cold HDD - sc
+
+Najtańszy dysk twardy przeznaczony do zastosowań wymagających rzadszego dostępu do danych.
 
 # Multi-Attach
 
@@ -72,3 +90,4 @@ Snapshoty służą głównie do tworzenia back-up'ów, poprzez robienie zrzutu s
 
 - [[EC2 Instance Store]]
 - [[Elastic File System]]
+- [[RDS]]

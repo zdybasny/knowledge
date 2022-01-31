@@ -1,4 +1,4 @@
-#AWS #management #autoscaling #compute 
+#AWS #management #autoscaling #compute
 
 EC2 Auto Scaling jest częścią usługi [[Auto Scaling]], która zapewnia uruchomienie pożądanej liczby [[EC2]], nawet jeśli jedna z nich ulegnie awarii, oraz umożliwia automatyczne zwiększanie lub zmniejszanie liczby instancji w miarę zmian zapotrzebowania na nie.
 
@@ -112,7 +112,6 @@ Cooldown skalowania pomaga uniknąć sytuacji, w której Auto Scaling uruchamia 
 
 Możesz także połączyć skalowanie predykcyjne i dynamiczne (odpowiednio podejście proaktywne i reaktywne), aby szybciej skalować [[EC2]].
 
-
 # Lifecycle hook
 
 [źródło](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html#lifecycle-hooks-overview)
@@ -137,7 +136,9 @@ Możliwe jest skalowanie na podstawie alarmach [[CloudWatch]]. Metryki, które m
 Jeśli rejestrujesz cele [[Elastic Load Balancing]] według ID [[EC2]], możesz użyć load balancera z ASG. Po dołączeniu [[Elastic Load Balancing#Target group|target grupy]] do ASG, Auto Scaling rejestruje swoje cele z [[Elastic Load Balancing#Target group|Target group]] dla Ciebie, gdy je uruchamia, a [[EC2]], które są kończone przez Auto Scaling są automatycznie wyrejestrowywane z load balancera.
 
 ---
+
 # See also
 
 - [[Auto Scaling]]
 - [[Elastic Load Balancing]]
+- [[EC2]]
