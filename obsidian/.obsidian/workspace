@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/RDS Storage Auto Scaling.md",
+            "file": "devops/aws/Aurora.md",
             "mode": "source",
             "source": false
           }
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#TODO",
+                "query": "alarm",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -85,13 +85,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/RDS Storage Auto Scaling.md",
+                "file": "devops/aws/Aurora.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
               }
             }
@@ -102,9 +102,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/RDS Storage Auto Scaling.md",
+                "file": "devops/aws/Aurora.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -135,8 +135,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -145,15 +144,15 @@
   },
   "active": "3e2ec5336e8edc39",
   "lastOpenFiles": [
-    "devops/aws/RDS Storage Auto Scaling.md",
+    "devops/aws/Aurora.md",
+    "devops/aws/Application Auto Scaling.md",
     "devops/aws/RDS.md",
-    "devops/templates/ToC Regex.md",
-    "devops/attachments/DB Activity Streams.png",
-    "Pasted image 20220131120250.png",
-    "devops/attachments/RDS Multi-AZ cluster.png",
-    "devops/attachments/RDS Read with Standby replicas.png",
-    "devops/attachments/RDS Read Replica.png",
-    "devops/attachments/RDS Multi-AZ instance.png",
-    "devops/attachments/RDS rr promotion.png"
+    "devops/aws/EC2 Auto Scaling.md",
+    "devops/aws/CloudWatch.md",
+    "devops/aws/IAM.md",
+    "devops/attachments/Aurora Cluster.png",
+    "devops/attachments/Aurora Serverless.png",
+    "Pasted image 20220201115106.png",
+    "devops/aws/DynamoDB.md"
   ]
 }

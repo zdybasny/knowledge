@@ -98,7 +98,7 @@ Auto Scaling wspietra następujące typy dynamicznych polityk:
 
 - skalowanie w oparciu o śledzenie celu (**target tracking scaling**) - zmiana aktualnej pojemności ASG w oparciu o wartość docelową dla określonej metryki;
 
-- skalowanie krokowe (**step scaling**) - zmiana aktualnej pojemności ASG w oparciu o zestaw dopasowań skalowania, zwanych dopasowaniami krokowymi (**step adjustment**), które różnią się w zależności od wielkości naruszenia alarmu;
+- skalowanie krokowe (**step scaling**) - zmiana aktualnej pojemności ASG w oparciu o zestaw dopasowań skalowania, zwanych dopasowaniami krokowymi (**step adjustment**), które różnią się w zależności od wielkości naruszenia [[CloudWatch#Alarm|alarmu]];
 
 - skalowanie proste (**simple scaling**) - zmiana aktualnej pojemności AGS na podstawie pojedynczej regulacji skalowania.
 
@@ -124,7 +124,7 @@ Popularnym zastosowaniem haków lifecycle jest kontrola, kiedy instancje są rej
 
 # Auto Scaling Alarm
 
-Możliwe jest skalowanie na podstawie alarmach [[CloudWatch]]. Metryki, które można użyć w tym celu to m.in:
+Możliwe jest skalowanie na podstawie [[CloudWatch#Alarm|alarmów CloudWatch]]. Metryki, które można użyć w tym celu to m.in:
 
 - wykożystanie CPU, RAM
 - liczba zapytań,
@@ -140,5 +140,6 @@ Jeśli rejestrujesz cele [[Elastic Load Balancing]] według ID [[EC2]], możesz 
 # See also
 
 - [[Auto Scaling]]
+- [[Application Auto Scaling]]
 - [[Elastic Load Balancing]]
 - [[EC2]]
