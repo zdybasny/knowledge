@@ -62,7 +62,7 @@ Istnieją 4 rodzaje load balancerów:
 
 - [[#Classic Load Balancer]] (CLB)  `deprecated` - podstawowe LB pomiędzy [[EC2]]
 
-## Porónanie typów
+## Porównanie typów
 
 [źródło](https://aws.amazon.com/elasticloadbalancing/features/?nc=sn&loc=2)
 

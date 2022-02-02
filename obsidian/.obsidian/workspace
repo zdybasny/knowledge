@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/Aurora.md",
+            "file": "devops/aws/RDS.md",
             "mode": "source",
             "source": false
           }
@@ -41,8 +41,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "alarm",
-                "matchingCase": true,
+                "query": "porów",
+                "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
                 "extraContext": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/Aurora.md",
+                "file": "devops/aws/RDS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/Aurora.md",
+                "file": "devops/aws/RDS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -144,15 +144,15 @@
   },
   "active": "3e2ec5336e8edc39",
   "lastOpenFiles": [
+    "devops/aws/RDS.md",
+    "devops/aws/ElastiCache.md",
     "devops/aws/Aurora.md",
     "devops/aws/Application Auto Scaling.md",
-    "devops/aws/RDS.md",
+    "devops/aws/Network ACL.md",
+    "devops/aws/Security group.md",
+    "devops/aws/Elastic Load Balancing.md",
     "devops/aws/EC2 Auto Scaling.md",
     "devops/aws/CloudWatch.md",
-    "devops/aws/IAM.md",
-    "devops/attachments/Aurora Cluster.png",
-    "devops/attachments/Aurora Serverless.png",
-    "Pasted image 20220201115106.png",
-    "devops/aws/DynamoDB.md"
+    "devops/aws/IAM.md"
   ]
 }

@@ -34,7 +34,7 @@ Dostępne platformy RDS:
   - [[#Multi-AZ DB cluster deployment]]
 - [[#Security]]
   - [[#Encryption]]
-  - [[#IAM Authentication]]
+  - [[#IAM Database Authentication]]
   - [[#Database Activity Streams]]
 - [[#DMS – Database Migration Service]]
 - [[#See also]]
@@ -99,11 +99,15 @@ Jeśli to konieczne, możesz odzyskać bazę danych do dowolnego punktu w czasie
 
 [źródło](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
 
-**RDS** używa wbudowane w silniki bazodanowe funckjonalności replikacji, aby tworzyć specjalne instancje DB zwane repliką odczytu (**read replica**). Z tego też powodu repliki te różnią się w zależności od zastowaniego silniga DB.
+**RDS** używa wbudowane w silniki bazodanowe funckjonalności replikacji, aby tworzyć specjalne instancje DB zwane repliką odczytu (**read replica**). Z tego też powodu repliki te różnią się w zależności od zastowaniego silnika DB.
 
-Źródłowa instancja DB staje się podstawową instancją DB (**primary DB instance**). Aktualizacje na niej wykonywane są asynchronicznie kopiowane do repliki odczytu. Można zmniejszyć obciążenie podstawowej instancji DB poprzez kierowanie zapytań odczytu z aplikacji do repliki odczytu.
+[[Aurora]] może posiadać 15 replik na klaster, natomiast pozostałe silniki RDS tylko 5. 
+
+Źródłowa instancja DB staje się podstawową instancją DB (**primary DB instance**). Aktualizacje na niej wykonywane są **asynchronicznie** kopiowane do repliki odczytu. Można zmniejszyć obciążenie podstawowej instancji DB poprzez kierowanie zapytań odczytu z aplikacji do repliki odczytu.
 
 Aby zacząć replikować instancję, która już świadczy usługi, wystarczy ją włączyć. Nowa replika odczytu jest tworzona przez RDS przy użyciu snapshota. Przy tej operacji nie ma żadnego przestoju w instancji podstawowej.
+
+Repliki odczytu dodają nowe endpointy z własną nazwą [[DNS]]. Musimy zatem zmienić naszą aplikację tak, aby odwoływała się do nich indywidualnie, aby zrównoważyć obciążenie odczytem.
 
 ![[RDS Read Replica.png]]
 
@@ -112,6 +116,8 @@ Korzystając z replik odczytu, można elastycznie skalować horyzontalnie poza o
 ## Replikacja do innych AZ i Regionów
 
 W niektórych przypadkach replika odczytu rezyduje w innym [[AWS locations#Region|regionie AWS]] niż jej podstawowa instancja DB. W takich przypadkach **RDS** tworzy bezpieczny kanał komunikacyjny pomiędzy główną instancją DB a repliką odczytu. **RDS** ustanawia wszelkie konfiguracje bezpieczeństwa AWS potrzebne do uruchomienia bezpiecznego kanału, takie jak dodawanie wpisów grup bezpieczeństwa.
+
+Multi-AZ zachowuje ten sam connection string niezależnie od tego, jak baza danych jest skonfigurowana.
 
 Można skonfigurować replikę odczytu dla instancji DB, która ma również replikę rezerwową skonfigurowaną w celu zapewnienia wysokiej dostępności we [[#Multi-AZ deployment|wdrożeniu typu Multi-AZ]]. Replikacja z repliką rezerwową (**standby**) jest synchroniczna, a replika rezerwowa nie może obsługiwać ruchu odczytu.
 
@@ -182,11 +188,14 @@ RDS oferuje zestaw funkcji zapewniających bezpieczne przechowywanie i dostęp d
 
 Aby zaszyfrować DB, trzeba wybrać tę opcję podczas jej tworzenia. Snapshoty są szyfrowane, jeśli tylko instancja DB jest szyfrowania. Aby zaszyfrować snapshot z nieszyfrowanej instancji, należy wybrać taką opcję podczas kopiowania snapshotów. Wtedy teżmożna przywrócić DB, tworząc nową (już szyfrowaną) instancję.
 
-## IAM Authentication
+## IAM Database Authentication
 
 RDS jest zintegrowany z [[IAM]] i zapewnia możliwość kontroli działań, które [[IAM#IAM User|użytkownicy]], [[IAM#IAM User Group|grupy IAM]] i inne zasoby z przypisanymi [[IAM#IAM Role|rolami]] mogą podejmować na określonych zasobach. Dodatkowo, można tagować swoje zasoby Amazon RDS i kontrolować działania, które użytkownicy IAM i grupy mogą podjąć na grupach zasobów, które mają ten sam tag i powiązaną wartość.
 
+IAM Database Authentication jest dostępne dla MySQL i PostgreSQL, natomiast  nie jest wspierane przez Oracle. 
+
 Podczas pierwszego tworzenia instancji DB w ramach Amazon RDS, utworzone zostanie główne konto użytkownika, które jest używane tylko w kontekście Amazon RDS do kontroli dostępu do instancji DB. Główne konto użytkownika umożliwia logowanie się do instancji DB ze wszystkimi uprawnieniami bazy danych. Po utworzeniu instancji DB można łączyć się z bazą danych przy użyciu poświadczeń użytkownika głównego. Następnie można utworzyć dodatkowe konta użytkowników, aby ograniczyć dostęp do instancji DB.
+
 
 ## Database Activity Streams
 
