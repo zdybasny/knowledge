@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/RDS.md",
+            "file": "devops/network/DNS.md",
             "mode": "source",
             "source": false
           }
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "porów",
+                "query": "route",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/aws/RDS.md",
+                "file": "devops/network/DNS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,9 +102,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/RDS.md",
+                "file": "devops/network/DNS.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -120,22 +120,23 @@
             }
           },
           {
-            "id": "2078c91846d78a39",
-            "type": "leaf",
-            "state": {
-              "type": "side-panel-control-view",
-              "state": {}
-            }
-          },
-          {
             "id": "6fc9204122b3fb08",
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "9e39511f0a60c0e8",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -144,15 +145,15 @@
   },
   "active": "3e2ec5336e8edc39",
   "lastOpenFiles": [
-    "devops/aws/RDS.md",
-    "devops/aws/ElastiCache.md",
-    "devops/aws/Aurora.md",
+    "devops/network/DNS.md",
+    "devops/aws/Route 53.md",
+    "devops/aws/Route 53 Application Recovery Controller.md",
     "devops/aws/Application Auto Scaling.md",
-    "devops/aws/Network ACL.md",
-    "devops/aws/Security group.md",
     "devops/aws/Elastic Load Balancing.md",
-    "devops/aws/EC2 Auto Scaling.md",
-    "devops/aws/CloudWatch.md",
-    "devops/aws/IAM.md"
+    "templates/Region.md",
+    "devops/aws/[[AWS locations.md",
+    "README.md",
+    "devops/aws/VPC.md",
+    "devops/aws/Global Accelerator.md"
   ]
 }

@@ -33,7 +33,7 @@
     {
       "name": "latex",
       "active": true,
-      "visible": false
+      "visible": true
     },
     {
       "name": "greekLetters",
@@ -43,7 +43,7 @@
     {
       "name": "colors",
       "active": true,
-      "visible": true
+      "visible": false
     }
   ]
 }
