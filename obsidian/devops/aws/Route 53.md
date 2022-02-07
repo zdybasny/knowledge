@@ -114,7 +114,7 @@ Route 53 obsługuje następujące typy [[DNS#DNS Record|rekordów DNS]]:
 - [[Elastic Load Balancing]],
 - dystrybucje [[CloudFront]],
 - [[API Gateway]],
-- środowika [[Elastick Beanstalk]],
+- [[Elastic Beanstalk#Environment|środowika Elastic Beanstalk]],
 - strony internetowe na [[S3]],
 - [[VPC#VPC Endpoint|endpointy VPC]],
 - [[Global Accelerator]].

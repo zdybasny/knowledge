@@ -1,3 +1,0 @@
-#AWS #compute 
-
-#TODO 

@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "8bb15061a163ee33",
+        "id": "83cc604d51fd67a3",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -37,7 +37,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "nat",
+                "query": "Auto Scaling group",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -136,17 +136,17 @@
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "8bb15061a163ee33",
+  "active": "83cc604d51fd67a3",
   "lastOpenFiles": [
+    "devops/templates/ToC Regex.md",
+    "devops/aws/Route 53.md",
+    "devops/aws/Elastic Beanstalk.md",
+    "devops/aws/EC2 Auto Scaling.md",
+    "devops/aws/Elastick Beanstalk.md",
+    "devops/aws/Route 53 Application Recovery Controller.md",
     "devops/aws/Elastic File System.md",
     "devops/aws/AWS Backup.md",
     "devops/aws/[What.md",
-    "devops/aws/NAT devices.md",
-    "devops/aws/Application Auto Scaling.md",
-    "devops/aws/Elastick Beanstalk.md",
-    "devops/aws/Route 53.md",
-    "devops/aws/Auto Scaling.md",
-    "devops/aws/Elastic Beanstalk.md",
-    "devops/aws/EC2.md"
+    "devops/aws/NAT devices.md"
   ]
 }
