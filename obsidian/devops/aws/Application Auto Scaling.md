@@ -73,10 +73,19 @@ Różne sewisy posiadają różne predefiniowane metryki dostępne do użycia po
 
 [źródło](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html)
 
-#TODO
-
 Skalowanie zasobu na podstawie zestawu korekt skalowania, które różnią się w zależności od wielkości naruszenia [[CloudWatch#Alarm|alarmu]].
-...
+
+Możesz określić typ dostosowania jako procent aktualnej pojemności skalowalnego celu lub w liczbach bezwzględnych.
+
+> Jeśli metryka skalowania jest metryką wykorzystania, która zwiększa lub zmniejsza się proporcjonalnie do pojemności skalowalnego celu, zalecamy użycie polityki [[#Target tracking scaling]]. 
+
+> Nadal masz możliwość użycia skalowania śledzącego cel ze skalowaniem krokowym dla bardziej zaawansowanej konfiguracji polityki skalowania. Na przykład, jeśli chcesz, możesz skonfigurować bardziej agresywną reakcję, gdy wykorzystanie osiągnie pewien poziom.
+
+Application Auto Scaling obsługuje następujące typy dostosowania dla polityk skalowania krokowego:
+
+- **ChangeInCapacity** - zmienia bieżącą pojemność obiektu docelowego **o określoną** wartość,
+- **ExactCapacity** - zmienia bieżącą pojemność obiektu docelowego **na określoną** wartość,
+- **PercentChangeInCapacity** - zmienia bieżącą pojemność obiektu docelowego o podaną wartość procentową.
 
 #### Scheduled scaling
 

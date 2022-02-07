@@ -16,7 +16,7 @@ Kiedy tworzysz bramę NAT, określasz jeden z następujących typów łącznośc
 
 - **prywatny** - Instancje [[EC2]] w prywatnych [[VPC Subnet]] mogą łączyć się z innymi [[VPC]] poprzez prywatną bramę NAT. Ruch z bramy NAT może być kierowany przez bramę tranzytową lub wirtualną bramę prywatną. Nie można powiązać elastycznego adresu IP z prywatną bramą NAT.
 
-# NAT Inctance
+# NAT Instance
 
 #TODO
 

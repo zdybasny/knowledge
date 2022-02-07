@@ -4,15 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3e2ec5336e8edc39",
+        "id": "8bb15061a163ee33",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "devops/network/DNS.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -41,7 +37,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "route",
+                "query": "nat",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/network/DNS.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/network/DNS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,25 +129,24 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "3e2ec5336e8edc39",
+  "active": "8bb15061a163ee33",
   "lastOpenFiles": [
-    "devops/network/DNS.md",
-    "devops/aws/Route 53.md",
-    "devops/aws/Route 53 Application Recovery Controller.md",
+    "devops/aws/Elastic File System.md",
+    "devops/aws/AWS Backup.md",
+    "devops/aws/[What.md",
+    "devops/aws/NAT devices.md",
     "devops/aws/Application Auto Scaling.md",
-    "devops/aws/Elastic Load Balancing.md",
-    "templates/Region.md",
-    "devops/aws/[[AWS locations.md",
-    "README.md",
-    "devops/aws/VPC.md",
-    "devops/aws/Global Accelerator.md"
+    "devops/aws/Elastick Beanstalk.md",
+    "devops/aws/Route 53.md",
+    "devops/aws/Auto Scaling.md",
+    "devops/aws/Elastic Beanstalk.md",
+    "devops/aws/EC2.md"
   ]
 }
