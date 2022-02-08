@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "83cc604d51fd67a3",
+        "id": "3d3f4fe96fc31d5d",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "devops/aws/API Gateway.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "devops/aws/API Gateway.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "devops/aws/API Gateway.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,17 +142,17 @@
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "83cc604d51fd67a3",
+  "active": "3d3f4fe96fc31d5d",
   "lastOpenFiles": [
-    "devops/templates/ToC Regex.md",
-    "devops/aws/Route 53.md",
-    "devops/aws/Elastic Beanstalk.md",
-    "devops/aws/EC2 Auto Scaling.md",
-    "devops/aws/Elastick Beanstalk.md",
-    "devops/aws/Route 53 Application Recovery Controller.md",
-    "devops/aws/Elastic File System.md",
-    "devops/aws/AWS Backup.md",
-    "devops/aws/[What.md",
-    "devops/aws/NAT devices.md"
+    "devops/aws/API Gateway.md",
+    "devops/network/DNS.md",
+    "devops/network/CIDR.md",
+    "devops/aws/AMI.md",
+    "devops/aws/Aurora.md",
+    "devops/aws/Application Auto Scaling.md",
+    "devops/temp/11.md",
+    "devops/network/22.md",
+    "devops/network/22.jpg.md",
+    "devops/network/22.md.md"
   ]
 }

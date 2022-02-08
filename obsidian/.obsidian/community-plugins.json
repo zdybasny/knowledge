@@ -4,9 +4,10 @@
   "obsidian-tabs",
   "obsidian-dictionary-plugin",
   "tag-wrangler",
-  "obsidian-embedded-note-titles",
   "obsidian-footnotes",
   "obsidian-code-block-enhancer",
   "table-editor-obsidian",
-  "find-unlinked-files"
+  "find-unlinked-files",
+  "obsidian-vault-statistics-plugin",
+  "obsidian-outliner"
 ]

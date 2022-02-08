@@ -4,12 +4,15 @@
   "tabSize": 3,
   "promptDelete": true,
   "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "attachments",
+  "attachmentFolderPath": "./",
   "showFrontmatter": true,
   "foldHeading": true,
   "foldIndent": true,
   "trashOption": "local",
   "newFileLocation": "current",
   "legacyEditor": false,
-  "livePreview": true
+  "livePreview": true,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true
 }
