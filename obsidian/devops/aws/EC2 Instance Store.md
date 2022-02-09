@@ -8,7 +8,7 @@ Instance Store jest idealny do tymczasowego przechowywania informacji, które cz
 
 Instance Store składa się z jednego lub więcej woluminów, wystawionych jako urządzenia blokowe. Rozmiar Instance Store, jak również liczba dostępnych urządzeń różni się w zależności od typu instancji.
 
-![EC2 Instance Store.png](EC2%20Instance%20Store.png.md)
+![EC2 Instance Store.png](../attachments/EC2%20Instance%20Store.png)
 
 ---
 # See also

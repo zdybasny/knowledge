@@ -4,7 +4,7 @@
   "tabSize": 3,
   "promptDelete": true,
   "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "./",
+  "attachmentFolderPath": "devops/attachments",
   "showFrontmatter": true,
   "foldHeading": true,
   "foldIndent": true,

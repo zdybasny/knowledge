@@ -10,4 +10,4 @@ Umożliwia wysyłanie wiadomości poprzez:
 
 ## publish/subscribe
 
-![SNS pub-sub.png](SNS%20pub-sub.png.md)
+![SNS pub-sub.png](../attachments/SNS%20pub-sub.png)

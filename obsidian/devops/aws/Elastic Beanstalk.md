@@ -108,7 +108,7 @@ Zasoby AWS tworzone dla warstwy **środowiska web server** obejmują:
 - jedną [Auto Scaling Group](EC2%20Auto%20Scaling.md#Auto%20Scaling%20Group),
 - jedną lub więcej [EC2](EC2.md).
 
-![Beanstalk web server.png](Beanstalk%20web%20server.png.md)
+![Beanstalk web server.png](../attachments/Beanstalk%20web%20server.png)
 
 Każde **środowisko** posiada rekord [CNAME](../network/DNS.md#CNAME) (adres URL), który wskazuje na [load balanser](Elastic%20Load%20Balancing.md). Ten adres URL jest aliasowany w [Route 53](Route%2053.md) do adresu URL [Elastic Load Balancing](Elastic%20Load%20Balancing.md) za pomocą [CNAME](../network/DNS.md#CNAME).
 
@@ -123,7 +123,7 @@ Zasoby AWS utworzone dla warstwy **Worker environment** obejmują:
 - jedną lub więcej [EC2](EC2.md) z doinstalowanym daemonem [SQS](SQS.md),
 - [IAM Role](IAM.md#IAM%20Role).
 
-![Beanstalk worker.png](Beanstalk%20worker.png.md)
+![Beanstalk worker.png](../attachments/Beanstalk%20worker.png)
 
 #### Daemon SQS
 
@@ -141,7 +141,7 @@ Aby wdrożyć aplikację na **Elastic Beanstalk**, należy przesłać [Applicati
 
 Elastic Beanstalk automatycznie uruchamia [Environment](#Environment) oraz tworzy i konfiguruje zasoby AWS potrzebne do uruchomienia kodu. Po uruchomieniu [Environment](#Environment), można nim zarządzać i wdrażać nowe [Application Version](#Application%20Version).
 
-![Beanstalk flow.png](Beanstalk%20flow.png.md)
+![Beanstalk flow.png](../attachments/Beanstalk%20flow.png)
 
 # Pricing
 

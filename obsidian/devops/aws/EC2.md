@@ -162,14 +162,14 @@ Dostarcza dedykowany serwer fizyczny w centrum danych (data centre). Jest to naj
 
 Dedicated Host jest zintegrowany z **AWS License Manager**.
 
-![AWS License Manager.png](AWS%20License%20Manager.png.md)
+![AWS License Manager.png](../attachments/AWS%20License%20Manager.png)
 
 ### Deticated Instances vs Deticated Hosts
 
 #ENG
 You can use Dedicated Hosts and Dedicated instances to launch Amazon EC2 instances on physical servers that are dedicated for your use. An important difference between a Dedicated Host and a Dedicated instance is that a Dedicated Host gives you additional visibility and control over how instances are placed on a physical server, and you can consistently deploy your instances to the same physical server over time. As a result, Dedicated Hosts enable you to use your existing server-bound software licenses and address corporate compliance and regulatory requirements.
 
-![EC2 Dedicated instances vs host.png](EC2%20Dedicated%20instances%20vs%20host.png.md)
+![EC2 Dedicated instances vs host.png](../attachments/EC2%20Dedicated%20instances%20vs%20host.png)
 
 # Placement Group
 
@@ -210,7 +210,7 @@ Skrypt ten uruchamiany jest przez użytkownika root.
 
 Podczas tworzenia EC2 przypinany jest do nie volumen pamięci masowej typu [Elastic Block Store](Elastic%20Block%20Store.md) o nazwie _Root_. Domyślnie jest on ustawiony z atrybutem _Delete on Termination_. Można przypiąć do EC2 dodatkowe valuminy, które domyślnie nie usuwają się z końcem cyklu życia danej instancji.
 
-![EC2 EBS.png](EC2%20EBS.png.md)
+![EC2 EBS.png](../attachments/EC2%20EBS.png)
 
 Dostępne typy voluminów dla EC2 to:
 

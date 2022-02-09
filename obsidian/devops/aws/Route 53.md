@@ -31,7 +31,6 @@ Możesz używać Route 53 do wykonywania trzech głównych funkcji w dowolnej ko
 - [Health Check](#Health%20Check)
 - [See also](#See%20also)
 
-
 # Rrejestracja domen
 
 **Reoute 53** pełni m.in. funkcję  [rejestratora domen](../network/DNS.md#Domain%20Name%20Registrar), umożliwiając rejestrację nowej [domeny](../network/DNS.md#Domain%20Name) dostępnej w Internecie. Pozwala także przenieść rejestrację już instniejących domen z innych rejestratorów do Route 53.
@@ -96,15 +95,15 @@ Route 53 obsługuje następujące typy [rekordów DNS](../network/DNS.md#DNS%20R
 
 #### Alias vs CNAME
 
-|                                                                  |                                        Alias                                       |                   CNAME                   |
-| :--------------------------------------------------------------- | :--------------------------------------------------------------------------------: | :---------------------------------------: |
-| zasoby celu                                                      |          [Obsługiwane zasoby AWS](#Obsługiwane%20zasoby%20AWS), rekordy w tej samej [Hosted zone](#Hosted%20zone)         |                rekordy DNS                |
-| rekordy o tej samej nazwie co wierzchołek strefy (**zone apex**) |                         **tak** (o tym samym typie rekordu)                        |                     -                     |
-| koszty                                                           |                           brak dla zapytań do zasobów AWS                          |                  **tak**                  |
-| odpowiedź na określony typ rekordu w zapytaniu DNS               |         tylko gdy nazwa i typ aliasu zgadza się z nazwą i typem w zapytaniu        | niezależnie od typy, gdy nazwa się zgadza |
-| listowanie w zapytaniach `dig` lub `nslookup`                    | jako typ określony w rekordzie (typ zależy od zasobu, do którego kieruje się ruch) |                 jako CNAME                |
-| natywny health check                                             |                                       **tak**                                      |                     -                     |
-| TTL                                                              |              **tak** (taki sam jak na zasobie do którego kieruje ruch)             |                  **tak**                  |
+|                                                                  |                                                   Alias                                                  |                   CNAME                   |
+| :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------: | :---------------------------------------: |
+| zasoby celu                                                      | [Obsługiwane zasoby AWS](#Obsługiwane%20zasoby%20AWS), rekordy w tej samej [Hosted zone](#Hosted%20zone) |                rekordy DNS                |
+| rekordy o tej samej nazwie co wierzchołek strefy (**zone apex**) |                                    **tak** (o tym samym typie rekordu)                                   |                     -                     |
+| koszty                                                           |                                      brak dla zapytań do zasobów AWS                                     |                  **tak**                  |
+| odpowiedź na określony typ rekordu w zapytaniu DNS               |                    tylko gdy nazwa i typ aliasu zgadza się z nazwą i typem w zapytaniu                   | niezależnie od typy, gdy nazwa się zgadza |
+| listowanie w zapytaniach `dig` lub `nslookup`                    |            jako typ określony w rekordzie (typ zależy od zasobu, do którego kieruje się ruch)            |                 jako CNAME                |
+| natywny health check                                             |                                                  **tak**                                                 |                     -                     |
+| TTL                                                              |                         **tak** (taki sam jak na zasobie do którego kieruje ruch)                        |                  **tak**                  |
 
 #### Obsługiwane zasoby AWS
 
@@ -170,7 +169,7 @@ Kiedy Route 53 otrzymuje zapytanie DNS dla domeny lub subdomeny, sprawdza który
 
 **Routing ważony** wymaga, aby każdy [rekord](../network/DNS.md#DNS%20Record) miał tą samą nazwę i typ dla każdego z zasobów. Każdy taki rekord ma przypisaną względną wagę, w oparciu której Route 53 wysyła ruch do zasobu jako część całkowitej wagi dla wszystkich rekordów w grupie:
 
-![Route53 policy weighted.png](Route53%20policy%20weighted.png.md)
+![Route53 policy weighted.png](../attachments/Route53%20policy%20weighted.png)
 
 Prosta ważona **może** byż skojażona z [Health Check](#Health%20Check)'iem.
 
@@ -206,15 +205,15 @@ Tworząc reguły **geoproximity** można wybrać ustalić :
 
 ### Kojarzenie Health Checków z rekordami Route 53
 
-| Typ polityki routingu rekordu Route 53 | Wymagany | Opcjonalny | Niedostępny |
-| :------------------------------------- | :------: | :--------: | :---------: |
-| [Simple](#Simple)                            |          |            |      X      |
-| [Multivalue answer](#Multivalue%20answer)                 |          |      X     |             |
-| [Latency-based](#Latency-based)                     |          |      X     |             |
-| [Weighted](#Weighted)                          |          |      X     |             |
-| [Failover](#Failover)                          |  primary |  secondary |             |
-| [Geolocation](#Geolocation)                       |          |      X     |             |
-| [Geoproximity](#Geoproximity)                      |          |      X     |             |
+| Typ polityki routingu rekordu Route 53    | Wymagany | Opcjonalny | Niedostępny |
+| :---------------------------------------- | :------: | :--------: | :---------: |
+| [Simple](#Simple)                         |          |            |      X      |
+| [Multivalue answer](#Multivalue%20answer) |          |      X     |             |
+| [Latency-based](#Latency-based)           |          |      X     |             |
+| [Weighted](#Weighted)                     |          |      X     |             |
+| [Failover](#Failover)                     |  primary |  secondary |             |
+| [Geolocation](#Geolocation)               |          |      X     |             |
+| [Geoproximity](#Geoproximity)             |          |      X     |             |
 
 ## Traffic flow
 
@@ -229,7 +228,7 @@ Można tworzyć rekordy pojedynczo, ale trudno jest śledzić zależności międ
 - automatyczne tworzenie i aktualizowanie rekordów,
 - ronowne wykorzystanie dla wielu rekordów w różnych strefach hostingu;
 
-![Route 53 Traffic flow.png](Route%2053%20Traffic%20flow.png.md)
+![Route 53 Traffic flow.png](../attachments/Route%2053%20Traffic%20flow.png)
 
 # Health Check
 

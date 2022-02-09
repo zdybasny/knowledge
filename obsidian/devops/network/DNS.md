@@ -58,7 +58,7 @@ Do ładowania strony internetowej zaangażowane są 4 serwery DNS:
 - [TLD nameserver](#TLD%20nameserver),
 - [Authoritative nameserver](#Authoritative%20nameserver).
 
-![DNS servers.png](../network/DNS.md%20servers.png.md)
+![DNS servers.png](../attachments/../network/DNS.md%20servers.png)
 
 ## DNS recursor
 
@@ -104,7 +104,7 @@ Rzeczywisty adres strony internetowej to złożony numeryczny adres IP, ale dzi�
 
 **FQDN** to w pełni kwalifikowana nazwa domeny, która podaje  jej dokładną lokalizację w hierarchii rekordów DNS. J
 
-![DNS FQDN.png](../network/DNS.md%20FQDN.png.md)
+![DNS FQDN.png](../attachments/../network/DNS.md%20FQDN.png)
 
 # Domain Name Registrar
 
@@ -119,7 +119,7 @@ Rejestrator nazw domen (**Domain Name Registrar**) to firma, która zarządza re
 DNS jest podzielony na wiele różnych **stref**. Strefy te rozróżniają odrębnie zarządzane obszary w przestrzeni nazw DNS. **Strefa DNS** jest częścią przestrzeni nazw DNS, która jest zarządzana przez konkretną organizację lub administratora. **Strefa DNS** jest przestrzenią administracyjną, która pozwala na bardziej granularną kontrolę komponentów DNS, takich jak [Authoritative nameserver](#Authoritative%20nameserver). Przestrzeń nazw domen jest drzewem hierarchicznym, z domeną główną DNS na szczycie. **Strefa DNS** rozpoczyna się od domeny w drzewie i może również rozciągać się w dół do subdomen, tak że wiele
 subdomen może być zarządzanych przez jeden podmiot.
 
-![DNS zone.png](../network/DNS.md%20zone.png.md)
+![DNS zone.png](../attachments/../network/DNS.md%20zone.png)
 
 Częstym błędem jest utożsamianie **strefy DNS** z nazwą domeny lub pojedynczym [DNS Server](#DNS%20Server). W rzeczywistości, **strefa DNS** może zawierać wiele subdomen i wiele stref może istnieć na tym samym serwerze. **Strefy DNS** nie muszą być fizycznie odseparowane od siebie, strefy są ściśle wykorzystywane do przekazywania kontroli.
 

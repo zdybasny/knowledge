@@ -51,6 +51,22 @@ $1%20$2)
 $1.md
 ```
 
+6. revert images with `.png` url removing `.md` from url
+
+```
+.png.md\)
+
+.png)
+```
+
+7. add an attechements location to inage url
+
+```
+(\[[^\]]+\]\()((?!http)[^#\)]*).png
+
+$1../attachments/$2.png
+```
+
 ## Obsidian MD to GitHub MD
 
 - make obsidian internal links `[]()` github ones `[]()`

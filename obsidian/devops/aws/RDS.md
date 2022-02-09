@@ -109,7 +109,7 @@ Aby zacząć replikować instancję, która już świadczy usługi, wystarczy j�
 
 Repliki odczytu dodają nowe endpointy z własną nazwą [DNS](../network/DNS.md). Musimy zatem zmienić naszą aplikację tak, aby odwoływała się do nich indywidualnie, aby zrównoważyć obciążenie odczytem.
 
-![RDS Read Replica.png](RDS%20Read%20Replica.png.md)
+![RDS Read Replica.png](../attachments/RDS%20Read%20Replica.png)
 
 Korzystając z replik odczytu, można elastycznie skalować horyzontalnie poza ograniczenia pojemności pojedynczej instancji DB w przypadku obciążeń bazodanowych o dużym natężeniu odczytu.
 
@@ -123,13 +123,13 @@ Można skonfigurować replikę odczytu dla instancji DB, która ma również rep
 
 Amazon nalicza koszty podczas transferu danych pomiędzy [AZ](AWS%20locations.md#Availability%20zone), jednak dla replik odczytu w tym samym regionie takie koszty nie są naliczane.
 
-![RDS Read with Standby replicas.png](RDS%20Read%20with%20Standby%20replicas.png.md)
+![RDS Read with Standby replicas.png](../attachments/RDS%20Read%20with%20Standby%20replicas.png)
 
 ## Disaster Recovery i promocja repliki odczytu
 
 Replikę odczytu można wypromować na samodzielną instancję DB. Gdy promujesz replikę odczytu, instancja DB jest restartowana zanim stanie się dostępna. Można to wykożystać do przywrócania bazy po awari (**Disaster Recovery**).
 
-![RDS rr promotion.png](RDS%20rr%20promotion.png.md)
+![RDS rr promotion.png](../attachments/RDS%20rr%20promotion.png)
 
 # Multi-AZ deployment
 
@@ -150,7 +150,7 @@ Uruchamianie instancji DB z wysoką dostępnością może zwiększyć dostępno�
 
 > Wysokiej dostępność nie jest rozwiązaniem skalowania dla scenariuszy read-only. Nie możesz użyć repliki standby do obsługi ruchu read-only. Aby obsługiwać ruch tylko do odczytu, należy użyć [Multi-AZ DB cluster deployment](#Multi-AZ%20DB%20cluster%20deployment) lub [Read Replica](#Read%20Replica).
 
-![RDS Multi-AZ instance.png](RDS%20Multi-AZ%20instance.png.md)
+![RDS Multi-AZ instance.png](../attachments/RDS%20Multi-AZ%20instance.png)
 
 ## Multi-AZ DB cluster deployment
 
@@ -160,7 +160,7 @@ Instancje  DB typu reader działają jako automatyczne cele awaryjne i obsługuj
 
 Wdrożenie klastra DB Multi-AZ ma rezerwowe instancje DB, które zapewniają obsługę przełączania awaryjnego i mogą obsługiwać ruch odczytu.
 
-![RDS Multi-AZ cluster.png](RDS%20Multi-AZ%20cluster.png.md)
+![RDS Multi-AZ cluster.png](../attachments/RDS%20Multi-AZ%20cluster.png)
 
 # Security
 
@@ -203,7 +203,7 @@ Zarządzane bazy danych muszą też zapewniać ochronę przed zagrożeniami wewn
 
 Obecnie **Database Activity Streams** obsługiwany przez [Aurora](Aurora.md) i Amazon RDS dla Oracle.
 
-![DB Activity Streams.png](DB%20Activity%20Streams.png.md)
+![DB Activity Streams.png](../attachments/DB%20Activity%20Streams.png)
 
 # DMS – Database Migration Service
 
