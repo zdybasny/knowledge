@@ -60,7 +60,7 @@ Najtańszy dysk twardy przeznaczony do zastosowań wymagających rzadszego dost�
 
 # Multi-Attach
 
-[źródło]([Attach a volume to multiple instances with Amazon EBS Multi-Attach - Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html))
+[źródło](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html)
 
 Amazon EBS Multi-Attach umożliwia dołączenie pojedynczego wolumenu **Provisioned IOPS SSD (io1 lub io2)** do wielu instancji [[EC2]], które znajdują się w tej samej [[AWS locations#Availability zone|AZ]]. Do [[EC2]] lub zestawu instancji można dołączyć wiele woluminów z włączoną funkcją Multi-Attach. Każda [[EC2]], do której wolumen jest dołączony, ma pełne uprawnienia do odczytu i zapisu do udostępnionego wolumenu.
 

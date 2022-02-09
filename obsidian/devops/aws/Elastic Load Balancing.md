@@ -217,7 +217,7 @@ Ruch do i z punktu końcowego Gateway Load Balancer jest konfigurowany za pomoc�
 
 `deprecated`
 
-[źródło]([What is a Classic Load Balancer? - Elastic Load Balancing (amazon.com)](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html))
+[źródło](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html)
 
 CLB zapewnia podstawowe równoważenie obciążenia pomiędzy wieloma [[EC2]] i działa zarówno na poziomie żądania, jak i połączenia. CLB jest przeznaczony dla aplikacji, które są zbudowane w sieci [[#EC2-Classic]].
 

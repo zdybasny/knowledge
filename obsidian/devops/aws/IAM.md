@@ -1,6 +1,6 @@
 #AWS #security
 
-[źródło]([What is IAM? - AWS Identity and Access Management (amazon.com)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html))
+[źródło](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
 **AWS Identity and Access Management** (IAM) umożliwia bezpieczne zarządzanie dostępem do usług i zasobów AWS. Korzystając z IAM, można tworzyć i zarządzać [[#IAM User|użytkownikami]] i [[#IAM User Group]] AWS oraz używać [[#Permission policies|uprawnień]], aby zezwalać i odmawiać im dostępu do zasobów AWS.
 
@@ -96,7 +96,7 @@ Na przykład, możesz określić, na które kubełki Amazon S3 pozwolisz użytko
 
 ## Effect
 
-[źródło]([Understanding how IAM works - AWS Identity and Access Management (amazon.com)](https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html#intro-structure-authorization))
+[źródło](https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html#intro-structure-authorization)
 
 Czy zezwolić lub odmówić dostępu. Ponieważ dostęp jest domyślnie odrzucany, zazwyczaj piszemy polityki, w których efektem jest zezwolenie.
 
