@@ -52,7 +52,7 @@ Klaster DB Aurory składa się z jednej lub więcej [instancji DB](RDS.md#Instan
 
 Każda [AZ](AWS%20locations.md#Availability%20zone) posiada własną kopię volimunu.
 
-![Aurora Cluster.png](../attachments/Aurora%20Cluster.png)
+![](attachments/Aurora%20Cluster.png)
 
 ## Endpointy klastra
 
@@ -112,7 +112,7 @@ Używając **Aurora Serverless v1,** możesz stworzyć endpoint bazy danych bez 
 
 Nie musisz zmieniać kodu aplikacji klienta bazy danych, aby korzystać z floty routerów. Aurora Serverless v1 automatycznie zarządza połączeniami. Skalowanie jest szybkie dzięki "ciepłej" puli zasobów, która jest zawsze gotowa do obsługi żądań. Pamięć masowa i przetwarzanie są oddzielone, więc Twój klaster DB Aurora Serverless v1 może skalować się do zera, gdy skończy przetwarzać obciążenia. Gdy Twój klaster Aurora Serverless v1 DB skaluje się do zera, płacisz tylko za pamięć masową.
 
-![Aurora Serverless.png](../attachments/Aurora%20Serverless.png)
+![](attachments/Aurora%20Serverless.png)
 
 # Multi-master cluster
 

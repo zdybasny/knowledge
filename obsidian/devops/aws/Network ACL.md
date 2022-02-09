@@ -73,7 +73,7 @@ Poniżej przedstawiono części składowe reguły NACL:
 
 Poniższy diagram ilustruje warstwy zabezpieczeń zapewnianych przez [Security group](Security%20group.md)s i NACL:
 
-![VPC diagram.png](../attachments/VPC%20diagram.png)
+![](attachments/VPC%20diagram.png)
 
 ---
 

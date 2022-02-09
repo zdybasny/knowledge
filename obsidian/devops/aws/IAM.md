@@ -6,7 +6,7 @@
 
 IAM jest funkcją konta AWS oferowaną bez dodatkowych opłat. Zostaniesz obciążony jedynie za korzystanie z innych usług AWS przez Twoich użytkowników.
 
-![IAM components.png](../attachments/IAM%20components.png)
+![](attachments/IAM%20components.png)
 
 #### Spis treści
 
@@ -73,7 +73,7 @@ Aby nadać podmiotom uprawnienia, możesz dołączyć politykę, która określa
 - [Effect](#Effect) - "Allow" / "Deny"
 - [Condition](#Condition) (opjonalnie) - warunek wykonania policy
 
-![IAM Policy structure.png](../attachments/IAM%20Policy%20structure.png)
+![](attachments/IAM%20Policy%20structure.png)
 
 Zestaw dostępnych **akcji**, **zasobów** i **warunków** dla danego serwisu znajduje się w [Actions, resources, and condition keys for AWS services - Service Authorization Reference (amazon.com)](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
 

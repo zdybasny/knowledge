@@ -4,7 +4,7 @@
 
 Podczas tworzenia [VPC](VPC.md) należy określić zakres adresów IPv4 dla [VPC](VPC.md) w postaci bloku **Classless Inter-Domain Routing** [CIDR](../network/CIDR.md)), na przykład 10.0.0.0/16. Poniższy diagram przedstawia nowe VPC z blokiem CIDR IPv4.
 
-![VPC CIDR.png](../attachments/VPC%20CIDR.png)
+![](attachments/VPC%20CIDR.png)
 
 W głównej tabeli trasowanie znajdują się następujące trasy:
 
@@ -16,7 +16,7 @@ W głównej tabeli trasowanie znajdują się następujące trasy:
 
 Podczas tworzenia podsieci określa się blok [CIDR](../network/CIDR.md) dla podsieci, który jest podzbiorem bloku [CIDR VPC](#Trasowanie%20VPC).
 
-![VPC Tracing.png](../attachments/VPC%20Tracing.png)
+![](attachments/VPC%20Tracing.png)
 
 Każda [VPC Subnet](VPC%20Subnet.md) musi być skojarzona z tablicą trasowania, która określa dozwolone trasy dla ruchu wychodzącego z danej [VPC Subnet](VPC%20Subnet.md). Każda utworzona [VPC Subnet](VPC%20Subnet.md) jest automatycznie kojarzona z główną tabelą dla [VPC](VPC.md). Można zmienić to skojarzenie oraz zawartość głównej tabeli trasowania.
 

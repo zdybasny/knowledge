@@ -8,34 +8,34 @@ Każde urządzenie podłączone do Internetu posiada unikalny adres IP, który j
 
 ##### Spis treści
 
-- [DNS Resolver](#DNS%20Resolver)
-  - [DHCP protocol](#DHCP%20protocol)
-- [DNS Server](#DNS%20Server)
-  - [DNS recursor](#DNS%20recursor)
-  - [Nameserver](#Nameserver)
-    - [Root nameserver](#Root%20nameserver)
-    - [TLD nameserver](#TLD%20nameserver)
-    - [Authoritative nameserver](#Authoritative%20nameserver)
-- [Domain Name](#Domain%20Name)
-  - [Fully Qualified Domain Name](#Fully%20Qualified%20Domain%20Name)
-- [Domain Name Registrar](#Domain%20Name%20Registrar)
-- [DNS zone](#DNS%20zone)
-- [Zone File](#Zone%20File)
-  - [DNS Record](#DNS%20Record)
-    - [A](#A)
-    - [AAAA](#AAAA)
-    - [CNAME](#CNAME)
-    - [NS](#NS)
-    - [SOA](#SOA)
-    - [MX](#MX)
-    - [SRV](#SRV)
+- [DNS Resolver](#dns-resolver)
+  - [DHCP protocol](#dhcp-protocol)
+- [DNS Server](#dns-server)
+  - [DNS recursor](#dns-recursor)
+  - [Nameserver](#nameserver)
+    - [Root nameserver](#root-nameserver)
+    - [TLD nameserver](#tld-nameserver)
+    - [Authoritative nameserver](#authoritative-nameserver)
+- [Domain Name](#domain-name)
+  - [Fully Qualified Domain Name](#fully-qualified-domain-name)
+- [Domain Name Registrar](#domain-name-registrar)
+- [DNS zone](#dns-zone)
+- [Zone File](#zone-file)
+  - [DNS Record](#dns-record)
+    - [A](#a)
+    - [AAAA](#aaaa)
+    - [CNAME](#cname)
+    - [NS](#ns)
+    - [SOA](#soa)
+    - [MX](#mx)
+    - [SRV](#srv)
   - [time-to-live](#time-to-live)
-- [Domain levels](#Domain%20levels)
-  - [Top Level Domain](#Top%20Level%20Domain)
-    - [Generic top-level domain](#Generic%20top-level%20domain)
-    - [Country code top-level domain](#Country%20code%20top-level%20domain)
-  - [Second Level Domain](#Second%20Level%20Domain)
-- [DNS protocol](#DNS%20protocol)
+- [Domain levels](#domain-levels)
+  - [Top Level Domain](#top-level-domain)
+    - [Generic top-level domain](#generic-top-level-domain)
+    - [Country code top-level domain](#country-code-top-level-domain)
+  - [Second Level Domain](#second-level-domain)
+- [DNS protocol](#dns-protocol)
 
 # DNS Resolver
 
@@ -58,7 +58,7 @@ Do ładowania strony internetowej zaangażowane są 4 serwery DNS:
 - [TLD nameserver](#TLD%20nameserver),
 - [Authoritative nameserver](#Authoritative%20nameserver).
 
-![DNS servers.png](../attachments/../network/DNS.md%20servers.png)
+![](attachments/DNS%20servers.png)
 
 ## DNS recursor
 
@@ -104,7 +104,7 @@ Rzeczywisty adres strony internetowej to złożony numeryczny adres IP, ale dzi�
 
 **FQDN** to w pełni kwalifikowana nazwa domeny, która podaje  jej dokładną lokalizację w hierarchii rekordów DNS. J
 
-![DNS FQDN.png](../attachments/../network/DNS.md%20FQDN.png)
+![](attachments/DNS%20FQDN.png)
 
 # Domain Name Registrar
 
@@ -119,7 +119,7 @@ Rejestrator nazw domen (**Domain Name Registrar**) to firma, która zarządza re
 DNS jest podzielony na wiele różnych **stref**. Strefy te rozróżniają odrębnie zarządzane obszary w przestrzeni nazw DNS. **Strefa DNS** jest częścią przestrzeni nazw DNS, która jest zarządzana przez konkretną organizację lub administratora. **Strefa DNS** jest przestrzenią administracyjną, która pozwala na bardziej granularną kontrolę komponentów DNS, takich jak [Authoritative nameserver](#Authoritative%20nameserver). Przestrzeń nazw domen jest drzewem hierarchicznym, z domeną główną DNS na szczycie. **Strefa DNS** rozpoczyna się od domeny w drzewie i może również rozciągać się w dół do subdomen, tak że wiele
 subdomen może być zarządzanych przez jeden podmiot.
 
-![DNS zone.png](../attachments/../network/DNS.md%20zone.png)
+![](attachments/DNS%20zone.png)
 
 Częstym błędem jest utożsamianie **strefy DNS** z nazwą domeny lub pojedynczym [DNS Server](#DNS%20Server). W rzeczywistości, **strefa DNS** może zawierać wiele subdomen i wiele stref może istnieć na tym samym serwerze. **Strefy DNS** nie muszą być fizycznie odseparowane od siebie, strefy są ściśle wykorzystywane do przekazywania kontroli.
 

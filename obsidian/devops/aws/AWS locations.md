@@ -2,11 +2,11 @@
 
 Możesz hostować zasoby VPC (np. [VPC Subnet](VPC%20Subnet.md)s) w wielu lokalizacjach na całym świecie. Lokalizacje te składają się z:
 
-- [#Region](#Region)s
-- [#Availability zone](#Availability%20zone)s
-- [#Local zone](#Local%20zone)s
-- [#Wavelength zone](#Wavelength%20zone)s
-- [#AWS Outposts](#AWS%20Outposts)
+- [Region](#Region)s
+- [Availability zone](#Availability%20zone)s
+- [Local zone](#Local%20zone)s
+- [Wavelength zone](#Wavelength%20zone)s
+- [AWS Outposts](#AWS%20Outposts)
 
 # Region
 

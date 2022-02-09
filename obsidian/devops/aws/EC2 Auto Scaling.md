@@ -118,7 +118,7 @@ Możesz także połączyć skalowanie predykcyjne i dynamiczne (odpowiednio pode
 
 EC2 Auto Scaling oferuje możliwość dodawania haków cyklu życia do swoich ASG. Te haki pozwalają tworzyć rozwiązania, które są świadome zdarzeń w cyklu życia instancji Auto Scaling, a następnie wykonać niestandardową akcję na instancjach, gdy wystąpi odpowiednie zdarzenie cyklu życia. Hak cyklu życia zapewnia określony czas (domyślnie jedna godzina) oczekiwania na zakończenie akcji, zanim instancja przejdzie do następnego stanu.
 
-![EC2 AS hook.png](../attachments/EC2%20AS%20hook.png)
+![](attachments/EC2%20AS%20hook.png)
 
 Popularnym zastosowaniem haków lifecycle jest kontrola, kiedy instancje są rejestrowane w [Elastic Load Balancing](Elastic%20Load%20Balancing.md). Dodając **launch lifecycle hook** do ASG, możesz upewnić się, że skrypty startowe zakończyły się sukcesem, a aplikacje na instancjach są gotowe do przyjęcia ruchu, zanim zostaną zarejestrowane do load balancera na końcu lifecycle hook.
 

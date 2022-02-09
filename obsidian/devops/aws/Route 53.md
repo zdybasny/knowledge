@@ -169,7 +169,7 @@ Kiedy Route 53 otrzymuje zapytanie DNS dla domeny lub subdomeny, sprawdza który
 
 **Routing ważony** wymaga, aby każdy [rekord](../network/DNS.md#DNS%20Record) miał tą samą nazwę i typ dla każdego z zasobów. Każdy taki rekord ma przypisaną względną wagę, w oparciu której Route 53 wysyła ruch do zasobu jako część całkowitej wagi dla wszystkich rekordów w grupie:
 
-![Route53 policy weighted.png](../attachments/Route53%20policy%20weighted.png)
+![](attachments/Route53%20policy%20weighted.png)
 
 Prosta ważona **może** byż skojażona z [Health Check](#Health%20Check)'iem.
 
@@ -228,7 +228,7 @@ Można tworzyć rekordy pojedynczo, ale trudno jest śledzić zależności międ
 - automatyczne tworzenie i aktualizowanie rekordów,
 - ronowne wykorzystanie dla wielu rekordów w różnych strefach hostingu;
 
-![Route 53 Traffic flow.png](../attachments/Route%2053%20Traffic%20flow.png)
+![](attachments/Route%2053%20Traffic%20flow.png)
 
 # Health Check
 

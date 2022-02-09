@@ -2,7 +2,7 @@
 
 # Trasowanie Podsieci
 
-![Trasowanie Podsieci](VPC%20Route%20table.md#Trasowanie%20Podsieci)
+![](VPC%20Route%20table.md#Trasowanie%20Podsieci)
 
 # Strefy dostępności
 

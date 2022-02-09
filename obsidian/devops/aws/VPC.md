@@ -24,7 +24,7 @@ Możesz mieć pewność, że wrażliwa aplikacja nie musi wysyłać ruchu przez 
 
 # Trasowanie VPC
 
-![Trasowanie VPC](VPC%20Route%20table.md#Trasowanie%20VPC)
+![](VPC%20Route%20table.md#Trasowanie%20VPC)
 
 # VPC Endpoint
 

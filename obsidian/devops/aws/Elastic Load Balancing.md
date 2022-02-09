@@ -107,7 +107,7 @@ Serwery aplikacji nie widzą IP clienta bezpośrednio, tylko adres ALB. Prawdziw
 
 Nazwa hosta dla ALB jest stała: **XXX.region.elb.amazonaws.com**.
 
-![ALB_NLB.png](../attachments/ALB_NLB.png)
+![](attachments/ALB_NLB.png)
 
 ### Algorytm ALB
 
@@ -160,7 +160,7 @@ Network Load Balancer funkcjonuje w [warstwie transportu](../network/Model%20OSI
 
 NLB tworzy interfejs sieciowy dla każdej [AZ](AWS%20locations.md#Availability%20zone), którą włączysz. Każdy węzeł równoważenia obciążenia w strefie dostępności używa tego interfejsu sieciowego, aby uzyskać **statyczny adres IP**. Kiedy tworzysz load balancer wychodzący do Internetu, możesz opcjonalnie przypisać jeden [Elastic IP](Elastic%20IP.md) na [VPC Subnet](VPC%20Subnet.md).
 
-![ALB_NLB.png](../attachments/ALB_NLB.png)
+![](attachments/ALB_NLB.png)
 
 ### Algorytm NLB
 
@@ -197,7 +197,7 @@ Gateway Load Balancer działa na [trzeciej warstwie](../network/Model%20OSI.md#L
 
 Gateway Load Balancer i jego zarejestrowane instancje wirtualnych urządzeń wymieniają ruch aplikacyjny za pomocą protokołu GENEVE na porcie 6081. Obsługuje on maksymalny rozmiar jednostki transmisji (MTU) 8500 bajtów.
 
-![GWLB.png](../attachments/GWLB.png)
+![](attachments/GWLB.png)
 
 Gateway Load Balancer używa punktów końcowych (**endpoint**) Gateway Load Balancer do bezpiecznej wymiany ruchu pomiędzy granicami [VPC](VPC.md). Endpoint GWLB jest punktem końcowym [VPC](VPC.md), który zapewnia prywatną łączność między urządzeniami wirtualnymi w [VPC](VPC.md) dostawcy usług a serwerami aplikacji w [VPC](VPC.md) odbiorcy usług. Wdrażasz Gateway Load Balancer w tym samym [VPC](VPC.md) co urządzenia wirtualne. Urządzenia wirtualne są rejestrowane w [Target group](#Target%20group) dla urządzenia Gateway Load Balancer.
 
@@ -221,7 +221,7 @@ Ruch do i z punktu końcowego Gateway Load Balancer jest konfigurowany za pomoc�
 
 CLB zapewnia podstawowe równoważenie obciążenia pomiędzy wieloma [EC2](EC2.md) i działa zarówno na poziomie żądania, jak i połączenia. CLB jest przeznaczony dla aplikacji, które są zbudowane w sieci [EC2-Classic](#EC2-Classic).
 
-![CLB.png](../attachments/CLB.png)
+![](attachments/CLB.png)
 
 Zalecany jest:
 
@@ -299,7 +299,7 @@ Dostępne dla: [ALB](#Application%20Load%20Balancer), [NLB](#Network%20Load%20Ba
 
 Aby użyć [Listener](#Listener) HTTPS, musisz wdrożyć co najmniej jeden certyfikat X.509 (sertyfikat serwera [SSL-TLS](../network/SSL-TLS.md)) na swoim load balancerze. Load balancer używa certyfikatu do zakończenia połączenia front-end, a następnie odszyfrowuje żądania od klientów przed wysłaniem ich do celów.
 
-![ELB SSL.png](../attachments/ELB%20SSL.png)
+![](attachments/ELB%20SSL.png)
 
 ### Tworzenie certyfikatu
 
@@ -381,7 +381,7 @@ Po włączeniu [Availability zone](AWS%20locations.md#Availability%20zone) dla l
 
 Jeśli włączysz **międzystrefowe równoważenie obciążenia**, każdy węzeł równoważenia obciążenia dystrybuuje ruch między zarejestrowanymi celami we wszystkich włączonych [AZ](AWS%20locations.md#Availability%20zone).
 
-![ELB Cross-Zone LB.png](../attachments/ELB%20Cross-Zone%20LB.png)
+![](attachments/ELB%20Cross-Zone%20LB.png)
 
 ## Zonal isolation
 

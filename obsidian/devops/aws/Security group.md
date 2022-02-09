@@ -43,7 +43,7 @@ Istnieją limity dotyczące liczby security groups, które można utworzyć w ra
 
 # Porównianie network ACL i security group
 
-![Porównianie network ACL i security group](Network%20ACL.md#Porównianie%20network%20ACL%20i%20security%20group)
+![](Network%20ACL.md#Porównianie%20network%20ACL%20i%20security%20group)
 
 ---
 
