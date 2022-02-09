@@ -1,1 +1,1 @@
-[AZ](AWS%20locations.md#Availability%20zone)
+[AZ](../devops/AWS/AWS%20locations.md#Availability%20zone)

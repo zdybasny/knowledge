@@ -1,10 +1,10 @@
 #AWS #network
 
-Route 53 to wysoce dostępna i skalowalna usługa sieciowa ([Authoritative nameserver](../network/DNS.md#Authoritative%20nameserver)) systemu nazw domen ([DNS](../network/DNS.md)) w chmurze. Route 53 jest również w pełni zgodny z IPv6.
+Route 53 to wysoce dostępna i skalowalna usługa sieciowa ([Authoritative nameserver](../Network/DNS.md#Authoritative%20nameserver)) systemu nazw domen ([DNS](../Network/DNS.md)) w chmurze. Route 53 jest również w pełni zgodny z IPv6.
 
 Możesz używać Route 53 do wykonywania trzech głównych funkcji w dowolnej kombinacji:
 
-- [Rejestracji domen](#Rejestracji%20domen) (jako [DNS Registrar](../network/DNS.md#Domain%20Name%20Registrar))
+- [Rejestracji domen](#Rejestracji%20domen) (jako [DNS Registrar](../Network/DNS.md#Domain%20Name%20Registrar))
 - [Routing DNS](#Routing%20DNS),
 - sprawdzania kondycji zasobów ([Health Check](#Health%20Check)).
 
@@ -33,15 +33,15 @@ Możesz używać Route 53 do wykonywania trzech głównych funkcji w dowolnej ko
 
 # Rrejestracja domen
 
-**Reoute 53** pełni m.in. funkcję  [rejestratora domen](../network/DNS.md#Domain%20Name%20Registrar), umożliwiając rejestrację nowej [domeny](../network/DNS.md#Domain%20Name) dostępnej w Internecie. Pozwala także przenieść rejestrację już instniejących domen z innych rejestratorów do Route 53.
+**Reoute 53** pełni m.in. funkcję  [rejestratora domen](../Network/DNS.md#Domain%20Name%20Registrar), umożliwiając rejestrację nowej [domeny](../Network/DNS.md#Domain%20Name) dostępnej w Internecie. Pozwala także przenieść rejestrację już instniejących domen z innych rejestratorów do Route 53.
 
-Lista dostępnych [TLD](../network/DNS.md#Top%20Level%20Domain) w Route 53 znajduje się tu: [Index to supported top-level domains](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
+Lista dostępnych [TLD](../Network/DNS.md#Top%20Level%20Domain) w Route 53 znajduje się tu: [Index to supported top-level domains](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
 
-Jeśli domena pozostaje zarejestrowana u [rejestratora](../network/DNS.md#Domain%20Name%20Registrar) zewnętrznego (zazwyczaj płacąc z góry za rok), taki rejestrator zazwyczaj zapewnia usługę DNS do zarządzania [rekordami DNS](../network/DNS.md#DNS%20Record). Jendak nadal można użyć **Route 53** w tym celu. Dokładniej opisane jest w to w [Routing DNS](#Routing%20DNS).
+Jeśli domena pozostaje zarejestrowana u [rejestratora](../Network/DNS.md#Domain%20Name%20Registrar) zewnętrznego (zazwyczaj płacąc z góry za rok), taki rejestrator zazwyczaj zapewnia usługę DNS do zarządzania [rekordami DNS](../Network/DNS.md#DNS%20Record). Jendak nadal można użyć **Route 53** w tym celu. Dokładniej opisane jest w to w [Routing DNS](#Routing%20DNS).
 
 # Routing DNS
 
-Route 53 może być używany jako usługa DNS dla domeny zarejestrowanej przez Route 53 czy też przez zewnęcznego [rejestratora](../network/DNS.md#Domain%20Name%20Registrar). Route 53 kieruje ruch internetowy do wybranej witryny, tłumacząc przyjazne [FQDN](../network/DNS.md#Fully%20Qualified%20Domain%20Name) na numeryczne IP.
+Route 53 może być używany jako usługa DNS dla domeny zarejestrowanej przez Route 53 czy też przez zewnęcznego [rejestratora](../Network/DNS.md#Domain%20Name%20Registrar). Route 53 kieruje ruch internetowy do wybranej witryny, tłumacząc przyjazne [FQDN](../Network/DNS.md#Fully%20Qualified%20Domain%20Name) na numeryczne IP.
 
 W ramach routingu Route 53 łączy żądania użytkowników do infrastruktury działającej w AWS, takiej jak:
 
@@ -56,16 +56,16 @@ Możesz wykorzystać Route 53 do skonfigurowania kontroli stanu DNS, a następni
 
 [źródło](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-working-with.html)
 
-Strefa hostowana ([DNS zone](../network/DNS.md#DNS%20zone)) i odpowiadająca jej [domena](../network/DNS.md#Domain%20Name) mają tę samą nazwę.
+Strefa hostowana ([DNS zone](../Network/DNS.md#DNS%20zone)) i odpowiadająca jej [domena](../Network/DNS.md#Domain%20Name) mają tę samą nazwę.
 
 Istnieją dwa rodzaje stref hostowanych:
 
-- **publiczna** - zawiera [rekordy](../network/DNS.md#DNS%20Record) określające sposób kierowania ruchu w Internecie (np. example.com),
-- **prywatna** - zawiera [rekordy](../network/DNS.md#DNS%20Record) określające sposób kierowania ruchu w Amazon [VPC](VPC.md) (np. company.internal).
+- **publiczna** - zawiera [rekordy](../Network/DNS.md#DNS%20Record) określające sposób kierowania ruchu w Internecie (np. example.com),
+- **prywatna** - zawiera [rekordy](../Network/DNS.md#DNS%20Record) określające sposób kierowania ruchu w Amazon [VPC](VPC.md) (np. company.internal).
 
 ## Obsługiwane rekordy DNS
 
-Route 53 obsługuje następujące typy [rekordów DNS](../network/DNS.md#DNS%20Record):
+Route 53 obsługuje następujące typy [rekordów DNS](../Network/DNS.md#DNS%20Record):
 (podstawowe)
 
 - **A**
@@ -85,13 +85,13 @@ Route 53 obsługuje następujące typy [rekordów DNS](../network/DNS.md#DNS%20R
 - SPF
 - SRV
 
-> Każdy z rekordów posiada wartość [TTL](../network/DNS.md#time-to-live). Krótszy time-to-live oznacza częstrze odświerzanie rekordów, lecz wąże się to z większym ruchem na Route 53 i, co za tym idzie, większym kosztem.
+> Każdy z rekordów posiada wartość [TTL](../Network/DNS.md#time-to-live). Krótszy time-to-live oznacza częstrze odświerzanie rekordów, lecz wąże się to z większym ruchem na Route 53 i, co za tym idzie, większym kosztem.
 
 ### Alias
 
 [źródło](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html)
 
-**Rekordy aliasowe** Route 53 stanowią rozszerzenie funkcjonalności DNS. **Rekordy aliasowe** pozwalają kierować ruch do [wybranych zasobów AWS](#Obsługiwane%20zasoby%20AWS) (wtedy mają typ [A](../network/DNS.md#A) lub [AAAA](../network/DNS.md#AAAA)). Pozwalają one również na kierowanie ruchu z jednego rekordu w [Hosted zone](#Hosted%20zone) do innego rekordu.
+**Rekordy aliasowe** Route 53 stanowią rozszerzenie funkcjonalności DNS. **Rekordy aliasowe** pozwalają kierować ruch do [wybranych zasobów AWS](#Obsługiwane%20zasoby%20AWS) (wtedy mają typ [A](../Network/DNS.md#A) lub [AAAA](../Network/DNS.md#AAAA)). Pozwalają one również na kierowanie ruchu z jednego rekordu w [Hosted zone](#Hosted%20zone) do innego rekordu.
 
 #### Alias vs CNAME
 
@@ -118,7 +118,7 @@ Route 53 obsługuje następujące typy [rekordów DNS](../network/DNS.md#DNS%20R
 - [endpointy VPC](VPC.md#VPC%20Endpoint),
 - [Global Accelerator](Global%20Accelerator.md).
 
-**Nie można** natomiast ustawić **Aliasu** dla [nazwy DNS](../network/DNS.md#Domain%20Name) **EC2**!
+**Nie można** natomiast ustawić **Aliasu** dla [nazwy DNS](../Network/DNS.md#Domain%20Name) **EC2**!
 
 ## Routing policy
 
@@ -142,9 +142,9 @@ Dostępne są następujące typy polityk:
 
 #### Simple
 
-Pozwala na skonfigurowanie standardowych [rekordów DNS](../network/DNS.md#DNS%20Record), bez specjalnych funkcji routingu Route 53, takich jak ważenie czy opóźnienia. **Routing prosty** przeważnie kieruje ruch do pojedynczego zasobu, np. do serwera WWW dla twojej strony.
+Pozwala na skonfigurowanie standardowych [rekordów DNS](../Network/DNS.md#DNS%20Record), bez specjalnych funkcji routingu Route 53, takich jak ważenie czy opóźnienia. **Routing prosty** przeważnie kieruje ruch do pojedynczego zasobu, np. do serwera WWW dla twojej strony.
 
-Dla **routingu prostego** nie można tworzyć wielu rekordów o tej samej nazwie i typie, ale można w jednym rekordzie podać wiele wartości, np. wiele adresów IP. W takim przypadku Route 53 zwróci wszystkie wartości w losowej kolejności, a [klient](../network/DNS.md#DNS%20Resolver) losowo wybiera jedną wartość.
+Dla **routingu prostego** nie można tworzyć wielu rekordów o tej samej nazwie i typie, ale można w jednym rekordzie podać wiele wartości, np. wiele adresów IP. W takim przypadku Route 53 zwróci wszystkie wartości w losowej kolejności, a [klient](../Network/DNS.md#DNS%20Resolver) losowo wybiera jedną wartość.
 
 Polityka prosta dla rekordu aliasu umożliwia określenie tylko jedenego zasóbu AWS lub jeden rekord w tej samej bieżącej [Hosted zone](#Hosted%20zone).
 
@@ -154,7 +154,7 @@ Prosta politykanie **nie** może byż skojażona z [Health Check](#Health%20Chec
 
 **Multiwalue answer routing** pozwala skonfigurować **Route 53** tak, aby w odpowiedzi na zapytania DNS zwracał wiele wartości, takich jak adresy IP serwerów [WWW](http://WWW).
 
-Możesz określić wiele wartości dla niemal każdego rekordu, ale **routing wielowartościowy** pozwala także na sprawdzanie stanu każdego zasobu, dzięki czemu **Route 53** zwraca tylko wartości dla zdrowych zasobów. Route 53 odpowiada na zapytania DNS z maksymalnie ośmioma zdrowymi rekordami i udziela różnych odpowiedzi różnym [DNS resolvers](../network/DNS.md#DNS%20Resolver).
+Możesz określić wiele wartości dla niemal każdego rekordu, ale **routing wielowartościowy** pozwala także na sprawdzanie stanu każdego zasobu, dzięki czemu **Route 53** zwraca tylko wartości dla zdrowych zasobów. Route 53 odpowiada na zapytania DNS z maksymalnie ośmioma zdrowymi rekordami i udziela różnych odpowiedzi różnym [DNS resolvers](../Network/DNS.md#DNS%20Resolver).
 
 W przeciwieństwie do [routingu prostego](#Simple) można opcjonalnie skojażyć [Health Check](#Health%20Check). Jeśli żaden [Health Check](#Health%20Check) nie zostanie skojażony, **Route 53** uznaje zawsze taki rekord za zdrowy.
 
@@ -165,9 +165,9 @@ Kiedy Route 53 otrzymuje zapytanie DNS dla domeny lub subdomeny, sprawdza który
 
 #### Weighted
 
-**Routing ważony** pozwala powiązać wiele zasobów z pojedynczą [nazwą domeny](../network/DNS.md#Domain%20Name) lub subdomeny i wybrać, jaka ilość ruchu jest kierowana do każdego z nich. Nadaje się do balansowania obciążeniem.
+**Routing ważony** pozwala powiązać wiele zasobów z pojedynczą [nazwą domeny](../Network/DNS.md#Domain%20Name) lub subdomeny i wybrać, jaka ilość ruchu jest kierowana do każdego z nich. Nadaje się do balansowania obciążeniem.
 
-**Routing ważony** wymaga, aby każdy [rekord](../network/DNS.md#DNS%20Record) miał tą samą nazwę i typ dla każdego z zasobów. Każdy taki rekord ma przypisaną względną wagę, w oparciu której Route 53 wysyła ruch do zasobu jako część całkowitej wagi dla wszystkich rekordów w grupie:
+**Routing ważony** wymaga, aby każdy [rekord](../Network/DNS.md#DNS%20Record) miał tą samą nazwę i typ dla każdego z zasobów. Każdy taki rekord ma przypisaną względną wagę, w oparciu której Route 53 wysyła ruch do zasobu jako część całkowitej wagi dla wszystkich rekordów w grupie:
 
 ![](attachments/Route53%20policy%20weighted.png)
 
@@ -252,4 +252,4 @@ Można również łączyć rezultaty z wielu Health Checków z użyciem:
 
 # See also
 
-- [DNS](../network/DNS.md)
+- [DNS](../Network/DNS.md)

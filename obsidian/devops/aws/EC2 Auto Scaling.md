@@ -37,7 +37,7 @@ ASG posiadają następujące atrybuty:
   - dane użytkownika EC2,
   - wolumeny [Elastic Block Store](Elastic%20Block%20Store.md),
   - [Security group](Security%20group.md),
-  - para kluczy [SSH](../network/SSH.md),
+  - para kluczy [SSH](../Network/SSH.md),
 - rozmiar minimalny / rozmiar maksymalny / pojemność początkowa,
 - informacje o [VPC](VPC.md) i [VPC Subnet](VPC%20Subnet.md),
 - informacje o [ELB](Elastic%20Load%20Balancing.md),

@@ -8,7 +8,7 @@ W większości przypadków [Security group](Security%20group.md) zaspokajają po
 
 Każda [VPC Subnet](VPC%20Subnet.md) z założenia musi być powiązana z NACL. Każda utworzona [VPC Subnet](VPC%20Subnet.md) jest automatycznie kojarzona z domyślnym NACL dla [VPC](VPC.md). Można zmienić to skojarzenie, a także zawartość domyślnej NACL.
 
-Można utworzyć dziennik przepływów ([VPC Flow Logs](VPC%20Flow%20Logs.md)) w [VPC](VPC.md) lub [VPC Subnet](VPC%20Subnet.md) w celu przechwytywania ruchu przychodzącego i wychodzącego z interfejsów sieciowych w [VPC](VPC.md) lub [VPC Subnet](VPC%20Subnet.md). Można również utworzyć [VPC Flow Logs](VPC%20Flow%20Logs.md) na pojedynczym [Elastic Network Interface](Elastic%20Network%20Interface.md). Dzienniki przepływów są publikowane w [CloudWatch Logs](CloudWatch.md#CloudWatch%20Logs) lub [S3](S3.md).
+Można utworzyć dziennik przepływów ([VPC Flow Logs](VPC%20Flow%20Logs.md)) w [VPC](VPC.md) lub [VPC Subnet](VPC%20Subnet.md) w celu przechwytywania ruchu przychodzącego i wychodzącego z interfejsów sieciowych w [VPC](VPC.md) lub [VPC Subnet](VPC%20Subnet.md). Można również utworzyć [VPC Flow Logs](VPC%20Flow%20Logs.md) na pojedynczym [Elastic network interface](Elastic%20network%20interface.md). Dzienniki przepływów są publikowane w [CloudWatch Logs](CloudWatch.md#CloudWatch%20Logs) lub [S3](S3.md).
 
 # Podstawy
 
@@ -51,13 +51,13 @@ Poniżej przedstawiono części składowe reguły NACL:
 
 - **Port range** - Port nasłuchiwania lub zakres portów dla ruchu sieciowego. Na przykład 80 dla ruchu HTTP.
 
-- **Source** - [Tylko reguły przychodzące] Źródło ruchu (zakres [CIDR](../network/CIDR.md))
+- **Source** - [Tylko reguły przychodzące] Źródło ruchu (zakres [CIDR](../Network/CIDR.md))
 
-- **Destination** - [Tylko reguły wychodzące] Miejsce docelowe dla ruchu (zakres [CIDR](../network/CIDR.md)).
+- **Destination** - [Tylko reguły wychodzące] Miejsce docelowe dla ruchu (zakres [CIDR](../Network/CIDR.md)).
 
 - **Allow/Deny** - Określenie, czy _zezwalać_ na określony ruch, czy go _odrzucać_.
 
-> Jeśli dodasz regułę za pomocą wiersza poleceń lub API [EC2](EC2.md), zakres [CIDR](../network/CIDR.md) zostanie automatycznie zmodyfikowany do postaci kanonicznej. Na przykład, jeśli podasz `100.68.0.18/18` jako zakres [CIDR](../network/CIDR.md), utworzy to regułę z zakresem `100.68.0.0/18`.
+> Jeśli dodasz regułę za pomocą wiersza poleceń lub API [EC2](EC2.md), zakres [CIDR](../Network/CIDR.md) zostanie automatycznie zmodyfikowany do postaci kanonicznej. Na przykład, jeśli podasz `100.68.0.18/18` jako zakres [CIDR](../Network/CIDR.md), utworzy to regułę z zakresem `100.68.0.0/18`.
 
 # Porównianie network ACL i security group
 
@@ -82,4 +82,4 @@ Poniższy diagram ilustruje warstwy zabezpieczeń zapewnianych przez [Security g
 - [Network ACLs on AWS](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
 - [VPC Subnet](VPC%20Subnet.md)
 - [Security group](Security%20group.md)
-- [CIDR](../network/CIDR.md)
+- [CIDR](../Network/CIDR.md)

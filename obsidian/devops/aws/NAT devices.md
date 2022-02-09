@@ -1,6 +1,6 @@
 #AWS #network
 
-Możesz użyć urządzenia [NAT](../network/NAT.md), aby umożliwić instancjom w prywatnych podsieciach łączenie się z internetem, innymi [VPC](VPC.md). Urządzenie NAT zamienia źródłowy adres IPv4 instancji na adres urządzenia NAT. Podczas wysyłania ruchu odpowiedzi do instancji [EC2](EC2.md), urządzenie NAT tłumaczy adresy z powrotem na oryginalne źródłowe adresy IPv4.
+Możesz użyć urządzenia [NAT](../Network/NAT.md), aby umożliwić instancjom w prywatnych podsieciach łączenie się z internetem, innymi [VPC](VPC.md). Urządzenie NAT zamienia źródłowy adres IPv4 instancji na adres urządzenia NAT. Podczas wysyłania ruchu odpowiedzi do instancji [EC2](EC2.md), urządzenie NAT tłumaczy adresy z powrotem na oryginalne źródłowe adresy IPv4.
 
 Instancje [EC2](EC2.md) te mogą komunikować się z usługami spoza [VPC](VPC.md), ale nie mogą otrzymywać niechcianych żądań połączenia.
 

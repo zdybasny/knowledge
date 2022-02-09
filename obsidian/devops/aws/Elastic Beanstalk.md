@@ -110,7 +110,7 @@ Zasoby AWS tworzone dla warstwy **środowiska web server** obejmują:
 
 ![](attachments/Beanstalk%20web%20server.png)
 
-Każde **środowisko** posiada rekord [CNAME](../network/DNS.md#CNAME) (adres URL), który wskazuje na [load balanser](Elastic%20Load%20Balancing.md). Ten adres URL jest aliasowany w [Route 53](Route%2053.md) do adresu URL [Elastic Load Balancing](Elastic%20Load%20Balancing.md) za pomocą [CNAME](../network/DNS.md#CNAME).
+Każde **środowisko** posiada rekord [CNAME](../Network/DNS.md#CNAME) (adres URL), który wskazuje na [load balanser](Elastic%20Load%20Balancing.md). Ten adres URL jest aliasowany w [Route 53](Route%2053.md) do adresu URL [Elastic Load Balancing](Elastic%20Load%20Balancing.md) za pomocą [CNAME](../Network/DNS.md#CNAME).
 
 ### Worker environment
 

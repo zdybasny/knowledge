@@ -35,7 +35,7 @@ Poniżej przedstawiono charakterystykę security groups:
 
 - [EC2](EC2.md) powiązane z security group nie mogą ze sobą rozmawiać, chyba że zostaną dodane reguły zezwalające na ruch (wyjątek: domyślna security group ma takie reguły domyślnie).
 
-- Security groups są powiązane z [Elastic Network Interface](Elastic%20Network%20Interface.md). Po uruchomieniu [EC2](EC2.md) możesz zmienić security groups, które są z nią powiązane, co powoduje zmianę security groups powiązanych z podstawowym interfejsem sieciowym (`eth0`). Możesz też określić lub zmienić security groups powiązane z dowolnym innym [Elastic Network Interface](Elastic%20Network%20Interface.md). Domyślnie, gdy tworzysz [Elastic Network Interface](Elastic%20Network%20Interface.md), jest on skojarzony z domyślną security group dla [VPC](VPC.md), chyba że określisz inną security group.
+- Security groups są powiązane z [Elastic network interface](Elastic%20network%20interface.md). Po uruchomieniu [EC2](EC2.md) możesz zmienić security groups, które są z nią powiązane, co powoduje zmianę security groups powiązanych z podstawowym interfejsem sieciowym (`eth0`). Możesz też określić lub zmienić security groups powiązane z dowolnym innym [Elastic network interface](Elastic%20network%20interface.md). Domyślnie, gdy tworzysz [Elastic network interface](Elastic%20network%20interface.md), jest on skojarzony z domyślną security group dla [VPC](VPC.md), chyba że określisz inną security group.
 
 ## Limity
 
@@ -52,4 +52,4 @@ Istnieją limity dotyczące liczby security groups, które można utworzyć w ra
 - [Security groups in AWS doc](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 - [EC2](EC2.md)
 - [Network ACL](Network%20ACL.md)
-- [CIDR](../network/CIDR.md)
+- [CIDR](../Network/CIDR.md)

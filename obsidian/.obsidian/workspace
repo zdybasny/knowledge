@@ -147,15 +147,15 @@
   },
   "active": "a3652a35721c95bc",
   "lastOpenFiles": [
-    "devops/aws/attachments/ELB SSL.png",
-    "devops/aws/Aurora.md",
-    "devops/network/DNS.md",
-    "devops/network/attachments/DNS FQDN.png",
-    "devops/aws/attachments/CLB.png",
-    "devops/aws/attachments/VPC CIDR.png",
-    "devops/aws/attachments/GWLB.png",
-    "devops/aws/attachments/DB Activity Streams.png",
-    "devops/aws/attachments/Beanstalk worker.png",
-    "devops/aws/attachments/Beanstalk flow.png"
+    "devops/AWS/attachments/ELB SSL.png",
+    "devops/AWS/Aurora.md",
+    "devops/Network/DNS.md",
+    "devops/Network/attachments/DNS FQDN.png",
+    "devops/AWS/attachments/CLB.png",
+    "devops/AWS/attachments/VPC CIDR.png",
+    "devops/AWS/attachments/GWLB.png",
+    "devops/AWS/attachments/DB Activity Streams.png",
+    "devops/AWS/attachments/Beanstalk worker.png",
+    "devops/AWS/attachments/Beanstalk flow.png"
   ]
 }

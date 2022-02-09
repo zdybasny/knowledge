@@ -110,7 +110,7 @@ Rzeczywisty adres strony internetowej to złożony numeryczny adres IP, ale dzi�
 
 [źródło](https://en.wikipedia.org/wiki/Domain_name_registrar)
 
-Np. Amazon [Route 53](Route%2053.md), GoDaddy
+Np. Amazon [Route 53](../AWS/Route%2053.md), GoDaddy
 
 Rejestrator nazw domen (**Domain Name Registrar**) to firma, która zarządza rezerwacją nazw domen internetowych. Rejestrator musi być akredytowany przez rejestr ogólnych domen najwyższego poziomu (**gTLD** - [Generic top-level domain registry](#Generic%20top-level%20domain%20registry)) lub rejestr krajowych domen najwyższego poziomu (**ccTLD** - [Country code top-level domain](#Country%20code%20top-level%20domain)) Rejestrator działa zgodnie z wytycznymi wskazanych rejestrów nazw domen.
 

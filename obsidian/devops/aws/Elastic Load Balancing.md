@@ -54,9 +54,9 @@ Domyślnie integruje się z [EC2](EC2.md), [Elastic Container Services](Elastic%
 
 Istnieją 4 rodzaje load balancerów:
 
-- [Application Load Balancer](#Application%20Load%20Balancer) (ALB) - do trasowania ruchu HTTP/HTTPS (lub [warstwy 7](../network/Model%20OSI.md#Layer%207))
+- [Application Load Balancer](#Application%20Load%20Balancer) (ALB) - do trasowania ruchu HTTP/HTTPS (lub [warstwy 7](../Network/Model%20OSI.md#Layer%207))
 
-- [Network Load Balancer](#Network%20Load%20Balancer) (ELB) - do trasowania ruchu TCP lub UDP (lub [warstwy 4](../network/Model%20OSI.md#Layer%204))
+- [Network Load Balancer](#Network%20Load%20Balancer) (ELB) - do trasowania ruchu TCP lub UDP (lub [warstwy 4](../Network/Model%20OSI.md#Layer%204))
 
 - [Gateway Load Balancer](#Gateway%20Load%20Balancer) (GWLB) - do trasowania ruchu TCP
 
@@ -68,7 +68,7 @@ Istnieją 4 rodzaje load balancerów:
 
 |                                                       | Application Load Balancer |            Network Load Balancer            |                         Gateway Load Balancer                        |             Classic Load Balancer             |
 | :---------------------------------------------------- | :-----------------------: | :-----------------------------------------: | :------------------------------------------------------------------: | :-------------------------------------------: |
-| **[Model OSI](../network/Model%20OSI.md) layers**                              |   [Layer 7](../network/Model%20OSI.md#Layer%207)   |            [Layer 4](../network/Model%20OSI.md#Layer%204)            | [Layer 3](../network/Model%20OSI.md#Layer%203) Gateway + [Layer 4](../network/Model%20OSI.md#Layer%204) Load Balancing | [Layer 4](../network/Model%20OSI.md#Layer%204) / [Layer 7](../network/Model%20OSI.md#Layer%207) |
+| **[Model OSI](../Network/Model%20OSI.md) layers**                              |   [Layer 7](../Network/Model%20OSI.md#Layer%207)   |            [Layer 4](../Network/Model%20OSI.md#Layer%204)            | [Layer 3](../Network/Model%20OSI.md#Layer%203) Gateway + [Layer 4](../Network/Model%20OSI.md#Layer%204) Load Balancing | [Layer 4](../Network/Model%20OSI.md#Layer%204) / [Layer 7](../Network/Model%20OSI.md#Layer%207) |
 | **[Listener](#Listener)'s rule protocols**                    |     HTTP, HTTPS, gRPC     |                TCP, UDP, TLS                |                                  IP                                  |           TCP, SSL/TLS, HTTP, HTTPS           |
 | **[Target group](#Target%20group) type**                            |  IP, [EC2](EC2.md), [Lambda](Lambda.md)  | IP, [EC2](EC2.md), [Application Load Balancer](#Application%20Load%20Balancer) |                              IP, [EC2](EC2.md)                             |       [EC2](EC2.md) (**no TG, directly only**)      |
 |                                                       |                           |                                             |                                                                      |                                               |
@@ -101,7 +101,7 @@ Istnieją 4 rodzaje load balancerów:
 
 [źródło](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
 
-**Application Load Balancer** podejmuje decyzje dotyczące routingu w [warstwie aplikacji](../network/Model%20OSI.md#Layer%207) (HTTP/HTTPS). Obsługuje routing oparty na ścieżkach i zawartości zapytań. Routing jest wykonywany niezależnie dla każdej [Target group](#Target%20group), nawet jeśli cel jest zarejestrowany w wielu grupach docelowych.
+**Application Load Balancer** podejmuje decyzje dotyczące routingu w [warstwie aplikacji](../Network/Model%20OSI.md#Layer%207) (HTTP/HTTPS). Obsługuje routing oparty na ścieżkach i zawartości zapytań. Routing jest wykonywany niezależnie dla każdej [Target group](#Target%20group), nawet jeśli cel jest zarejestrowany w wielu grupach docelowych.
 
 Serwery aplikacji nie widzą IP clienta bezpośrednio, tylko adres ALB. Prawdziwy adres klienta dostępny przesyłany jest w nagłówkach zapytań **X-Forwarded-For**, **X-Forwarded-Port**, **X-Forwarded-Proto**,
 
@@ -142,7 +142,7 @@ Należy wybrać co najmniej dwie [VPC Subnet](VPC%20Subnet.md). Obowiązują nas
 
 - Każda [VPC Subnet](VPC%20Subnet.md) musi pochodzić z innej strefy [AZ](AWS%20locations.md#Availability%20zone).
 
-- Aby upewnić się, że Load Balancer może się prawidłowo skalować, sprawdź, czy każda [VPC Subnet](VPC%20Subnet.md) dla Load Balancera ma blok [CIDR](../network/CIDR.md) z co najmniej **/27** bitmaską (na przykład 10.0.0.0/27) i co najmniej 8 wolnych adresów IP na [VPC Subnet](VPC%20Subnet.md). Twój load balancer używa tych adresów IP do nawiązywania połączeń z celami. W zależności od profilu ruchu, Load Balancer może skalować się wyżej i zużywać maksymalnie do 100 adresów IP rozłożonych na wszystkie włączone [VPC Subnet](VPC%20Subnet.md)
+- Aby upewnić się, że Load Balancer może się prawidłowo skalować, sprawdź, czy każda [VPC Subnet](VPC%20Subnet.md) dla Load Balancera ma blok [CIDR](../Network/CIDR.md) z co najmniej **/27** bitmaską (na przykład 10.0.0.0/27) i co najmniej 8 wolnych adresów IP na [VPC Subnet](VPC%20Subnet.md). Twój load balancer używa tych adresów IP do nawiązywania połączeń z celami. W zależności od profilu ruchu, Load Balancer może skalować się wyżej i zużywać maksymalnie do 100 adresów IP rozłożonych na wszystkie włączone [VPC Subnet](VPC%20Subnet.md)
 
 #### Local Zone
 
@@ -156,7 +156,7 @@ Można określić jedną lub więcej [VPC Subnet](VPC%20Subnet.md) strefy [lokal
 
 [źródło](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
 
-Network Load Balancer funkcjonuje w [warstwie transportu](../network/Model%20OSI.md#Layer%204) OSI. Może obsłużyć miliony żądań na sekundę. Po otrzymaniu przez Load Balancer żądania połączenia, wybiera on cel z [Target group](#Target%20group) dla domyślnej [Rule](#Rule). Próbuje otworzyć połączenie TCP do wybranego celu na porcie określonym w konfiguracji [Listener](#Listener)a.
+Network Load Balancer funkcjonuje w [warstwie transportu](../Network/Model%20OSI.md#Layer%204) OSI. Może obsłużyć miliony żądań na sekundę. Po otrzymaniu przez Load Balancer żądania połączenia, wybiera on cel z [Target group](#Target%20group) dla domyślnej [Rule](#Rule). Próbuje otworzyć połączenie TCP do wybranego celu na porcie określonym w konfiguracji [Listener](#Listener)a.
 
 NLB tworzy interfejs sieciowy dla każdej [AZ](AWS%20locations.md#Availability%20zone), którą włączysz. Każdy węzeł równoważenia obciążenia w strefie dostępności używa tego interfejsu sieciowego, aby uzyskać **statyczny adres IP**. Kiedy tworzysz load balancer wychodzący do Internetu, możesz opcjonalnie przypisać jeden [Elastic IP](Elastic%20IP.md) na [VPC Subnet](VPC%20Subnet.md).
 
@@ -193,7 +193,7 @@ Połączenia TCP od klienta mają różne porty źródłowe i numery sekwencji, 
 
 **GWLB** umożliwia wdrażanie, skalowanie i zarządzanie wirtualnymi urządzeniami, takimi jak zapory sieciowe, systemy wykrywania i zapobiegania włamaniom oraz systemy głębokiej inspekcji pakietów. Łączy w sobie przejrzystą [Internet Gateway](Internet%20Gateway.md) (czyli pojedynczy punkt wejścia i wyjścia dla całego ruchu) i dystrybuuje ruch, jednocześnie skalując urządzenia wirtualne wraz z zapotrzebowaniem.
 
-Gateway Load Balancer działa na [trzeciej warstwie](../network/Model%20OSI.md#Layer%203) (warstwie sieciowej) [modelu OSI](../network/Model%20OSI.md). Nasłuchuje wszystkich pakietów IP na wszystkich portach i przekazuje ruch do [Target group](#Target%20group), która jest określona w [regule nasłuchu](#Rule). Utrzymuje [Flow Stickiness](#Flow%20Stickiness) do konkretnego urządzenia docelowego używając 5-tuple (dla przepływów TCP/UDP) lub 3-tuple (dla przepływów innych niż TCP/UDP).
+Gateway Load Balancer działa na [trzeciej warstwie](../Network/Model%20OSI.md#Layer%203) (warstwie sieciowej) [modelu OSI](../Network/Model%20OSI.md). Nasłuchuje wszystkich pakietów IP na wszystkich portach i przekazuje ruch do [Target group](#Target%20group), która jest określona w [regule nasłuchu](#Rule). Utrzymuje [Flow Stickiness](#Flow%20Stickiness) do konkretnego urządzenia docelowego używając 5-tuple (dla przepływów TCP/UDP) lub 3-tuple (dla przepływów innych niż TCP/UDP).
 
 Gateway Load Balancer i jego zarejestrowane instancje wirtualnych urządzeń wymieniają ruch aplikacyjny za pomocą protokołu GENEVE na porcie 6081. Obsługuje on maksymalny rozmiar jednostki transmisji (MTU) 8500 bajtów.
 
@@ -225,8 +225,8 @@ CLB zapewnia podstawowe równoważenie obciążenia pomiędzy wieloma [EC2](EC2.
 
 Zalecany jest:
 
-- [Application Load Balancer](#Application%20Load%20Balancer) dla ruchu w [warstwie 7](../network/Model%20OSI.md#Layer%207) i
-- [Network Load Balancer](#Network%20Load%20Balancer) dla ruchu w [warstwie 4](../network/Model%20OSI.md#Layer%204)
+- [Application Load Balancer](#Application%20Load%20Balancer) dla ruchu w [warstwie 7](../Network/Model%20OSI.md#Layer%207) i
+- [Network Load Balancer](#Network%20Load%20Balancer) dla ruchu w [warstwie 4](../Network/Model%20OSI.md#Layer%204)
 
 podczas korzystania z [VPC](VPC.md).
 
@@ -262,7 +262,7 @@ Platforma EC2-Classic została wprowadzona w oryginalnym wydaniu Amazon EC2. Je�
 
 Dostępne dla: [ALB](#Application%20Load%20Balancer), [CLB](#Classic%20Load%20Balancer).
 
-Musisz upewnić się, że LB może komunikować się z zarejestrowanymi celami zarówno na porcie [Listener](#Listener)a jak i porcie [Health Check](#Health%20Check). Za każdym razem, gdy dodajesz [Listener](#Listener) do LB lub aktualizujesz port [Health Check](#Health%20Check) dla [Target group](#Target%20group) używanej przez LB do [trasowania](../network/NAT.md) żądań, musisz sprawdzić, czy [Security group](Security%20group.md) skojarzone z LB zezwalają na ruch na nowym porcie w obu kierunkach. W [VPC](VPC.md) podajesz [Security group](Security%20group.md) dla load balancera, co pozwala Ci wybrać porty i protokoły, które mają być dozwolone.
+Musisz upewnić się, że LB może komunikować się z zarejestrowanymi celami zarówno na porcie [Listener](#Listener)a jak i porcie [Health Check](#Health%20Check). Za każdym razem, gdy dodajesz [Listener](#Listener) do LB lub aktualizujesz port [Health Check](#Health%20Check) dla [Target group](#Target%20group) używanej przez LB do [trasowania](../Network/NAT.md) żądań, musisz sprawdzić, czy [Security group](Security%20group.md) skojarzone z LB zezwalają na ruch na nowym porcie w obu kierunkach. W [VPC](VPC.md) podajesz [Security group](Security%20group.md) dla load balancera, co pozwala Ci wybrać porty i protokoły, które mają być dozwolone.
 
 ## Listener
 
@@ -297,7 +297,7 @@ Gdy warunki dla danej reguły są spełnione, wówczas wykonywane są jej akcje.
 
 Dostępne dla: [ALB](#Application%20Load%20Balancer), [NLB](#Network%20Load%20Balancer),  [CLB](#Classic%20Load%20Balancer).
 
-Aby użyć [Listener](#Listener) HTTPS, musisz wdrożyć co najmniej jeden certyfikat X.509 (sertyfikat serwera [SSL-TLS](../network/SSL-TLS.md)) na swoim load balancerze. Load balancer używa certyfikatu do zakończenia połączenia front-end, a następnie odszyfrowuje żądania od klientów przed wysłaniem ich do celów.
+Aby użyć [Listener](#Listener) HTTPS, musisz wdrożyć co najmniej jeden certyfikat X.509 (sertyfikat serwera [SSL-TLS](../Network/SSL-TLS.md)) na swoim load balancerze. Load balancer używa certyfikatu do zakończenia połączenia front-end, a następnie odszyfrowuje żądania od klientów przed wysłaniem ich do celów.
 
 ![](attachments/ELB%20SSL.png)
 
@@ -305,15 +305,15 @@ Aby użyć [Listener](#Listener) HTTPS, musisz wdrożyć co najmniej jeden certy
 
 - Podczas tworzenia listenera HTTPS należy podać dokładnie jeden certyfikat. Certyfikat ten nazywany jest **certyfikatem domyślnym**. Po utworzeniu listenera HTTPS można zastąpić domyślny certyfikat.
 
-- Podczas tworzenia certyfikatu do użycia z load balancerem należy określić [nazwę domeny](../network/DNS.md).
+- Podczas tworzenia certyfikatu do użycia z load balancerem należy określić [nazwę domeny](../Network/DNS.md).
 
-- Klient może użyć Server Name Indication ([SNI](../network/SSL-TLS.md#Server%20Name%20Indication)), aby nazwę hosta. Dostępne dla: [ALB](#Application%20Load%20Balancer), [NLB](#Network%20Load%20Balancer).
+- Klient może użyć Server Name Indication ([SNI](../Network/SSL-TLS.md#Server%20Name%20Indication)), aby nazwę hosta. Dostępne dla: [ALB](#Application%20Load%20Balancer), [NLB](#Network%20Load%20Balancer).
 
-- Można określić dodatkowe certyfikaty na **liście certyfikatów** do obsługi wielu domen. W takim przypadku domyślny certyfikat jest używany tylko wtedy, gdy klient łączy się bez użycia protokołu [SNI](../network/SSL-TLS.md#Server%20Name%20Indication) do określenia nazwy hosta lub gdy na liście certyfikatów nie ma pasujących certyfikatów.
+- Można określić dodatkowe certyfikaty na **liście certyfikatów** do obsługi wielu domen. W takim przypadku domyślny certyfikat jest używany tylko wtedy, gdy klient łączy się bez użycia protokołu [SNI](../Network/SSL-TLS.md#Server%20Name%20Indication) do określenia nazwy hosta lub gdy na liście certyfikatów nie ma pasujących certyfikatów.
 
 > Zaleca się tworzenie certyfikatów dla load balancera za pomocą [Certificate Manager](Certificate%20Manager.md) (ACM). ACM integruje się z Elastic Load Balancing, dzięki czemu można wdrożyć certyfikat na load balancerze.
 
-> Alternatywnie można użyć narzędzi SSL/TLS do utworzenia żądania podpisania certyfikatu ([CSR](../network/SSL-TLS.md#CSR)), następnie uzyskać podpisanie [CSR](../network/SSL-TLS.md#CSR) przez [CA](../network/SSL-TLS.md#CA) w celu utworzenia certyfikatu, a następnie zaimportować certyfikat do ACM lub przesłać certyfikat do AWS Identity and Access Management ([IAM](IAM.md)).
+> Alternatywnie można użyć narzędzi SSL/TLS do utworzenia żądania podpisania certyfikatu ([CSR](../Network/SSL-TLS.md#CSR)), następnie uzyskać podpisanie [CSR](../Network/SSL-TLS.md#CSR) przez [CA](../Network/SSL-TLS.md#CA) w celu utworzenia certyfikatu, a następnie zaimportować certyfikat do ACM lub przesłać certyfikat do AWS Identity and Access Management ([IAM](IAM.md)).
 
 Jeśli nie określisz dodatkowych certyfikatów, ale musisz hostować wiele bezpiecznych aplikacji za pośrednictwem jednego load balancera, możesz użyć certyfikatu wieloznacznego lub dodać do certyfikatu Subject Alternative Name (SAN) dla każdej dodatkowej domeny.
 

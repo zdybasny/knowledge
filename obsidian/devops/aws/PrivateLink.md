@@ -62,7 +62,7 @@ Pełna lista wspieranych usług dostępna jest w dokumentacji AWS pod [tym adr
 
 **Interface endpoint** może otrzymać ruch na jeden z dwóch sposobów:
 
-- wykorzystanie prywatnego [DNS](../network/DNS.md) w [VPC](VPC.md) – w tym rozwiązaniu cały ruch z [VPC](VPC.md) przekierowany jest przez ten **endpoint**; nie wymaga żadnych zmian w kodzie);
+- wykorzystanie prywatnego [DNS](../Network/DNS.md) w [VPC](VPC.md) – w tym rozwiązaniu cały ruch z [VPC](VPC.md) przekierowany jest przez ten **endpoint**; nie wymaga żadnych zmian w kodzie);
 - korzystanie z prywatnych adresów **endpointów** -  klienci używają ich zamiast domyślnych adresów usług lub załączają nagłówek `Host` (tak jest w przypadku endpointa dla [API Gateway](API%20Gateway.md)); wymagana jest rekonfiguracja klientów.
 
 ## Gateway Load Balancer endpoint

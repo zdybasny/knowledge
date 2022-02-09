@@ -1,1 +1,1 @@
-[Region](AWS%20locations.md#Region)
+[Region](../devops/AWS/AWS%20locations.md#Region)

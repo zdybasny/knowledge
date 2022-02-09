@@ -8,7 +8,7 @@ Umożliwia to posiadanie wirtualnej sieci (VPN), którą definiujesz i możesz k
 
 Można skonfigurować:
 
-- zakres adresów IP [CIDR](../network/CIDR.md) [CIDR](../network/CIDR.md)),
+- zakres adresów IP [CIDR](../Network/CIDR.md) [CIDR](../Network/CIDR.md)),
 - podsieci ([VPC Subnet](VPC%20Subnet.md)),
 - tabele tras ([VPC Route table](VPC%20Route%20table.md)),
 - bramy sieciowe ([Internet Gateway](Internet%20Gateway.md), [NAT Gateway](NAT%20devices.md#NAT%20Gateway)).
@@ -16,7 +16,7 @@ Można skonfigurować:
 VPC oferuje m.in.:
 
 - wystawianie pewnych obszarów dostępnych z Internetu, np. serwer WWW,
-- translacje adresów sieciowych lub [NAT](../network/NAT.md) dla tych prywatnych podsieci,
+- translacje adresów sieciowych lub [NAT](../Network/NAT.md) dla tych prywatnych podsieci,
 - łączenie VPC między sobą,
 - prywatne połączenia z wieloma usługami AWS.
 

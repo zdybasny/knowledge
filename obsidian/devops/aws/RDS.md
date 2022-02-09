@@ -107,7 +107,7 @@ Jeśli to konieczne, możesz odzyskać bazę danych do dowolnego punktu w czasie
 
 Aby zacząć replikować instancję, która już świadczy usługi, wystarczy ją włączyć. Nowa replika odczytu jest tworzona przez RDS przy użyciu snapshota. Przy tej operacji nie ma żadnego przestoju w instancji podstawowej.
 
-Repliki odczytu dodają nowe endpointy z własną nazwą [DNS](../network/DNS.md). Musimy zatem zmienić naszą aplikację tak, aby odwoływała się do nich indywidualnie, aby zrównoważyć obciążenie odczytem.
+Repliki odczytu dodają nowe endpointy z własną nazwą [DNS](../Network/DNS.md). Musimy zatem zmienić naszą aplikację tak, aby odwoływała się do nich indywidualnie, aby zrównoważyć obciążenie odczytem.
 
 ![](attachments/RDS%20Read%20Replica.png)
 
