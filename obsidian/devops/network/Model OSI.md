@@ -14,7 +14,7 @@ Model OSI (ang. **Open Systems Interconnection** Model) składaj się z siedmiu 
 
 Każdy protokół sieciowy przypisany jest do jednej z warstw. Poszczególne warstwy realizują w związku z tym różne usługi. Z usług dostarczanych przez warstwę korzysta warstwa znajdująca się bezpośrednio nad nią. Jest to tak zwany warstwowy model usług.
 
-![[Model OSI.png]]
+![Model OSI.png](Model%20OSI.png.md)
 
 > Warstwowy model sieci oferuje nie tylko pojęciowe i strukturalne uporządkowanie, ale także umożliwia przezroczyste dla wyższych warstw zmiany sposobu realizacji usług znajdujących się poniżej. Dobrym przykładem korzyści płynących ze ścisłego powiązania warstw z realizowanymi przez nie funkcjami jest dynamiczny rozwój sieci bezprzewodowych w standardzie 802.11. Dla przeglądarki internetowej używającej na poziomie warstwy aplikacji protokołu HTTP, czy dla klienta FTP nie ma znaczenia czy na warstwie łącza danych używany jest protokół Ethernet 802.11, czy też jakiś inny (pod warunkiem, że realizuje funkcje przypisane do tej warstwy).
 
@@ -70,7 +70,7 @@ Na poziomie warstwy sieciowej wprowadzone jest także pojęcie gniazda (ang. **s
 
 **Wartswa aplikacji**
 
-**Pzykładowe protokoły**: HTTP, [[DNS]], POP3, FTP, SSH.
+**Pzykładowe protokoły**: HTTP, [DNS](DNS.md), POP3, FTP, SSH.
 
  Zadania realizowane przez tą warstwę są najbardziej różnorodne i jednocześnie najbliższe potrzebom użytkownika. Na warstwie aplikacji realizowane są funkcje, które są niezbędne do świadczenia usług końcowych, takich jak dyski sieciowe, udostępnianie drukarek czy treści. 
  
@@ -82,4 +82,4 @@ Na poziomie warstwy sieciowej wprowadzone jest także pojęcie gniazda (ang. **s
  
  Natomiast w hoście docelowym następuje proces odwrotny (ang. **decapsulation**). Najpierw z bitów składana jest ramka. Później po odjęciu nagłówka warstwy łącza danych powstaje datagram. Kolejnymi krokami jest odcięcie nagłówków warstwy sieci i transportowej i przekazanie do warstwy aplikacji samego komunikatu.
 
- ![[OSI encapsulation.png]]
+ ![OSI encapsulation.png](OSI%20encapsulation.png.md)

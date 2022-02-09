@@ -1,1 +1,1 @@
-[[AWS locations#Region|Region]]
+[Region](AWS%20locations.md#Region)

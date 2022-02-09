@@ -8,15 +8,15 @@ Umożliwia to posiadanie wirtualnej sieci (VPN), którą definiujesz i możesz k
 
 Można skonfigurować:
 
-- zakres adresów IP ([[CIDR]]),
-- podsieci ([[VPC Subnet]]),
-- tabele tras ([[VPC Route table]]),
-- bramy sieciowe ([[Internet Gateway]], [[NAT devices#NAT Gateway|NAT Gateway]]).
+- zakres adresów IP [CIDR](../network/CIDR.md) [CIDR](../network/CIDR.md)),
+- podsieci ([VPC Subnet](VPC%20Subnet.md)),
+- tabele tras ([VPC Route table](VPC%20Route%20table.md)),
+- bramy sieciowe ([Internet Gateway](Internet%20Gateway.md), [NAT Gateway](NAT%20devices.md#NAT%20Gateway)).
 
 VPC oferuje m.in.:
 
 - wystawianie pewnych obszarów dostępnych z Internetu, np. serwer WWW,
-- translacje adresów sieciowych lub [[NAT]] dla tych prywatnych podsieci,
+- translacje adresów sieciowych lub [NAT](../network/NAT.md) dla tych prywatnych podsieci,
 - łączenie VPC między sobą,
 - prywatne połączenia z wieloma usługami AWS.
 
@@ -24,10 +24,10 @@ Możesz mieć pewność, że wrażliwa aplikacja nie musi wysyłać ruchu przez 
 
 # Trasowanie VPC
 
-![[VPC Route table#Trasowanie VPC]]
+![Trasowanie VPC](VPC%20Route%20table.md#Trasowanie%20VPC)
 
 # VPC Endpoint
 
 [źródło](https://rozchmurzeni.pl/vpc-endpoint/)
 
-**VPC Endpoint** to usługa pozwalająca na wpięcie do naszego VPC publicznych usług AWS. Przykładem takich usług są: S3, DynamoDB, API Gateway, Systems Manager, etc. Pod spodem **endpointy** oparte są na [[PrivateLink]], dzięki czemu cały ruch nie opuszcza sieci AWS. 
+**VPC Endpoint** to usługa pozwalająca na wpięcie do naszego VPC publicznych usług AWS. Przykładem takich usług są: S3, DynamoDB, API Gateway, Systems Manager, etc. Pod spodem **endpointy** oparte są na [PrivateLink](PrivateLink.md), dzięki czemu cały ruch nie opuszcza sieci AWS. 

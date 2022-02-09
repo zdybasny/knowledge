@@ -2,75 +2,75 @@
 
 [źródło](https://www.cloudflare.com/learning/dns/what-is-dns/)
 
-System nazw domen (**DNS** - **Domain Name System**) jest książką telefoniczną Internetu. Ludzie uzyskują dostęp do informacji online poprzez [[#Domain Name]], takie jak `nytimes.com` lub `espn.com`. Przeglądarki internetowe komunikują się za pomocą adresów IP (Internet Protocol). DNS tłumaczy nazwy domen na adresy IP, dzięki czemu przeglądarki mogą załadować zasoby internetowe.
+System nazw domen (**DNS** - **Domain Name System**) jest książką telefoniczną Internetu. Ludzie uzyskują dostęp do informacji online poprzez [Domain Name](#Domain%20Name), takie jak `nytimes.com` lub `espn.com`. Przeglądarki internetowe komunikują się za pomocą adresów IP (Internet Protocol). DNS tłumaczy nazwy domen na adresy IP, dzięki czemu przeglądarki mogą załadować zasoby internetowe.
 
 Każde urządzenie podłączone do Internetu posiada unikalny adres IP, który jest wykorzystywany przez inne maszyny w celu odnalezienia urządzenia. Serwery DNS eliminują konieczność zapamiętywania przez ludzi adresów IP, takich jak `192.168.1.1` (w IPv4), lub bardziej złożonych, nowszych alfanumerycznych adresów IP, takich jak `2400:cb00:2048:1::c629:d7a2` (w IPv6).
 
 ##### Spis treści
 
-- [[#DNS Resolver]]
-  - [[#DHCP protocol]]
-- [[#DNS Server]]
-  - [[#DNS recursor]]
-  - [[#Nameserver]]
-    - [[#Root nameserver]]
-    - [[#TLD nameserver]]
-    - [[#Authoritative nameserver]]
-- [[#Domain Name]]
-  - [[#Fully Qualified Domain Name]]
-- [[#Domain Name Registrar]]
-- [[#DNS zone]]
-- [[#Zone File]]
-  - [[#DNS Record]]
-    - [[#A]]
-    - [[#AAAA]]
-    - [[#CNAME]]
-    - [[#NS]]
-    - [[#SOA]]
-    - [[#MX]]
-    - [[#SRV]]
-  - [[#time-to-live]]
-- [[#Domain levels]]
-  - [[#Top Level Domain]]
-    - [[#Generic top-level domain]]
-    - [[#Country code top-level domain]]
-  - [[#Second Level Domain]]
-- [[#DNS protocol]]
+- [DNS Resolver](#DNS%20Resolver)
+  - [DHCP protocol](#DHCP%20protocol)
+- [DNS Server](#DNS%20Server)
+  - [DNS recursor](#DNS%20recursor)
+  - [Nameserver](#Nameserver)
+    - [Root nameserver](#Root%20nameserver)
+    - [TLD nameserver](#TLD%20nameserver)
+    - [Authoritative nameserver](#Authoritative%20nameserver)
+- [Domain Name](#Domain%20Name)
+  - [Fully Qualified Domain Name](#Fully%20Qualified%20Domain%20Name)
+- [Domain Name Registrar](#Domain%20Name%20Registrar)
+- [DNS zone](#DNS%20zone)
+- [Zone File](#Zone%20File)
+  - [DNS Record](#DNS%20Record)
+    - [A](#A)
+    - [AAAA](#AAAA)
+    - [CNAME](#CNAME)
+    - [NS](#NS)
+    - [SOA](#SOA)
+    - [MX](#MX)
+    - [SRV](#SRV)
+  - [time-to-live](#time-to-live)
+- [Domain levels](#Domain%20levels)
+  - [Top Level Domain](#Top%20Level%20Domain)
+    - [Generic top-level domain](#Generic%20top-level%20domain)
+    - [Country code top-level domain](#Country%20code%20top-level%20domain)
+  - [Second Level Domain](#Second%20Level%20Domain)
+- [DNS protocol](#DNS%20protocol)
 
 # DNS Resolver
 
 DNS resolver to klient DNS w systemie operacyjnym, który zajmuje się rowiązywaniem nazwy (odpytaniem DNS).
 Klientami systemu DNS są komputery oraz inne serwery DNS.
 
-Każdy system operacyjny ma wbudowany resolwer, który do działania potrzebuje adresu najbliższego serwera DNS. Adres ten wpisujemy, gdy konfigurujemy adres IP ręcznie lub jest on dostarczany przez serwer [[#DHCP protocol|DHCP]].
+Każdy system operacyjny ma wbudowany resolwer, który do działania potrzebuje adresu najbliższego serwera DNS. Adres ten wpisujemy, gdy konfigurujemy adres IP ręcznie lub jest on dostarczany przez serwer [DHCP](#DHCP%20protocol).
 
 ## DHCP protocol
 
 [źródło](https://pl.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
-**Dynamic Host Configuration Protocol** (protokół dynamicznego konfigurowania hostów) jest to protokół komunikacyjny umożliwiający hostom uzyskanie od serwera danych konfiguracyjnych, np. adresu IP hosta, adresu IP bramy sieciowej, adresu [[#DNS Server]], maski podsieci.
+**Dynamic Host Configuration Protocol** (protokół dynamicznego konfigurowania hostów) jest to protokół komunikacyjny umożliwiający hostom uzyskanie od serwera danych konfiguracyjnych, np. adresu IP hosta, adresu IP bramy sieciowej, adresu [DNS Server](#DNS%20Server), maski podsieci.
 
 # DNS Server
 
 Do ładowania strony internetowej zaangażowane są 4 serwery DNS:
 
-- [[#DNS recursor]],
-- [[#Root nameserver]],
-- [[#TLD nameserver]],
-- [[#Authoritative nameserver]].
+- [DNS recursor](#DNS%20recursor),
+- [Root nameserver](#Root%20nameserver),
+- [TLD nameserver](#TLD%20nameserver),
+- [Authoritative nameserver](#Authoritative%20nameserver).
 
-![[DNS servers.png]]
+![DNS servers.png](../network/DNS.md%20servers.png.md)
 
 ## DNS recursor
 
-**Rekursor DNS**  jest serwerem zaprojektowanym do odbierania zapytań z [[#DNS Resolver|maszyn klienckich]] poprzez aplikacje takie jak przeglądarki internetowe. Zazwyczaj rekursor jest odpowiedzialny za wykonanie dodatkowych zapytań w celu zaspokojenia zapytania DNS [[#DNS Resolver|klienta]].
+**Rekursor DNS**  jest serwerem zaprojektowanym do odbierania zapytań z [maszyn klienckich](#DNS%20Resolver) poprzez aplikacje takie jak przeglądarki internetowe. Zazwyczaj rekursor jest odpowiedzialny za wykonanie dodatkowych zapytań w celu zaspokojenia zapytania DNS [klienta](#DNS%20Resolver).
 
 > Może być postrzegany jako bibliotekarz, który jest proszony o znalezienie konkretnej książki gdzieś w bibliotece
 
 ## Nameserver
 
-**Serwer nazw** jest rodzajem serwera DNS. Jest to serwer, który przechowuje wszystkie rekordy DNS dla domeny, w tym rekordy [[#A]], [[#MX]] lub [[#CNAME]].
+**Serwer nazw** jest rodzajem serwera DNS. Jest to serwer, który przechowuje wszystkie rekordy DNS dla domeny, w tym rekordy [A](#A), [MX](#MX) lub [CNAME](#CNAME).
 
-Prawie wszystkie domeny polegają na wielu **serwerach nazw**, aby zwiększyć niezawodność: jeśli jeden **serwer nazw** przestanie działać lub jest niedostępny, zapytania DNS mogą przejść do innego. Zazwyczaj istnieje jeden [[#Root nameserver]] i kilka drugorzędnych, które przechowują dokładne kopie rekordów DNS. Aktualizacja głównego serwera nazw spowoduje aktualizację również drugorzędnych serwerów nazw.
+Prawie wszystkie domeny polegają na wielu **serwerach nazw**, aby zwiększyć niezawodność: jeśli jeden **serwer nazw** przestanie działać lub jest niedostępny, zapytania DNS mogą przejść do innego. Zazwyczaj istnieje jeden [Root nameserver](#Root%20nameserver) i kilka drugorzędnych, które przechowują dokładne kopie rekordów DNS. Aktualizacja głównego serwera nazw spowoduje aktualizację również drugorzędnych serwerów nazw.
 
 Gdy używanych jest wiele **serwerów nazw** (jak w większości przypadków), **rekordy NS** powinny wymieniać więcej niż jeden serwer.
 
@@ -82,7 +82,7 @@ Gdy używanych jest wiele **serwerów nazw** (jak w większości przypadków), *
 
 ### TLD nameserver
 
-Server [[#Top Level Domain TLD]]  jest kolejnym krokiem w poszukiwaniu konkretnego adresu IP i przechowuje ostatnią część nazwy hosta (w `example.com`, serwer TLD to `com`).
+Server [Top Level Domain TLD](#Top%20Level%20Domain%20TLD)  jest kolejnym krokiem w poszukiwaniu konkretnego adresu IP i przechowuje ostatnią część nazwy hosta (w `example.com`, serwer TLD to `com`).
 
 > Może być postrzegany jako konkretny regał z książkami w bibliotece.
 
@@ -104,28 +104,28 @@ Rzeczywisty adres strony internetowej to złożony numeryczny adres IP, ale dzi�
 
 **FQDN** to w pełni kwalifikowana nazwa domeny, która podaje  jej dokładną lokalizację w hierarchii rekordów DNS. J
 
-![[DNS FQDN.png]]
+![DNS FQDN.png](../network/DNS.md%20FQDN.png.md)
 
 # Domain Name Registrar
 
 [źródło](https://en.wikipedia.org/wiki/Domain_name_registrar)
 
-Np. Amazon [[Route 53]], GoDaddy
+Np. Amazon [Route 53](Route%2053.md), GoDaddy
 
-Rejestrator nazw domen (**Domain Name Registrar**) to firma, która zarządza rezerwacją nazw domen internetowych. Rejestrator musi być akredytowany przez rejestr ogólnych domen najwyższego poziomu (**gTLD** - [[#Generic top-level domain registry]]) lub rejestr krajowych domen najwyższego poziomu (**ccTLD** - [[#Country code top-level domain]]) Rejestrator działa zgodnie z wytycznymi wskazanych rejestrów nazw domen.
+Rejestrator nazw domen (**Domain Name Registrar**) to firma, która zarządza rezerwacją nazw domen internetowych. Rejestrator musi być akredytowany przez rejestr ogólnych domen najwyższego poziomu (**gTLD** - [Generic top-level domain registry](#Generic%20top-level%20domain%20registry)) lub rejestr krajowych domen najwyższego poziomu (**ccTLD** - [Country code top-level domain](#Country%20code%20top-level%20domain)) Rejestrator działa zgodnie z wytycznymi wskazanych rejestrów nazw domen.
 
 # DNS zone
 
-DNS jest podzielony na wiele różnych **stref**. Strefy te rozróżniają odrębnie zarządzane obszary w przestrzeni nazw DNS. **Strefa DNS** jest częścią przestrzeni nazw DNS, która jest zarządzana przez konkretną organizację lub administratora. **Strefa DNS** jest przestrzenią administracyjną, która pozwala na bardziej granularną kontrolę komponentów DNS, takich jak [[#Authoritative nameserver]]. Przestrzeń nazw domen jest drzewem hierarchicznym, z domeną główną DNS na szczycie. **Strefa DNS** rozpoczyna się od domeny w drzewie i może również rozciągać się w dół do subdomen, tak że wiele
+DNS jest podzielony na wiele różnych **stref**. Strefy te rozróżniają odrębnie zarządzane obszary w przestrzeni nazw DNS. **Strefa DNS** jest częścią przestrzeni nazw DNS, która jest zarządzana przez konkretną organizację lub administratora. **Strefa DNS** jest przestrzenią administracyjną, która pozwala na bardziej granularną kontrolę komponentów DNS, takich jak [Authoritative nameserver](#Authoritative%20nameserver). Przestrzeń nazw domen jest drzewem hierarchicznym, z domeną główną DNS na szczycie. **Strefa DNS** rozpoczyna się od domeny w drzewie i może również rozciągać się w dół do subdomen, tak że wiele
 subdomen może być zarządzanych przez jeden podmiot.
 
-![[DNS zone.png]]
+![DNS zone.png](../network/DNS.md%20zone.png.md)
 
-Częstym błędem jest utożsamianie **strefy DNS** z nazwą domeny lub pojedynczym [[#DNS Server]]. W rzeczywistości, **strefa DNS** może zawierać wiele subdomen i wiele stref może istnieć na tym samym serwerze. **Strefy DNS** nie muszą być fizycznie odseparowane od siebie, strefy są ściśle wykorzystywane do przekazywania kontroli.
+Częstym błędem jest utożsamianie **strefy DNS** z nazwą domeny lub pojedynczym [DNS Server](#DNS%20Server). W rzeczywistości, **strefa DNS** może zawierać wiele subdomen i wiele stref może istnieć na tym samym serwerze. **Strefy DNS** nie muszą być fizycznie odseparowane od siebie, strefy są ściśle wykorzystywane do przekazywania kontroli.
 
 # Zone File
 
-**Plik strefy** jest zwykłym plikiem tekstowym przechowywanym w [[#DNS Server]], który zawiera rzeczywistą reprezentację [[#DNS zone]] i zawiera wszystkie [[#DNS Record|rekordy DNS]] dla każdej domeny w strefie. **Pliki strefy** muszą zawsze zaczynać się od rekordu [[#SOA]] (Start of Authority), który zawiera ważne informacje, w tym informacje kontaktowe administratora strefy.
+**Plik strefy** jest zwykłym plikiem tekstowym przechowywanym w [DNS Server](#DNS%20Server), który zawiera rzeczywistą reprezentację [DNS zone](#DNS%20zone) i zawiera wszystkie [rekordy DNS](#DNS%20Record) dla każdej domeny w strefie. **Pliki strefy** muszą zawsze zaczynać się od rekordu [SOA](#SOA) (Start of Authority), który zawiera ważne informacje, w tym informacje kontaktowe administratora strefy.
 
 ## DNS Record
 
@@ -135,27 +135,27 @@ Np. A, AAAA, CNAME, NS
 
 **Rekordy DNS** są instrukcjami, które żyją w autorytatywnych serwerach DNS i dostarczają informacji o domenie, w tym jaki adres IP jest związany z tą domeną i jak obsługiwać żądania dla tej domeny.
 
-Rekordy te składają się z serii plików tekstowych napisanych **składnią DNS**. Składnia DNS to po prostu ciąg znaków używanych jako komendy, które mówią serwerowi DNS, co ma robić. Wszystkie rekordy DNS mają również 'TTL', co oznacza [[#time-to-live]], i wskazuje jak często serwer DNS będzie odświeżał dany rekord.
+Rekordy te składają się z serii plików tekstowych napisanych **składnią DNS**. Składnia DNS to po prostu ciąg znaków używanych jako komendy, które mówią serwerowi DNS, co ma robić. Wszystkie rekordy DNS mają również 'TTL', co oznacza [time-to-live](#time-to-live), i wskazuje jak często serwer DNS będzie odświeżał dany rekord.
 
 Najczęściej stosowane typu rekordów to:
 
 ### A
 
-Rekord **A** oznacza "adres" i jest to najbardziej podstawowy typ rekordu DNS: wskazuje on adres IPv4 danej domeny. Rekordy A przechowują tylko adresy IPv4. Jeśli strona ma adres IPv6, zamiast tego użyje rekordu [[#AAAA]].
+Rekord **A** oznacza "adres" i jest to najbardziej podstawowy typ rekordu DNS: wskazuje on adres IPv4 danej domeny. Rekordy A przechowują tylko adresy IPv4. Jeśli strona ma adres IPv6, zamiast tego użyje rekordu [AAAA](#AAAA).
 
 Np. jeśli wyciągniesz rekordy DNS z cloudflare.com, rekord **A** zwraca obecnie adres IP o wartości: 104.17.210.9.
 
 ### AAAA
 
-Rekord **AAAA** dopasowuje nazwę domeny do adresu IPv6. Rekordy **AAAA** są dokładnie takie same jak rekordy [[#A]], z tą różnicą, że przechowują adres IPv6 domeny zamiast jej adresu IPv4.
+Rekord **AAAA** dopasowuje nazwę domeny do adresu IPv6. Rekordy **AAAA** są dokładnie takie same jak rekordy [A](#A), z tą różnicą, że przechowują adres IPv6 domeny zamiast jej adresu IPv4.
 
 IPv6 jest najnowszą wersją protokołu internetowego (IP). Jedną z istotnych różnic między IPv6 a IPv4 jest to, że adresy IPv6 są dłuższe niż adresy IPv4. IPv6 oferują wykładniczo więcej permutacji, a tym samym znacznie więcej możliwych adresów IP.
 
 ### CNAME
 
-Rekord **CNAME** (**canonical name** - nazwa kanoniczna) jest używany zamiast rekordu [[#A]], gdy domena lub subdomena jest aliasem innej domeny. Wszystkie rekordy **CNAME** muszą wskazywać na domenę, nigdy na adres IP. Domena z rekordem CNAME może wskazywać na inną domenę z rekordem **CNAME** lub na domenę z rekordem [[#A]].
+Rekord **CNAME** (**canonical name** - nazwa kanoniczna) jest używany zamiast rekordu [A](#A), gdy domena lub subdomena jest aliasem innej domeny. Wszystkie rekordy **CNAME** muszą wskazywać na domenę, nigdy na adres IP. Domena z rekordem CNAME może wskazywać na inną domenę z rekordem **CNAME** lub na domenę z rekordem [A](#A).
 
-Często, gdy strony mają subdomeny takie jak blog.example.com lub shop.example.com, te subdomeny będą miały rekordy **CNAME**, które wskazują na domenę główną (example.com). W ten sposób, jeśli adres IP hosta się zmieni, tylko rekord DNS [[#A]] dla domeny głównej musi zostać zaktualizowany, a wszystkie rekordy CNAME będą podążać za zmianami dokonanymi w domenie głównej.
+Często, gdy strony mają subdomeny takie jak blog.example.com lub shop.example.com, te subdomeny będą miały rekordy **CNAME**, które wskazują na domenę główną (example.com). W ten sposób, jeśli adres IP hosta się zmieni, tylko rekord DNS [A](#A) dla domeny głównej musi zostać zaktualizowany, a wszystkie rekordy CNAME będą podążać za zmianami dokonanymi w domenie głównej.
 
 ### NS
 
@@ -173,7 +173,7 @@ Wszystkie strefy DNS potrzebują rekordu **SOA** w celu zachowania zgodności ze
 
 ### MX
 
-Rekord MX (**mail exchange** - wymiany poczty) kieruje pocztę elektroniczną do serwera pocztowego. **MX** wskazuje, w jaki sposób wiadomości e-mail powinny być kierowane zgodnie z protokołem **SMTP** (Simple Mail Transfer Protocol). Podobnie jak [[#CNAME]], **MX** musi zawsze wskazywać na inną domenę.
+Rekord MX (**mail exchange** - wymiany poczty) kieruje pocztę elektroniczną do serwera pocztowego. **MX** wskazuje, w jaki sposób wiadomości e-mail powinny być kierowane zgodnie z protokołem **SMTP** (Simple Mail Transfer Protocol). Podobnie jak [CNAME](#CNAME), **MX** musi zawsze wskazywać na inną domenę.
 
 ### SRV
 
@@ -183,7 +183,7 @@ Rekord **SRV** (**service)**) określa **hosta** i **port** dla konkretnych usł
 
 [źródło](https://support.google.com/a/answer/48090)
 
-Wartość **TTL** to wartość w [[#DNS Record]], która określa liczbę sekund między wprowadzaniem kolejnych zmian w rekordach. Każdy z rekordów w domenie ma wartość **TTL**. Bieżąca wartość TTL rekordu określa, jak długo trzeba czekać na zastosowanie wprowadzonych zmian.
+Wartość **TTL** to wartość w [DNS Record](#DNS%20Record), która określa liczbę sekund między wprowadzaniem kolejnych zmian w rekordach. Każdy z rekordów w domenie ma wartość **TTL**. Bieżąca wartość TTL rekordu określa, jak długo trzeba czekać na zastosowanie wprowadzonych zmian.
 
 > Google zaleca ustawienie wartości TTL na 3600, co oznacza, że serwery internetowe będą sprawdzać aktualność rekordu co godzinę.
 
@@ -201,7 +201,7 @@ Np. .com, .gov, .org
 
 Ogólne domeny najwyższego poziomu (**gTLD**) są jedną z kategorii domen najwyższego poziomu (TLD) utrzymywanych przez Internet Assigned Numbers Authority (IANA) do użytku w systemie nazw domen w Internecie. Domena najwyższego poziomu jest ostatnim poziomem każdej w pełni kwalifikowanej nazwy domeny.
 
-Są one nazywane ogólnymi z powodów historycznych; początkowo były one przeciwstawiane [[#Country code top-level domain|krajowym TLD]] w RFC 920.
+Są one nazywane ogólnymi z powodów historycznych; początkowo były one przeciwstawiane [krajowym TLD](#Country%20code%20top-level%20domain) w RFC 920.
 
 ### Country code top-level domain
 
@@ -217,14 +217,14 @@ Domena najwyższego poziomu z kodem kraju (**ccTLD**) jest internetową domeną 
 
 Np. **amazon**.com, **google**.com
 
-Domena drugiego poziomu (**SLD**) to nazwa znajdująca się na lewo od rozszerzenia domeny [[#Top Level Domain]].
+Domena drugiego poziomu (**SLD**) to nazwa znajdująca się na lewo od rozszerzenia domeny [Top Level Domain](#Top%20Level%20Domain).
 **SLD** jest pierwszym punktem kontaktu internautów z witryną. To najbardziej zapamiętywalna część adresu URL i dlatego jest najważniejsza.
 
 # DNS protocol
 
 [źródło](https://pl.wikipedia.org/wiki/Domain_Name_System)
 
-**DNS** to również protokół komunikacyjny opisujący sposób łączenia się [[#DNS Resolver|klientów]] z [[#DNS Server|serwerami DNS]]. Częścią specyfikacji protokołu jest również zestaw zaleceń, jak aktualizować wpisy w bazach domen internetowych.
+**DNS** to również protokół komunikacyjny opisujący sposób łączenia się [klientów](#DNS%20Resolver) z [serwerami DNS](#DNS%20Server). Częścią specyfikacji protokołu jest również zestaw zaleceń, jak aktualizować wpisy w bazach domen internetowych.
 
 Standardowy port DNS to 53.
 

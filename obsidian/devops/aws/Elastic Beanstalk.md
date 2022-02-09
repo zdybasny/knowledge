@@ -4,32 +4,32 @@
 
 **Elastic Beanstalk** umożliwia szybkie wdrażanie aplikacje w chmurze AWS i zarządzanie nimi bez konieczności poznawania infrastruktury, na której działają te aplikacje. Wystarczy załadować aplikację, a Elastic Beanstalk automatycznie zajmie się szczegółami dostarczania, m.in:
 
-- pojemności ([[EC2]]),
+- pojemności ([EC2](EC2.md)),
 - środowiska uruchomieniowego (np. JRE, Python 3 RE)
-- pamięci masowej ([[Elastic Block Store]]),
-- firewalla ([[Security group]]),
-- równoważenia obciążenia ([[Elastic Load Balancing]]),
-- skalowania ([[Auto Scaling]]),
+- pamięci masowej ([Elastic Block Store](Elastic%20Block%20Store.md)),
+- firewalla ([Security group](Security%20group.md)),
+- równoważenia obciążenia ([Elastic Load Balancing](Elastic%20Load%20Balancing.md)),
+- skalowania ([Auto Scaling](Auto%20Scaling.md)),
 - monitorowania stanu aplikacji.
 
-Nadal jednaj pozostaje możliwość konfiguracji [[#Environment|środowiska]] Beanstalk.
+Nadal jednaj pozostaje możliwość konfiguracji [środowiska](#Environment) Beanstalk.
 
 ##### Spis treści
 
-- [[#Komponenty i koncepcje]]
-  - [[#Platform]]
-    - [[#Obsługiwane platformy]]
-  - [[#Application]]
-  - [[#Application Version]]
-  - [[#Environment]]
-  - [[#Environment Tier]]
-    - [[#Web server environment]]
-    - [[#Worker environment]]
-      - [[#Daemon SQS]]
-  - [[#Environment configuration]]
-- [[#Wdrożenie aplikacji]]
-- [[#Pricing]]
-- [[#See also]]
+- [Komponenty i koncepcje](#Komponenty%20i%20koncepcje)
+  - [Platform](#Platform)
+    - [Obsługiwane platformy](#Obsługiwane%20platformy)
+  - [Application](#Application)
+  - [Application Version](#Application%20Version)
+  - [Environment](#Environment)
+  - [Environment Tier](#Environment%20Tier)
+    - [Web server environment](#Web%20server%20environment)
+    - [Worker environment](#Worker%20environment)
+      - [Daemon SQS](#Daemon%20SQS)
+  - [Environment configuration](#Environment%20configuration)
+- [Wdrożenie aplikacji](#Wdrożenie%20aplikacji)
+- [Pricing](#Pricing)
+- [See also](#See%20also)
 
 # Komponenty i koncepcje
 
@@ -69,34 +69,34 @@ Odługuje również kontenery Docker:
 
 **Aplikacja** Elastic Beanstalk to logiczny zbiór komponentów Elastic Beanstalk, w tym:
 
-- [[#Environment]]s,
-- [[#Application Version]]s,
-- [[#Environment configuration]]s.
+- [Environment](#Environment)s,
+- [Application Version](#Application%20Version)s,
+- [Environment configuration](#Environment%20configuration)s.
 
 W Elastic Beanstalk **aplikacja** jest koncepcyjnie podobna do folderu.
 
 ## Application Version
 
-W Elastic Beanstalk, **wersja aplikacji** odnosi się do konkretnej, oznaczonej iteracji kodu możliwego do wdrożenia dla aplikacji internetowej. **Wersja aplikacji** wskazuje na obiekt [[S3]], który zawiera kod możliwy do wdrożenia (np. plik Java WAR).
+W Elastic Beanstalk, **wersja aplikacji** odnosi się do konkretnej, oznaczonej iteracji kodu możliwego do wdrożenia dla aplikacji internetowej. **Wersja aplikacji** wskazuje na obiekt [S3](S3.md), który zawiera kod możliwy do wdrożenia (np. plik Java WAR).
 
-**Wersja aplikacji** jest częścią [[#Application]]. [[#Application]] może mieć wiele **wersji**, a każda **wersja** jest unikalna.
+**Wersja aplikacji** jest częścią [Application](#Application). [Application](#Application) może mieć wiele **wersji**, a każda **wersja** jest unikalna.
 
 > W działającym środowisku możesz wdrożyć dowolną wersję aplikacji, którą już przesłałeś do aplikacji, lub możesz przesłać i natychmiast wdrożyć nową wersję aplikacji. Możesz załadować wiele wersji aplikacji, aby przetestować różnice pomiędzy jedną wersją aplikacji internetowej a drugą.
 
 ## Environment
 
-**Środowisko** to zbiór zasobów AWS, na których działa [[#Application Version]]. Tworząc środowisko, Elastic Beanstalk dostarcza zasoby potrzebne do uruchomienia określonej przez Ciebie [[#Application Version]].
+**Środowisko** to zbiór zasobów AWS, na których działa [Application Version](#Application%20Version). Tworząc środowisko, Elastic Beanstalk dostarcza zasoby potrzebne do uruchomienia określonej przez Ciebie [Application Version](#Application%20Version).
 
-Każde **środowisko** uruchamia tylko jedną [[#Application Version]] w danym momencie, jednak można uruchomić tę samą lub różne [[#Application Version]]s na wielu środowiskach jednocześnie.
+Każde **środowisko** uruchamia tylko jedną [Application Version](#Application%20Version) w danym momencie, jednak można uruchomić tę samą lub różne [Application Version](#Application%20Version)s na wielu środowiskach jednocześnie.
 
 ## Environment Tier
 
-Aby uruchamić [[#Environment]], trzeba najpierw wybrać **warstwę środowiska**. **Environment Tier** określa typ [[#Application]] uruchamianej w [[#Environment]] i decyduje o zasobach, które Elastic Beanstalk dostarcza do jej obsługi.
+Aby uruchamić [Environment](#Environment), trzeba najpierw wybrać **warstwę środowiska**. **Environment Tier** określa typ [Application](#Application) uruchamianej w [Environment](#Environment) i decyduje o zasobach, które Elastic Beanstalk dostarcza do jej obsługi.
 
 Dostępne są 2 **warstwy środowiska**:
 
-- [[#Web server environment]] - dla aplikacji obsługujących żądania HTTP,
-- [[#Worker environment]] -  dla aplikacji backendowych, które pobiera zadania z kolejki Amazon [[SQS]].
+- [Web server environment](#Web%20server%20environment) - dla aplikacji obsługujących żądania HTTP,
+- [Worker environment](#Worker%20environment) -  dla aplikacji backendowych, które pobiera zadania z kolejki Amazon [SQS](SQS.md).
 
 ### Web server environment
 
@@ -104,13 +104,13 @@ Dostępne są 2 **warstwy środowiska**:
 
 Zasoby AWS tworzone dla warstwy **środowiska web server** obejmują:
 
-- jeden [[Elastic Load Balancing|ELB]],
-- jedną [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]],
-- jedną lub więcej [[EC2]].
+- jeden [ELB](Elastic%20Load%20Balancing.md),
+- jedną [Auto Scaling Group](EC2%20Auto%20Scaling.md#Auto%20Scaling%20Group),
+- jedną lub więcej [EC2](EC2.md).
 
-![[Beanstalk web server.png]]
+![Beanstalk web server.png](Beanstalk%20web%20server.png.md)
 
-Każde **środowisko** posiada rekord [[DNS#CNAME|CNAME]] (adres URL), który wskazuje na [[Elastic Load Balancing|load balanser]]. Ten adres URL jest aliasowany w [[Route 53]] do adresu URL [[Elastic Load Balancing]] za pomocą [[DNS#CNAME|CNAME]].
+Każde **środowisko** posiada rekord [CNAME](../network/DNS.md#CNAME) (adres URL), który wskazuje na [load balanser](Elastic%20Load%20Balancing.md). Ten adres URL jest aliasowany w [Route 53](Route%2053.md) do adresu URL [Elastic Load Balancing](Elastic%20Load%20Balancing.md) za pomocą [CNAME](../network/DNS.md#CNAME).
 
 ### Worker environment
 
@@ -118,30 +118,30 @@ Każde **środowisko** posiada rekord [[DNS#CNAME|CNAME]] (adres URL), który ws
 
 Zasoby AWS utworzone dla warstwy **Worker environment** obejmują:
 
-- jedną [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]],
-- kolejkę Amazon [[SQS]],
-- jedną lub więcej [[EC2]] z doinstalowanym daemonem [[SQS]],
-- [[IAM#IAM Role|IAM Role]].
+- jedną [Auto Scaling Group](EC2%20Auto%20Scaling.md#Auto%20Scaling%20Group),
+- kolejkę Amazon [SQS](SQS.md),
+- jedną lub więcej [EC2](EC2.md) z doinstalowanym daemonem [SQS](SQS.md),
+- [IAM Role](IAM.md#IAM%20Role).
 
-![[Beanstalk worker.png]]
+![Beanstalk worker.png](Beanstalk%20worker.png.md)
 
 #### Daemon SQS
 
-Po uruchomieniu **środowiska robotniczego**, Elastic Beanstalk instaluje niezbędne pliki pomocnicze dla wybranego języka programowania oraz **daemon** na każdej instancji [[EC2]] w  [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]]. Każdy z deamonów na wielu [[EC2]] czyta z tej samej kolejki [[SQS]].
+Po uruchomieniu **środowiska robotniczego**, Elastic Beanstalk instaluje niezbędne pliki pomocnicze dla wybranego języka programowania oraz **daemon** na każdej instancji [EC2](EC2.md) w  [Auto Scaling Group](EC2%20Auto%20Scaling.md#Auto%20Scaling%20Group). Każdy z deamonów na wielu [EC2](EC2.md) czyta z tej samej kolejki [SQS](SQS.md).
 
-**Daemon** odczytuje wiadomości z kolejki [[SQS]], a następnie wysyła dane w celu przetworzenia do [[#Application]] uruchomionej w **środowisku robotniczym**.
+**Daemon** odczytuje wiadomości z kolejki [SQS](SQS.md), a następnie wysyła dane w celu przetworzenia do [Application](#Application) uruchomionej w **środowisku robotniczym**.
 
 ## Environment configuration
 
-**Konfiguracja środowiska** identyfikuje zbiór parametrów i ustawień, które definiują zachowanie [[#Environment]] i powiązanych z nim zasobów. Kiedy aktualizujesz ustawienia **konfiguracji środowiska**, Elastic Beanstalk automatycznie stosuje zmiany do istniejących zasobów lub usuwa i wdraża nowe zasoby (w zależności od rodzaju zmiany).
+**Konfiguracja środowiska** identyfikuje zbiór parametrów i ustawień, które definiują zachowanie [Environment](#Environment) i powiązanych z nim zasobów. Kiedy aktualizujesz ustawienia **konfiguracji środowiska**, Elastic Beanstalk automatycznie stosuje zmiany do istniejących zasobów lub usuwa i wdraża nowe zasoby (w zależności od rodzaju zmiany).
 
 # Wdrożenie aplikacji
 
-Aby wdrożyć aplikację na **Elastic Beanstalk**, należy przesłać [[#Application Version]] w postaci pakietu źródłowego (na przykład plik Java .war), a następnie podać pewne informacje o niej.
+Aby wdrożyć aplikację na **Elastic Beanstalk**, należy przesłać [Application Version](#Application%20Version) w postaci pakietu źródłowego (na przykład plik Java .war), a następnie podać pewne informacje o niej.
 
-Elastic Beanstalk automatycznie uruchamia [[#Environment]] oraz tworzy i konfiguruje zasoby AWS potrzebne do uruchomienia kodu. Po uruchomieniu [[#Environment]], można nim zarządzać i wdrażać nowe [[#Application Version]].
+Elastic Beanstalk automatycznie uruchamia [Environment](#Environment) oraz tworzy i konfiguruje zasoby AWS potrzebne do uruchomienia kodu. Po uruchomieniu [Environment](#Environment), można nim zarządzać i wdrażać nowe [Application Version](#Application%20Version).
 
-![[Beanstalk flow.png]]
+![Beanstalk flow.png](Beanstalk%20flow.png.md)
 
 # Pricing
 
@@ -151,8 +151,8 @@ Sam **Beanstalk** jest darmowy, lecz płąci się za zarządzane przez niego zas
 
 # See also
 
-- [[EC2]]
-- [[Elastic Block Store]]
-- [[Security group]]
-- [[Elastic Load Balancing]]
-- [[Auto Scaling]]
+- [EC2](EC2.md)
+- [Elastic Block Store](Elastic%20Block%20Store.md)
+- [Security group](Security%20group.md)
+- [Elastic Load Balancing](Elastic%20Load%20Balancing.md)
+- [Auto Scaling](Auto%20Scaling.md)

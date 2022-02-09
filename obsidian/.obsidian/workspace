@@ -4,13 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "3d3f4fe96fc31d5d",
+        "id": "6cf6ff6318c40af6",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/aws/API Gateway.md",
-            "mode": "source",
+            "file": "devops/aws/Elastic Block Store.md",
+            "mode": "preview",
+            "backlinks": false,
             "source": false
           }
         }
@@ -41,7 +42,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Auto Scaling group",
+                "query": "tag:#storage",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -49,8 +50,17 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "a42e93b0820bf86e",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "a46c7e129a2dea2f",
@@ -80,29 +90,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "92ac7fb7d92959ce",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "devops/aws/API Gateway.md",
-                "collapseAll": true,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
             "id": "3ca1b5537678d40d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/aws/API Gateway.md",
+                "file": "devops/aws/Elastic Block Store.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,25 +127,43 @@
               "type": "side-panel-control-view",
               "state": {}
             }
+          },
+          {
+            "id": "b6aff98dae38866f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "devops/aws/Elastic Block Store.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "3d3f4fe96fc31d5d",
+  "active": "6cf6ff6318c40af6",
   "lastOpenFiles": [
-    "devops/aws/API Gateway.md",
+    "devops/aws/Elastic Block Store.md",
+    "devops/aws/EC2.md",
+    "devops/templates/Regex rules.md",
+    "devops/aws/Elastic Load Balancing.md",
+    "devops/network/SSL-TLS.md",
+    "devops/aws/NAT devices.md",
+    "devops/aws/RDS.md",
+    "devops/network/Model OSI.md",
     "devops/network/DNS.md",
-    "devops/network/CIDR.md",
-    "devops/aws/AMI.md",
-    "devops/aws/Aurora.md",
-    "devops/aws/Application Auto Scaling.md",
-    "devops/temp/11.md",
-    "devops/network/22.md",
-    "devops/network/22.jpg.md",
-    "devops/network/22.md.md"
+    "devops/aws/Elastic Beanstalk.md"
   ]
 }

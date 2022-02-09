@@ -2,9 +2,9 @@
 
 # Trasowanie VPC
 
-Podczas tworzenia [[VPC]] należy określić zakres adresów IPv4 dla [[VPC]] w postaci bloku **Classless Inter-Domain Routing** ([[CIDR]]), na przykład 10.0.0.0/16. Poniższy diagram przedstawia nowe VPC z blokiem CIDR IPv4.
+Podczas tworzenia [VPC](VPC.md) należy określić zakres adresów IPv4 dla [VPC](VPC.md) w postaci bloku **Classless Inter-Domain Routing** [CIDR](../network/CIDR.md)), na przykład 10.0.0.0/16. Poniższy diagram przedstawia nowe VPC z blokiem CIDR IPv4.
 
-![[VPC CIDR.png]]
+![VPC CIDR.png](VPC%20CIDR.png.md)
 
 W głównej tabeli trasowanie znajdują się następujące trasy:
 
@@ -14,20 +14,20 @@ W głównej tabeli trasowanie znajdują się następujące trasy:
 
 # Trasowanie Podsieci
 
-Podczas tworzenia podsieci określa się blok [[CIDR]] dla podsieci, który jest podzbiorem bloku [[#Trasowanie VPC|CIDR VPC]].
+Podczas tworzenia podsieci określa się blok [CIDR](../network/CIDR.md) dla podsieci, który jest podzbiorem bloku [CIDR VPC](#Trasowanie%20VPC).
 
-![[VPC Tracing.png]]
+![VPC Tracing.png](VPC%20Tracing.png.md)
 
-Każda [[VPC Subnet]] musi być skojarzona z tablicą trasowania, która określa dozwolone trasy dla ruchu wychodzącego z danej [[VPC Subnet]]. Każda utworzona [[VPC Subnet]] jest automatycznie kojarzona z główną tabelą dla [[VPC]]. Można zmienić to skojarzenie oraz zawartość głównej tabeli trasowania.
+Każda [VPC Subnet](VPC%20Subnet.md) musi być skojarzona z tablicą trasowania, która określa dozwolone trasy dla ruchu wychodzącego z danej [VPC Subnet](VPC%20Subnet.md). Każda utworzona [VPC Subnet](VPC%20Subnet.md) jest automatycznie kojarzona z główną tabelą dla [VPC](VPC.md). Można zmienić to skojarzenie oraz zawartość głównej tabeli trasowania.
 
-Instancja 2A nie może dotrzeć do Internetu, ale może dotrzeć do innych instancji w [[VPC]]. Można pozwolić instancji w [[VPC]] na inicjowanie połączeń wychodzących do Internetu przez IPv4, ale uniemożliwić niechciane połączenia przychodzące z Internetu za pomocą [[NAT devices#NAT Gateway|NAT Gateway]] lub [[NAT devices#NAT Inctance|NAT Instance]].
+Instancja 2A nie może dotrzeć do Internetu, ale może dotrzeć do innych instancji w [VPC](VPC.md). Można pozwolić instancji w [VPC](VPC.md) na inicjowanie połączeń wychodzących do Internetu przez IPv4, ale uniemożliwić niechciane połączenia przychodzące z Internetu za pomocą [NAT Gateway](NAT%20devices.md#NAT%20Gateway) lub [NAT Instance](NAT%20devices.md#NAT%20Inctance).
 
-Ponieważ można przydzielić ograniczoną liczbę adresów [[Elastic IP]], zaleca się korzystanie z [[NAT devices]] w przypadku większej liczby [[EC2]] wymagających statycznego publicznego adresu IP.
+Ponieważ można przydzielić ograniczoną liczbę adresów [Elastic IP](Elastic%20IP.md), zaleca się korzystanie z [NAT devices](NAT%20devices.md) w przypadku większej liczby [EC2](EC2.md) wymagających statycznego publicznego adresu IP.
 
 ## Public subnet
 
-Jeśli podsieć jest skojarzona z [[VPC Route table]], która ma trasę do [[Internet Gateway]], jest to tzw. **podsieć publiczna**.
+Jeśli podsieć jest skojarzona z [VPC Route table](VPC%20Route%20table.md), która ma trasę do [Internet Gateway](Internet%20Gateway.md), jest to tzw. **podsieć publiczna**.
 
 ## Private subnet
 
-Jeśli podsieć jest skojarzona z [[VPC Route table]], która **NIE** zawiera trasy do [[Internet Gateway]], jest to podsieć prywatna. Taka podsieć nadal może trasować do [[NAT devices#NAT Gateway|NAT Gateway]].
+Jeśli podsieć jest skojarzona z [VPC Route table](VPC%20Route%20table.md), która **NIE** zawiera trasy do [Internet Gateway](Internet%20Gateway.md), jest to podsieć prywatna. Taka podsieć nadal może trasować do [NAT Gateway](NAT%20devices.md#NAT%20Gateway).

@@ -1,1 +1,1 @@
-[[AWS locations#Availability zone|AZ]]
+[AZ](AWS%20locations.md#Availability%20zone)

@@ -4,30 +4,30 @@ Amazon Elastic Compute Cloud (Amazon EC2) oferuje platformę obliczeniową, z in
 
 ##### Spis treści
 
-- [[#Typy instancji]]
-  - [[#Ogólnego zastosowania - t, m]]
-  - [[#Zoptymalizowana pod kątem obliczeń (compute) - c]]
-  - [[#Zoptymalizowana pod kątem pamięci (memory) - r, x, z]]
-  - [[#Zoptymalizowana pod kątem pamięci masowej (storage) - i, d, h]]
-  - [[#Ze wsparciem sprzętowym]]
-- [[#Opcje kupna]]
-  - [[#on-demand]]
-  - [[#Reserved Instances]]
-    - [[#Standard]]
-    - [[#Convertible]]
-    - [[#Scheduled]]
-  - [[#Savings Plan]]
-  - [[#Spot]]
-    - [[#Spot Fleets]]
-  - [[#Dedicated Hosts]]
-    - [[#AWS License Manager]]
-    - [[#Deticated Instances vs Deticated Hosts]]
-- [[#Placement Group]]
-- [[#EC2 User Data]]
-- [[#Storage]]
-- [[#EC2 Auto Scaling]]
-  - [[#Auto Scaling group]]
-- [[#See also]]
+- [Typy instancji](#Typy%20instancji)
+  - [Ogólnego zastosowania - t, m](#Ogólnego%20zastosowania%20-%20t,%20m)
+  - [Zoptymalizowana pod kątem obliczeń (compute) - c](#Zoptymalizowana%20pod%20kątem%20obliczeń%20(compute)%20-%20c)
+  - [Zoptymalizowana pod kątem pamięci (memory) - r, x, z](#Zoptymalizowana%20pod%20kątem%20pamięci%20(memory)%20-%20r,%20x,%20z)
+  - [Zoptymalizowana pod kątem pamięci masowej (storage) - i, d, h](#Zoptymalizowana%20pod%20kątem%20pamięci%20masowej%20(storage)%20-%20i,%20d,%20h)
+  - [Ze wsparciem sprzętowym](#Ze%20wsparciem%20sprzętowym)
+- [Opcje kupna](#Opcje%20kupna)
+  - [on-demand](#on-demand)
+  - [Reserved Instances](#Reserved%20Instances)
+    - [Standard](#Standard)
+    - [Convertible](#Convertible)
+    - [Scheduled](#Scheduled)
+  - [Savings Plan](#Savings%20Plan)
+  - [Spot](#Spot)
+    - [Spot Fleets](#Spot%20Fleets)
+  - [Dedicated Hosts](#Dedicated%20Hosts)
+    - [AWS License Manager](#AWS%20License%20Manager)
+    - [Deticated Instances vs Deticated Hosts](#Deticated%20Instances%20vs%20Deticated%20Hosts)
+- [Placement Group](#Placement%20Group)
+- [EC2 User Data](#EC2%20User%20Data)
+- [Storage](#Storage)
+- [EC2 Auto Scaling](#EC2%20Auto%20Scaling)
+  - [Auto Scaling group](#Auto%20Scaling%20group)
+- [See also](#See%20also)
 
 # Typy instancji
 
@@ -120,11 +120,11 @@ Scheduled Reserved Instance opłaca się w przypadku obciążeń zmiennych, ale 
 
 ## Savings Plan
 
-Podobny do instancji zarezerwowanych, z tą różnicą, że nie ogranicza się tylko do EC2. Obsługuje również [[Fargate]] i [[Lambda]]. W przeciwieństwie do Reserved Instances nie rezerwuje pojemności.
+Podobny do instancji zarezerwowanych, z tą różnicą, że nie ogranicza się tylko do EC2. Obsługuje również [Fargate](Fargate.md) i [Lambda](Lambda.md). W przeciwieństwie do Reserved Instances nie rezerwuje pojemności.
 
 ## Spot
 
-Pozwala na wykorzystanie nadmiaru mocy obliczeniowej EC2, które mogą istnieć w [[AWS locations#Availability zone|Availability zone]]. Pozwala uzyskać nawet 90% zniżki. Istnieje cena rynkowa dla typów instancji na strefę dostępności i jest to tzw. **cena spot** (spot prise). Jeśli twoja oferta jest wyższa niż cena spot, będziesz mógł uruchomić swoje instancje. Jeśli cena spot przekroczy twoją ofertę, wtedy twoja instancja zostanie zamknięta w ciągu 2 minut. Z tego powodu nadaje się w przypadku obciążeń, które mogą się uruchamiać i zamykać bez negatywnego wpływu na system.
+Pozwala na wykorzystanie nadmiaru mocy obliczeniowej EC2, które mogą istnieć w [Availability zone](AWS%20locations.md#Availability%20zone). Pozwala uzyskać nawet 90% zniżki. Istnieje cena rynkowa dla typów instancji na strefę dostępności i jest to tzw. **cena spot** (spot prise). Jeśli twoja oferta jest wyższa niż cena spot, będziesz mógł uruchomić swoje instancje. Jeśli cena spot przekroczy twoją ofertę, wtedy twoja instancja zostanie zamknięta w ciągu 2 minut. Z tego powodu nadaje się w przypadku obciążeń, które mogą się uruchamiać i zamykać bez negatywnego wpływu na system.
 
 Nadaje szczególnie do:
 
@@ -162,14 +162,14 @@ Dostarcza dedykowany serwer fizyczny w centrum danych (data centre). Jest to naj
 
 Dedicated Host jest zintegrowany z **AWS License Manager**.
 
-![[AWS License Manager.png]]
+![AWS License Manager.png](AWS%20License%20Manager.png.md)
 
 ### Deticated Instances vs Deticated Hosts
 
 #ENG
 You can use Dedicated Hosts and Dedicated instances to launch Amazon EC2 instances on physical servers that are dedicated for your use. An important difference between a Dedicated Host and a Dedicated instance is that a Dedicated Host gives you additional visibility and control over how instances are placed on a physical server, and you can consistently deploy your instances to the same physical server over time. As a result, Dedicated Hosts enable you to use your existing server-bound software licenses and address corporate compliance and regulatory requirements.
 
-![[EC2 Dedicated instances vs host.png]]
+![EC2 Dedicated instances vs host.png](EC2%20Dedicated%20instances%20vs%20host.png.md)
 
 # Placement Group
 
@@ -177,17 +177,17 @@ You can use Dedicated Hosts and Dedicated instances to launch Amazon EC2 instanc
 
 Placement group pozwalają na określenie strategi rozmieszczenia EC2. Dostępne są następujące strategie:
 
-- **Cluster**  - grupuje EC2 razem w jednej [[AWS locations#Availability zone|AZ]].
+- **Cluster**  - grupuje EC2 razem w jednej [AZ](AWS%20locations.md#Availability%20zone).
   - Zastosowane:
     - uzyskanie wysokiej wydajności sieci,
     - bazy danych.
 
-- **Spread** - rozmieszcza każdą EC2 w osobnych fizycznych urządzeniach, które posiadają własną sieć i źródło zasilania. Max. 7 EC2 na [[AWS locations#Availability zone|AZ]]
+- **Spread** - rozmieszcza każdą EC2 w osobnych fizycznych urządzeniach, które posiadają własną sieć i źródło zasilania. Max. 7 EC2 na [AZ](AWS%20locations.md#Availability%20zone)
   - Zastosowane:
     - zapewnienie izolacji dla krytycznych obciążeń,
     - aplikacje wymagające bardzo wysokiej dostępności.
 
-- **Partition** - rozmieszcza EC2 w osobnych partycjach, ktore które bazują na osobnych urządzeniach wewnątrz [[AWS locations#Availability zone|AZ]].
+- **Partition** - rozmieszcza EC2 w osobnych partycjach, ktore które bazują na osobnych urządzeniach wewnątrz [AZ](AWS%20locations.md#Availability%20zone).
   - Zastosowanie:
     - w dużych rozproszonych i powtarzalnych obciążeń, np. Hadoop, Cassandra, Kafka.
 
@@ -208,31 +208,31 @@ Skrypt ten uruchamiany jest przez użytkownika root.
 
 #storage
 
-Podczas tworzenia EC2 przypinany jest do nie volumen pamięci masowej typu [[Elastic Block Store]] o nazwie _Root_. Domyślnie jest on ustawiony z atrybutem _Delete on Termination_. Można przypiąć do EC2 dodatkowe valuminy, które domyślnie nie usuwają się z końcem cyklu życia danej instancji.
+Podczas tworzenia EC2 przypinany jest do nie volumen pamięci masowej typu [Elastic Block Store](Elastic%20Block%20Store.md) o nazwie _Root_. Domyślnie jest on ustawiony z atrybutem _Delete on Termination_. Można przypiąć do EC2 dodatkowe valuminy, które domyślnie nie usuwają się z końcem cyklu życia danej instancji.
 
-![[EC2 EBS.png]]
+![EC2 EBS.png](EC2%20EBS.png.md)
 
 Dostępne typy voluminów dla EC2 to:
 
-- [[Elastic Block Store|EBS]]
-- [[EC2 Instance Store|Instance Store]]
+- [EBS](Elastic%20Block%20Store.md)
+- [Instance Store](EC2%20Instance%20Store.md)
 - ...
 
 # EC2 Auto Scaling
 
 #autoscaling
 
-[[EC2 Auto Scaling]] umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w ramach [[EC2 Auto Scaling#Auto Scaling Group|Auto Scaling Group]] w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
+[EC2 Auto Scaling](EC2%20Auto%20Scaling.md) umożliwia automatyczne dodawanie lub usuwanie instancji Amazon EC2 w ramach [Auto Scaling Group](EC2%20Auto%20Scaling.md#Auto%20Scaling%20Group) w odpowiedzi na zmieniające się zapotrzebowanie aplikacji.
 
-**Więcej: [[EC2 Auto Scaling]]**
+**Więcej: [EC2 Auto Scaling](EC2%20Auto%20Scaling.md)**
 
 ---
 
 # See also
 
-- [[Security group]]
-- [[Elastic IP]]
-- [[Network ACL]]
-- [[NAT devices]]
-- [[Elastic Block Store]]
-- [[EC2 Auto Scaling]]
+- [Security group](Security%20group.md)
+- [Elastic IP](Elastic%20IP.md)
+- [Network ACL](Network%20ACL.md)
+- [NAT devices](NAT%20devices.md)
+- [Elastic Block Store](Elastic%20Block%20Store.md)
+- [EC2 Auto Scaling](EC2%20Auto%20Scaling.md)

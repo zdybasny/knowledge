@@ -2,7 +2,7 @@
 
 [źródło](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html)
 
-**ElastiCash** to pełni zarządzana usługa pamięci podręcznej, czyli bazy danych trzymanej w pamięci w celu zapewnienia bardzo wysokich wydajności bardzo niskich opóźnień. Gwarantuje niski czas odpowiedzi, skalowanie i replikację, aby sprostać żądaniom aplikacji. Odciąża bazy danych (np. [[RDS]]) przy intensywnym odczycie.
+**ElastiCash** to pełni zarządzana usługa pamięci podręcznej, czyli bazy danych trzymanej w pamięci w celu zapewnienia bardzo wysokich wydajności bardzo niskich opóźnień. Gwarantuje niski czas odpowiedzi, skalowanie i replikację, aby sprostać żądaniom aplikacji. Odciąża bazy danych (np. [RDS](RDS.md)) przy intensywnym odczycie.
 
 ElastiCashe wspiera **Memcached** oraz **Redis** oraz bsługuje powszechne przypadki użycia, w tym cache dla baz danych i pamięć sesji. Obie technologie są przechowują dane klucz-wartość (**noSQL**).
 
@@ -11,8 +11,8 @@ upewnić się, że tylko najbardziej aktualne dane są tam przechowywane. Jeśli
 
 ##### Spis treści
 
-- [[#Porównanie Memcashed i Redis]]
-- [[#See also]]
+- [Porównanie Memcashed i Redis](#Porównanie%20Memcashed%20i%20Redis)
+- [See also](#See%20also)
 
 # Porównanie Memcashed i Redis
 [źródło AWS](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html) [źródło](https://www.imaginarycloud.com/blog/redis-vs-memcached/) [źródło](https://faun.pub/aws-solutions-architect-associate-cheat-sheet-6991d2f6cb7d)
@@ -44,4 +44,4 @@ upewnić się, że tylko najbardziej aktualne dane są tam przechowywane. Jeśli
 
 # See also
 
-- [[RDS]]
+- [RDS](RDS.md)

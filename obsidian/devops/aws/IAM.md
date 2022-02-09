@@ -2,30 +2,30 @@
 
 [źródło](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
-**AWS Identity and Access Management** (IAM) umożliwia bezpieczne zarządzanie dostępem do usług i zasobów AWS. Korzystając z IAM, można tworzyć i zarządzać [[#IAM User|użytkownikami]] i [[#IAM User Group]] AWS oraz używać [[#Permission policies|uprawnień]], aby zezwalać i odmawiać im dostępu do zasobów AWS.
+**AWS Identity and Access Management** (IAM) umożliwia bezpieczne zarządzanie dostępem do usług i zasobów AWS. Korzystając z IAM, można tworzyć i zarządzać [użytkownikami](#IAM%20User) i [IAM User Group](#IAM%20User%20Group) AWS oraz używać [uprawnień](#Permission%20policies), aby zezwalać i odmawiać im dostępu do zasobów AWS.
 
 IAM jest funkcją konta AWS oferowaną bez dodatkowych opłat. Zostaniesz obciążony jedynie za korzystanie z innych usług AWS przez Twoich użytkowników.
 
-![[IAM components.png]]
+![IAM components.png](IAM%20components.png.md)
 
 #### Spis treści
 
-- [[#IAM User]]
-  - [[#Sfederowani użytkownicy]]
-- [[#IAM User Group]]
-- [[#IAM Role]]
-  - [[#Service-linked role]]
-- [[#Permission policies]]
-  - [[#Principal]]
-  - [[#Action]]
-  - [[#Resource]]
-  - [[#Effect]]
-  - [[#Condition]]
-- [[#IAM Security Tools]]
-- [[#IAM Credentials Report]]
-  - [[#IAM Access Advisor]]
-- [[#Best practices]]
-- [[#See also]]
+- [IAM User](#IAM%20User)
+  - [Sfederowani użytkownicy](#Sfederowani%20użytkownicy)
+- [IAM User Group](#IAM%20User%20Group)
+- [IAM Role](#IAM%20Role)
+  - [Service-linked role](#Service-linked%20role)
+- [Permission policies](#Permission%20policies)
+  - [Principal](#Principal)
+  - [Action](#Action)
+  - [Resource](#Resource)
+  - [Effect](#Effect)
+  - [Condition](#Condition)
+- [IAM Security Tools](#IAM%20Security%20Tools)
+- [IAM Credentials Report](#IAM%20Credentials%20Report)
+  - [IAM Access Advisor](#IAM%20Access%20Advisor)
+- [Best practices](#Best%20practices)
+- [See also](#See%20also)
 
 # IAM User
 
@@ -67,13 +67,13 @@ Uprawnienia pozwalają określić dostęp do zasobów AWS. Uprawnienia nadawane 
 Aby nadać podmiotom uprawnienia, możesz dołączyć politykę, która określa:
 
 - Sid (opcjonalnie) - identyfikator
-- [[#Principal]] - konto, użytkownik lub rola, której których dotyczy policy
-- [[#Action]] - lista akcji dozwolonych lub niedozwolonych
-- [[#Resource]] - lista zasobów, których dotyczy policy
-- [[#Effect]] - "Allow" / "Deny"
-- [[#Condition]] (opjonalnie) - warunek wykonania policy
+- [Principal](#Principal) - konto, użytkownik lub rola, której których dotyczy policy
+- [Action](#Action) - lista akcji dozwolonych lub niedozwolonych
+- [Resource](#Resource) - lista zasobów, których dotyczy policy
+- [Effect](#Effect) - "Allow" / "Deny"
+- [Condition](#Condition) (opjonalnie) - warunek wykonania policy
 
-![[IAM Policy structure.png]]
+![IAM Policy structure.png](IAM%20Policy%20structure.png.md)
 
 Zestaw dostępnych **akcji**, **zasobów** i **warunków** dla danego serwisu znajduje się w [Actions, resources, and condition keys for AWS services - Service Authorization Reference (amazon.com)](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
 
@@ -107,7 +107,7 @@ AWS checks each policy that applies to the context of your request. If a single 
 
 - An explicit allow in any permissions policy (identity-based or resource-based) overrides this default.
 
-- The existence of an [[Organizations SCP]], **IAM permissions boundary**, or a session policy overrides the allow. If one or more of these policy types exists, they must all allow the request. Otherwise, it is implicitly denied.
+- The existence of an [Organizations SCP](Organizations%20SCP.md), **IAM permissions boundary**, or a session policy overrides the allow. If one or more of these policy types exists, they must all allow the request. Otherwise, it is implicitly denied.
 
 - An explicit deny in any policy overrides any allows.
 
@@ -156,11 +156,11 @@ Oto zalecenia Amazon dotyczące usługi AWS Identity and Access Management (IAM)
 • Używaj warunków polityki dla dodatkowego bezpieczeństwa.
 • Monitoruj aktywność na swoim koncie AWS.
 
-Szczegółowe zalecenia znajdują się na stronie AWS: [Security best practices in IAM]([Security best practices in IAM - AWS Identity and Access Management (amazon.com)](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials)).
+Szczegółowe zalecenia znajdują się na stronie AWS: [Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials).
 
 ---
 
 # See also
 
-- [Security best practices in IAM]([Security best practices in IAM - AWS Identity and Access Management (amazon.com)](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials)).
+- [Security best practices in IAM]((https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html.md#lock-away-credentials)
 - [Actions, resources, and condition keys for AWS services - Service Authorization Reference (amazon.com)](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)

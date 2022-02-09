@@ -2,22 +2,22 @@
 
 [źródło](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling)
 
-**RDS Storage Auto Scaling** stale monitoruje rzeczywiste zużycie pamięci masowej dla [[RDS]] i skaluje wertykalnie pojemność automatycznie, gdy rzeczywiste wykorzystanie zbliża się do dostarczonej pojemności pamięci masowej.
+**RDS Storage Auto Scaling** stale monitoruje rzeczywiste zużycie pamięci masowej dla [RDS](RDS.md) i skaluje wertykalnie pojemność automatycznie, gdy rzeczywiste wykorzystanie zbliża się do dostarczonej pojemności pamięci masowej.
 
 Nadaje się to idealnie do nieprzewidywalnych obciążeń.
 
-Nie ma żadnych dodatkowych kosztów dla **RDS Storage Auto Scaling**. Płacisz tylko za zasoby [[RDS]] potrzebne do uruchomienia aplikacji.
+Nie ma żadnych dodatkowych kosztów dla **RDS Storage Auto Scaling**. Płacisz tylko za zasoby [RDS](RDS.md) potrzebne do uruchomienia aplikacji.
 
 ##### Spis treści
 
-- [[#Triggery skalowania]]
-- [[#Pojemności skalowania]]
-- [[#Obsługiwane silniki RDS]]
-- [[#See also]]
+- [Triggery skalowania](#Triggery%20skalowania)
+- [Pojemności skalowania](#Pojemności%20skalowania)
+- [Obsługiwane silniki RDS](#Obsługiwane%20silniki%20RDS)
+- [See also](#See%20also)
 
 # Triggery skalowania
 
-[[RDS]] rozpoczyna modyfikację pamięci masowej dla [[RDS#Instancja bazy danych|instancji DB]] z włączoną funkcją autoskalowania, gdy wystąpią poniższe czynniki:
+[RDS](RDS.md) rozpoczyna modyfikację pamięci masowej dla [instancji DB](RDS.md#Instancja%20bazy%20danych) z włączoną funkcją autoskalowania, gdy wystąpią poniższe czynniki:
 
 - wolne dostępne miejsce jest mniejsze niż 10% zaalokowanej przestrzeni dyskowej,
 - stan ten trwa co najmniej 5 minut,
@@ -49,5 +49,5 @@ RDS Storage Auto Scaling obsługuje wszystkie silniki bazodanowe:
 
 # See also
 
-- [[Auto Scaling]]
-- [[RDS]]
+- [Auto Scaling](Auto%20Scaling.md)
+- [RDS](RDS.md)

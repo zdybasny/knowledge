@@ -5,4 +5,4 @@
 ---
 # See also
 
-- [[PrivateLink]]
+- [PrivateLink](PrivateLink.md)

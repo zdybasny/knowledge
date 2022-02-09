@@ -2,19 +2,19 @@
 
 [źródło](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)
 
-Elastic File System (**EFS**) to prosty, bezserwerowy, elastyczny system plików typu "set-and-forget" do użytku z usługami w chmurze AWS i zasobami lokalnymi. Jest to w pełni zarządzany system plików **NFS** (network file system), który został zaprojektowany specjalnie dla obciążeń Linux (bazuje na interfejsie [POSIX](https://pl.wikipedia.org/wiki/POSIX)) dla wielu [[EC2]] jednocześnie. Umożliwia również przechowywanie danych w wielu [[AWS locations#Availability zone|AZ]], dzięki czemu domyślnie uzyskuje się pewną trwałość. Obsługuje skalowanie do petabajtów danych.
+Elastic File System (**EFS**) to prosty, bezserwerowy, elastyczny system plików typu "set-and-forget" do użytku z usługami w chmurze AWS i zasobami lokalnymi. Jest to w pełni zarządzany system plików **NFS** (network file system), który został zaprojektowany specjalnie dla obciążeń Linux (bazuje na interfejsie [POSIX](https://pl.wikipedia.org/wiki/POSIX)) dla wielu [EC2](EC2.md) jednocześnie. Umożliwia również przechowywanie danych w wielu [AZ](AWS%20locations.md#Availability%20zone), dzięki czemu domyślnie uzyskuje się pewną trwałość. Obsługuje skalowanie do petabajtów danych.
 
-Dostępna jest opcja szyfrowania w spoczynky używająca [[Key Management Service]].
+Dostępna jest opcja szyfrowania w spoczynky używająca [Key Management Service](Key%20Management%20Service.md).
 
-EFS jest znacznie droższy od [[Elastic Block Store]], ale płaci się faktyczne użycie, do którego  EFS się skaluje.
+EFS jest znacznie droższy od [Elastic Block Store](Elastic%20Block%20Store.md), ale płaci się faktyczne użycie, do którego  EFS się skaluje.
 
 ##### Spis treści
 
-- [[#EFS storage classes]]
-  - [[#Standard vs One Zone]]
-  - [[#Infrequent-Access]]
-- [[#Tryby EFS]]
-- [[#See also]]
+- [EFS storage classes](#EFS%20storage%20classes)
+  - [Standard vs One Zone](#Standard%20vs%20One%20Zone)
+  - [Infrequent-Access](#Infrequent-Access)
+- [Tryby EFS](#Tryby%20EFS)
+- [See also](#See%20also)
 
 # EFS storage classes
 
@@ -34,7 +34,7 @@ Należą do nich:
 - **EFS Standard**,
 - **EFS Standard-IA:**
 
-Klasy przechowywania **EFS Standard** i **EFS Standard-IA** są [[AWS locations#Region|regionalnymi]] klasami przechowywania, które zostały zaprojektowane w celu zapewnienia ciągłej dostępności danych i metadanych redundantine w wielu [[AWS locations#Availability zone|AZ]]. w ramach [[AWS locations#Region|regionu]].
+Klasy przechowywania **EFS Standard** i **EFS Standard-IA** są [regionalnymi](AWS%20locations.md#Region) klasami przechowywania, które zostały zaprojektowane w celu zapewnienia ciągłej dostępności danych i metadanych redundantine w wielu [AZ](AWS%20locations.md#Availability%20zone). w ramach [regionu](AWS%20locations.md#Region).
 
 > Klasa pamięci masowej Standard jest używana do często używanych plików. Jest to klasa pamięci masowej, w której początkowo zapisywane są dane klientów w przypadku standardowych klas pamięci masowej.
 
@@ -43,9 +43,9 @@ Klasy przechowywania **EFS Standard** i **EFS Standard-IA** są [[AWS locations#
 
 Opcją na redukjce kosztów jest użycie **EFS One Zone** oraz **EFS One Zone-Infrequent Access**.
 
-Te klasy pamięci zapewniają ciągłą dostępność danych i metadanych, przechowując je redundantnie w ramach pojedynczej [[AWS locations#Availability zone|AZ]]. Z tego powodu dane mogą zostać utracone w przypadku awarii [[AWS locations#Availability zone|AZ]].
+Te klasy pamięci zapewniają ciągłą dostępność danych i metadanych, przechowując je redundantnie w ramach pojedynczej [AZ](AWS%20locations.md#Availability%20zone). Z tego powodu dane mogą zostać utracone w przypadku awarii [AZ](AWS%20locations.md#Availability%20zone).
 
-Aby zapewnić dodatkową ochronę danych, **Amazon EFS** automatycznie tworzy kopie zapasowe systemów plików przy klas **One Zone** za pomocą [[AWS Backup]]. Kopie zapasowe EFS zarządzane przez [[AWS Backup]], są replikowane do trzech [[AWS locations#Availability zone|AZ]].
+Aby zapewnić dodatkową ochronę danych, **Amazon EFS** automatycznie tworzy kopie zapasowe systemów plików przy klas **One Zone** za pomocą [AWS Backup](AWS%20Backup.md). Kopie zapasowe EFS zarządzane przez [AWS Backup](AWS%20Backup.md), są replikowane do trzech [AZ](AWS%20locations.md#Availability%20zone).
 
 > EFS One Zone-Standard jest używany do często używanych plików. Jest to klasa pamięci masowej, w której początkowo zapisywane są dane klienta dla klas pamięci masowej One Zone.
 
@@ -78,5 +78,5 @@ EFS został zaprojektowany, aby zapewnić przepustowość, IOPS i niskie opóźn
 
 # See also
 
-- [[Elastic Block Store]]
-- [[EC2 Instance Store]]
+- [Elastic Block Store](Elastic%20Block%20Store.md)
+- [EC2 Instance Store](EC2%20Instance%20Store.md)
