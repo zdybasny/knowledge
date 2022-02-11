@@ -17,4 +17,3 @@ Można używać custom actions pod pewnymi obostrzeniami w zależności od tego,
 - public - bez ograniczeń.
 
 # Expression
-# github context

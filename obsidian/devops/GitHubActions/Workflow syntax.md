@@ -193,7 +193,7 @@ on:
 
 #### on.workflow_call.secrets
 
-W ramach wywołanego [Workflow](Workflow.md) można użyć kontekstu sekretów, by odwołać się do sekretu.
+W ramach wywołanego [Workflow](Workflow.md) można użyć [Context](Context.md) sekretów, by `secrets` się do sekretu.
 
 Jeśli wywołujący [Workflow](Workflow.md) przekaże sekret, który nie jest określony w wywołanym [Workflow](Workflow.md), spowoduje to błąd.
 
@@ -288,7 +288,7 @@ defaults:
 
 ## concurrency
 
-Użycie **współbieżności** zapewnia, że w danym momencie uruchomione zostanie tylko tylko [Job](Job.md) lub [Workflow](Workflow.md) korzystający z tej samej grupy współbieżności. Grupa współbieżności może być dowolnym ciągiem znaków lub [Expression](Action.md#Expression). Wyrażenie może używać tylko [github context](Action.md#github%20context).
+Użycie **współbieżności** zapewnia, że w danym momencie uruchomione zostanie tylko tylko [Job](Job.md) lub [Workflow](Workflow.md) korzystający z tej samej grupy współbieżności. Grupa współbieżności może być dowolnym ciągiem znaków lub [Expression](Action.md#Expression). Wyrażenie może używać tylko [Context](Context.md) `github`.
 
 > Możesz również określić współbieżność na poziomie [Joba](Job.md):  [`jobs.<job_id>.concurrency`](#jobs%20job_id%20concurrency).
 
@@ -370,7 +370,7 @@ jobs:
 
 [źródło](https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution)
 
-Sprawdza warunek, który decyduje o uruchomieniu [Joba](Job.md). Możesz użyć dowolnego obsługiwanego [kontekstu](Action.md#github%20context) i [Expression](Action.md#Expression) do utworzenia warunku.
+Sprawdza warunek, który decyduje o uruchomieniu [Joba](Job.md). Możesz użyć dowolnego obsługiwanego [Context](Context.md) i [Expression](Action.md#Expression) do utworzenia warunku.
 
 Przykład:
 
@@ -570,7 +570,7 @@ Przekazuje mapę wejść do wywoływanego [Workflow](Workflow.md).
 
 Wszystkie dane wejściowe, które przekazujemy, muszą pasować do specyfikacji danych wejściowych zdefiniowanych w wywołanym [Workflow](Workflow.md) ([`on.workflow_call.inputs.<input_id>`](#on%20workflow_call%20inputs) ).
 
-> W przeciwieństwie do [`jobs.<job_id>.steps[*].with`](#jobs%20job_id%20steps%20with), dane wejściowe przekazane za pomocą `jobs.<job_id>.with` nie są dostępne jako zmienne środowiskowe w wywołanym [Workflow](Workflow.md). Zamiast tego, można się do nich odwoływać za pomocą kontekstu `inputs`.
+> W przeciwieństwie do [`jobs.<job_id>.steps[*].with`](#jobs%20job_id%20steps%20with), dane wejściowe przekazane za pomocą `jobs.<job_id>.with` nie są dostępne jako zmienne środowiskowe w wywołanym [Workflow](Workflow.md). Zamiast tego, można się do nich odwoływać za pomocą [Context](Context.md) `inputs`.
 
 Przykład:
 
@@ -671,7 +671,7 @@ Parametry są ustawiane jako zmienne środowiskowe z prefiksem `INPUT_` i conwer
 
 A `map` of the input parameters defined by the action. Each input parameter is a key/value pair. Input parameters are set as environment variables. The variable is prefixed with `INPUT_` and converted to upper case.
 
-> W przeciwieństwie do [`jobs.<job_id>.with`](#jobs%20job_id%20with), dane wejściowe przekazane za pomocą `jobs.<job_id>.steps[*].with` nie można się do nich odwoływać za pomocą kontekstu `inputs`.
+> W przeciwieństwie do [`jobs.<job_id>.with`](#jobs%20job_id%20with), dane wejściowe przekazane za pomocą `jobs.<job_id>.steps[*].with` nie można się do nich odwoływać za pomocą [Context](Context.md) `inputs`.
 
 ### jobs.<job_id>.steps[*].with.args
 

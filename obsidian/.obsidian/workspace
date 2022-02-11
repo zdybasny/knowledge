@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/GitHubActions/Workflow.md",
+            "file": "devops/GitHubActions/Workflow syntax.md",
             "mode": "source",
             "source": false
           }
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/GitHubActions/Workflow.md",
+                "file": "devops/GitHubActions/Workflow syntax.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/GitHubActions/Workflow.md",
+                "file": "devops/GitHubActions/Workflow syntax.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +144,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -153,15 +153,15 @@
   },
   "active": "565809429410fc4a",
   "lastOpenFiles": [
-    "devops/GitHubActions/Workflow.md",
     "devops/GitHubActions/Workflow syntax.md",
+    "devops/GitHubActions/Workflow.md",
+    "devops/GitHubActions/Runner.md",
     "devops/GitHubActions/Job.md",
-    "devops/GitHubActions/Environment.md",
     "devops/GitHubActions/Event.md",
+    "devops/GitHubActions/Environment.md",
+    "devops/GitHubActions/Context.md",
     "devops/GitHubActions/Action.md",
     "Jobów.md",
-    "devops/GitHubActions/Runner.md",
-    "devops/AWS/VPC Route table.md",
-    "devops/Network/Event.md"
+    "devops/AWS/VPC Route table.md"
   ]
 }
