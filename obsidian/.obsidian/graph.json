@@ -5,24 +5,31 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "tag:#TODO path:devops/aws",
+      "query": "tag:#TODO",
       "color": {
         "a": 1,
         "rgb": 16711680
       }
     },
     {
-      "query": "path:aws",
+      "query": "path:AWS",
       "color": {
         "a": 1,
         "rgb": 16748544
       }
     },
     {
-      "query": "path:network",
+      "query": "path:GitHubActions",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "path:Network",
       "color": {
         "a": 1,
         "rgb": 5426144
@@ -39,6 +46,6 @@
   "repelStrength": 0.431372549019608,
   "linkStrength": 0.519607843137255,
   "linkDistance": 30,
-  "scale": 0.19357346817856727,
+  "scale": 0.45050811767578286,
   "close": true
 }

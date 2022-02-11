@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "a3652a35721c95bc",
+        "id": "565809429410fc4a",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "devops/GitHubActions/Workflow.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -89,6 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "devops/GitHubActions/Workflow.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,6 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "devops/GitHubActions/Workflow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,17 +151,17 @@
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "a3652a35721c95bc",
+  "active": "565809429410fc4a",
   "lastOpenFiles": [
-    "devops/AWS/attachments/ELB SSL.png",
-    "devops/AWS/Aurora.md",
-    "devops/Network/DNS.md",
-    "devops/Network/attachments/DNS FQDN.png",
-    "devops/AWS/attachments/CLB.png",
-    "devops/AWS/attachments/VPC CIDR.png",
-    "devops/AWS/attachments/GWLB.png",
-    "devops/AWS/attachments/DB Activity Streams.png",
-    "devops/AWS/attachments/Beanstalk worker.png",
-    "devops/AWS/attachments/Beanstalk flow.png"
+    "devops/GitHubActions/Workflow.md",
+    "devops/GitHubActions/Workflow syntax.md",
+    "devops/GitHubActions/Job.md",
+    "devops/GitHubActions/Environment.md",
+    "devops/GitHubActions/Event.md",
+    "devops/GitHubActions/Action.md",
+    "Jobów.md",
+    "devops/GitHubActions/Runner.md",
+    "devops/AWS/VPC Route table.md",
+    "devops/Network/Event.md"
   ]
 }
