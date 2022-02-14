@@ -4,7 +4,7 @@
 
 Konteksty są sposobem dostępu do informacji o przebiegach [Workflowó](Workflow.md), [Runnerów](Runner.md), [Jobów](Job.md) i **krokach**. Każdy kontekst jest obiektem zawierającym właściwości, które mogą być stringami lub innymi obiektami.
 
-Konteksty, obiekty i właściwości różnią się znacząco w zależności od warunków uruchomienia [Workflow](Workflow.md). 
+Konteksty, obiekty i właściwości różnią się znacząco w zależności od warunków uruchomienia [Workflow](Workflow.md).
 Np. kontekst [`matrix`](https://docs.github.com/en/actions/learn-github-actions/contexts#matrix-context) jest wypełniany tylko dla [Jobów](Job.md) w macierzy budowy.
 
 ##### Spis treści
@@ -32,4 +32,3 @@ W GitHub Actions można odwołać się do następujących kontekstów:
 # Dostępność kontekstów
 
 Nie wszystkie konteksty są dostępne w każdym miejscu [Workflow](Workflow.md). Kiedy dany kontekst jest dostępny, zawarte jest w tabeli: [Context availability](https://docs.github.com/en/actions/learn-github-actions/contexts#context-availability).
-

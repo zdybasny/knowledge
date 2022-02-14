@@ -23,7 +23,7 @@ GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workfl
   - [defaults](#defaults)
   - [concurrency](#concurrency)
 - [Składnia Jobs:](#składnia-jobs)
-  - [Atrybuty Jobs analogiczne do Workflow](#atrybuty%20jobs%20analogiczne%20do%20workflow)
+  - [Atrybuty Jobs analogiczne do Workflow:](#atrybuty%20jobs%20analogiczne%20do%20workflow)
     - [jobs.<job_id>.name](#jobs%20job_id%20name)
     - [jobs.<job_id>.permissions](#jobs%20job_id%20permissions)
     - [jobs.<job_id>.concurrency](#jobs%20job_id%20concurrency)
@@ -49,8 +49,8 @@ GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workfl
   - [jobs.<job_id>.with](#jobs%20job_id%20with)
   - [jobs.<job_id>.secrets](#jobs%20job_id%20secrets)
 - [Składnia Steps:](#składnia-steps)
-  - [Atrybuty Steps analogiczne do Jobs](#atrybuty%20steps%20analogiczne%20do%20jobs)
-    - [jobs.<job_id>.steps[*].name](#jobs%20job_id%20steps%20name) 
+  - [Atrybuty Steps analogiczne do Jobs:](#atrybuty%20steps%20analogiczne%20do%20jobs)
+    - [jobs.<job_id>.steps[*].name](#jobs%20job_id%20steps%20name)
     - [jobs.<job_id>.steps[*].uses](#jobs%20job_id%20steps%20uses)
     - [jobs.<job_id>.steps[*].env](#jobs%20job_id%20steps%20env)
     - [jobs.<job_id>.steps[*].continue-on-error](#jobs%20job_id%20steps%20continue-on-error)
@@ -222,7 +222,7 @@ jobs:
 
 Aby móc wywołac [Workflow](Workflow.md) manualnie, należy zawrezć `on.workflow_dispatch`.
 
-### on.workflow_dispatch.inputs
+#### on.workflow_dispatch.inputs
 
 Dodaje parametry do [Workflow](Workflow.md) (analogicznie do [`on.workflow_dispatch.inputs`](#on%20workflow_call%20inputs)).
 
@@ -304,7 +304,7 @@ concurrency: ci-${{ github.ref }}
 
 Można uruchomić nieograniczoną liczbę [Jobów](Job.md), o ile nie przekroczy się limitów użycia [Workflow](Workflow.md).
 
-## Atrybuty Jobs analogiczne do Workflow
+## Atrybuty Jobs analogiczne do Workflow:
 
 Większość [atrybutów workflow](#Plik%20workflow) są analogiczne dla opisu [Jobów](Event.md):
 
@@ -499,7 +499,7 @@ Jeśli ustawiony na `true`, GitHub pozwala na przejście [Workflow](Workflow.md)
 
 Tworzy kontener do uruchomienia wszystkich kroków w [Jobie](Job.md), które nie określają jeszcze kontenera.
 
-Jeśli masz kroki, które używają zarówno skryptu jak i kontenera, działania kontenera będą uruchamiane jako kontenery rodzeństwa w tej samej sieci z tymi samymi uchwytami woluminów.
+Jeśli masz **kroki**, które używają zarówno skryptu jak i kontenera, działania kontenera będą uruchamiane jako kontenery rodzeństwa w tej samej sieci z tymi samymi uchwytami na woluminy.
 
 Jeśli nie ustawisz `container`, wszystkie kroki będą uruchamiane bezpośrednio na hoście określonym przez `runs-on`, chyba że krok odnosi się do akcji skonfigurowanej do uruchamiania w kontenerze.
 
@@ -532,7 +532,7 @@ Atrybuty `jobs.<job_id>.container` to:
 
 [źródło](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idservices)
 
-Służy do hostowania kontenerów usług dla [Joba](Job.md) w [Workflow](Workflow.md). Kontenery usług są przydatne do tworzenia np. baz danych lub usług cache'owania, takich jak Redis. [Runner](Runner.md) automatycznie tworzy sieć Docker i zarządza cyklem życia kontenerów usług.
+Służy do hostowania kontenerów usług dla [Joba](Job.md) w [Workflow](Workflow.md). Kontenery usług są przydatne do tworzenia np. baz danych lub usług cache'owania, takich jak Redis. [Runner](Runner.md) automatycznie tworzy sieć Docker ([bridge network](https://docs.docker.com/network/bridge/)) i zarządza cyklem życia kontenerów.
 
 `jobs.<job_id>.services` posiada te same atrybuty co [`jobs.<job_id>.container`](#jobs%20job_id%20container).
 
@@ -613,7 +613,7 @@ jobs:
 
 Nie wszystkie **kroki** uruchamiają [Action](Action.md), ale wszystkie [Action](Action.md) uruchamiają się jako **krok**. Każdy **krok** działa w swoim własnym procesie w środowisku uruchomieniowym i ma dostęp do przestrzeni roboczej i systemu plików. Ponieważ **kroki** działają w swoim własnym procesie, zmiany w zmiennych środowiskowych nie są zachowywane pomiędzy **krokami**. GitHub dostarcza wbudowanych **kroki** do konfiguracji i wykonania [Jobów](Job.md).
 
-## Atrybuty Steps analogiczne do Jobs
+## Atrybuty Steps analogiczne do Jobs:
 
 ### jobs.<job_id>.steps[*].name
 
