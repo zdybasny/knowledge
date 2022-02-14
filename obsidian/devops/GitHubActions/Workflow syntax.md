@@ -23,6 +23,7 @@ GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workfl
   - [defaults](#defaults)
   - [concurrency](#concurrency)
 - [Składnia Jobs:](#składnia-jobs)
+  - [jobs.<job_id>](#jobs%20job_id)
   - [Atrybuty Jobs analogiczne do Workflow:](#atrybuty%20jobs%20analogiczne%20do%20workflow)
     - [jobs.<job_id>.name](#jobs%20job_id%20name)
     - [jobs.<job_id>.permissions](#jobs%20job_id%20permissions)
@@ -78,7 +79,7 @@ Definiuje, jakie zdarzenia (tu [lista zdarzeń](Event.md#Lista%20zdarzeń)) mog�
 
 Można zdefiniować:
 
-- pojedyncze [zdarzenie](Event.md): `  on: push `,
+- pojedyncze [zdarzenie](Event.md): ` on: push  `,
 - jedno z wielu [zdarzeń](Event.md): `on: [push, fork]` (każde [zdarzenie](Event.md) uruchamia nowy [Workflow](Workflow.md))
 - harmonogram: [`on.schedule`](#on%20schedule),
 - wywołanie przez inny [Workflow](Workflow.md) :  [`on.workflow_call`](#on%20workflow_call),
@@ -303,6 +304,12 @@ concurrency: ci-${{ github.ref }}
 [źródło](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobs)
 
 Można uruchomić nieograniczoną liczbę [Jobów](Job.md), o ile nie przekroczy się limitów użycia [Workflow](Workflow.md).
+
+## jobs.<job_id>
+
+Użyj `jobs.<job_id>` aby nadać swojemu **zadaniu** identyfikator unikalny w ramach obiektu `jobs`.
+
+- `<job_id>` musi zaczynać się od litery lub `_` i zawierać tylko znaki alfanumeryczne, `-` lub `_`.
 
 ## Atrybuty Jobs analogiczne do Workflow:
 

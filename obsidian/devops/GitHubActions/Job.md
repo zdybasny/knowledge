@@ -1,9 +1,10 @@
 #github #pipelines
 
 **Zadanie** (**job**) to zbiór **kroków** dla [Workflow](Workflow.md), które wykonywane są przez tego samego wykonawcę.
+
 Każdy **krok** jest:
 
-- albo skryptem powłoki, który zostanie wykonany,
+- albo skryptem powłoki, który zostanie wykonany;
 - albo [Action](Action.md), która zostanie uruchomiona.
 
 Kroki wykonywane są w kolejności na tym samym [Runnerze](Runner.md), współdzieląc dane.
@@ -26,7 +27,13 @@ Można skonfigurować zależności **zadania** z innymi **zadaniami**. Domyślni
 
 W ramach pojedynczego [Workflow](Workflow.md) można uruchomić nieograniczoną liczbę **jobów**, o ile nie przekroczy się limitów użycia [Workflow](Workflow.md).
 
-Składnia i atrybuty **jobów** opisane są w rodziale [**Workflow syntax > jobs**](Workflow%20syntax.md#jobs).
+Składnia i atrybuty **jobów** opisane są w rodziale [**Workflow syntax > Składnia Jobs**](Workflow%20syntax.md#Składnia%20Jobs).
+
+## job_id
+
+Użyj `jobs.<job_id>` aby nadać swojemu **zadaniu** identyfikator unikalny w ramach obiektu `jobs`.
+
+`<job_id>` musi zaczynać się od litery lub `_` i zawierać tylko znaki alfanumeryczne, `-` lub `_`.
 
 # Cache
 
