@@ -2,11 +2,38 @@
 
 **Zdarzenie** to określona aktywność w repozytorium, która uruchamia [Workflow](Workflow.md).
 
-Niektóre **zdarzenia** posiadają wiele typów aktywności. Dla tych zdarzeń można określić, które typy aktywności wyzwolą uruchomienie [Workflow](Workflow.md) (patrz: [`on.<event_name>.types`](Workflow%20syntax.md#on%20event_name%20types)).
-
 ##### Spis treści
 
+- [Obsługa zdarzeń w workflow](#Obsługa%20zdarzeń%20w%20workflow)
+  - [Typy](#Typy)
+  - [Filtry](#Filtry)
 - [Lista zdarzeń](#Lista%20zdarzeń)
+
+# Obsługa zdarzeń w workflow
+
+[Workflow](Workflow.md) określa, które Eventy mogą powodować jego uruchomienie.
+
+Można zdefiniować:
+
+- pojedyncze **zdarzenie**: `  on: push `,
+- jeden z wielu **zdarzeń**: `on: [push, fork]` (każdy **zdarzenie** uruchamia nowy [Workflow](Workflow.md)),
+- harmonogram: `on.schedule`,
+- wywołanie przez inny [Workflow](Workflow.md):  `on.workflow_call`,
+- wywołanie manualne: [`on.workflow_dispatch`.
+
+Więcej: [**Workflow syntax** > `on`](Workflow%20syntax.md#on).
+
+## Typy
+
+Niektóre **zdarzenia** posiadają wiele typów aktywności. Dla tych **zdarzeń** można określić, które typy aktywności wyzwolą uruchomienie [Workflow](Workflow.md).
+
+Więcej: [`on.<event_name>.types`](Workflow%20syntax.md#on%20event_name%20types).
+
+## Filtry
+
+Niektóre **zdarzenia** posiadają filtry, które dają większą kontrolę nad tym, kiedy [Workflow](Workflow.md) powinien zostać uruchomiony.
+
+Więcej: [`on.<event_name>.<filter_name>`](Workflow%20syntax.md#on%20event_name%20filter_name).
 
 # Lista zdarzeń
 

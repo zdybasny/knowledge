@@ -74,12 +74,12 @@ Jeśli pominiesz nazwę, GitHub ustawi ją na ścieżkę do pliku [Workflow](Wor
 
 ## on
 
-Ddefiniuje, jakie zdarzenia (tu [lista zdarzeń](Event.md#Lista%20zdarzeń)) mogą powodować uruchomienie [Workflow](Workflow.md).
+Definiuje, jakie zdarzenia (tu [lista zdarzeń](Event.md#Lista%20zdarzeń)) mogą powodować uruchomienie [Workflow](Workflow.md).
 
 Można zdefiniować:
 
-- pojedyncze [zdarzenie](Event.md): ` on: push  `,
-  - jedno z wielu [zdarzeń](Event.md): `on: [push, fork]` (każdy [zdarzenie](Event.md) uruchamia nowy [Workflow](Workflow.md))
+- pojedyncze [zdarzenie](Event.md): `  on: push `,
+- jedno z wielu [zdarzeń](Event.md): `on: [push, fork]` (każde [zdarzenie](Event.md) uruchamia nowy [Workflow](Workflow.md))
 - harmonogram: [`on.schedule`](#on%20schedule),
 - wywołanie przez inny [Workflow](Workflow.md) :  [`on.workflow_call`](#on%20workflow_call),
 - wywołanie manualne: [`on.workflow_dispatch`](#on%20workflow_dispatch).
