@@ -4,17 +4,17 @@
 
 ##### Spis treści
 
-- [Plik workflow](#plik-workflow)
-  - [Workflow syntax](#workflow-syntax)
-  - [Workflow command](#workflow-command)
-    - [Environment file](#environment-file)
-      - [Toolkit functions](#toolkit-functions)
+- [Plik workflow](#plik%20workflow)
+  - [Workflow syntax](#workflow%20syntax)
+  - [Workflow command](#workflow%20command)
+    - [Environment file](#environment%20file)
+      - [Toolkit functions](#toolkit%20functions)
 - [Trigger](#trigger)
-- [Reużywanie workflow](#reużywanie-workflow)
-  - [Sposoby na reużycie workflow](#sposoby-na-reużycie-workflow)
-  - [Dostęp do reużywalnego workflow](#dostęp-do-reużywalnego-workflow)
-    - [Kontekst w wywołanym workflow](#kontekst-w-wywołanym-workflow)
-    - [Token (GITHUB_TOKEN & PAS - personal access token)](#token-github_token--pas---personal-access-token)
+- [Reużywanie workflow](#reużywanie%20workflow)
+  - [Sposoby na reużycie workflow](#sposoby%20na%20reużycie%20workflow)
+  - [Dostęp do reużywalnego workflow](#dostęp%20do%20reużywalnego%20workflow)
+    - [Kontekst w wywołanym workflow](#kontekst%20w%20wywołanym%20workflow)
+    - [Token (GITHUB_TOKEN & PAS - personal access token)](#Token%20GITHUB_TOKEN%20PAS%20-%20personal%20access%20token)
     - [Ograniczenia](#ograniczenia)
 
 # Plik workflow
@@ -104,13 +104,13 @@ W zależności od widoczności repozytorium, można wywołać **workflow**:
 
 Jeśli reużyjemy **workflow** z innego repozytorium, wszelkie [Actions](Action.md) w wywołanym **workflow** uruchamiana są tak, jakby były częścią wywołującego **workflow**.
 
-Gdy reużywalny **workflow** jest wywoływany przez inny **workflow**, [Context](Context.md) `github` jest zawsze skojarzony z **workflow** wywołującym, a wywołany **workflow** automatycznie otrzymuje dostęp do `github.token` oraz `secrets.GITHUB_TOKEN`.
+Gdy reużywalny **workflow** jest wywoływany przez inny **workflow**, [Context](Context.md) `github` jest zawsze skojarzony z **workflow** wywołującym, a wywołany **workflow** automatycznie otrzymuje dostęp do `github.token` oraz `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN).
 
 ### Token (GITHUB_TOKEN & PAS - personal access token)
 
-Gdy używamy `secrets.GITHUB_TOKEN` repozytorium do wykonywania zadań, [Eventy](Event.md) wywołane przez `secrets.GITHUB_TOKEN` nie będą tworzyły nowego **workflow**. Zapobiega to przypadkowemu tworzeniu rekurencyjnych przebiegów pracy.
+Gdy używamy `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) repozytorium do wykonywania zadań, [Eventy](Event.md) wywołane przez `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) nie będą tworzyły nowego **workflow**. Zapobiega to przypadkowemu tworzeniu rekurencyjnych przebiegów pracy.
 
-Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć **PAS** (**Personal Access Token**) zamiast `secrets.GITHUB_TOKEN` do wyzwalania [Eventów](Event.md) wymagających tokena. PAS tworzy się i przechowuje go jako sekret.
+Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć **PAS** (**Personal Access Token**) zamiast `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena. PAS tworzy się i przechowuje go jako sekret.
 
 ```yaml
 on:

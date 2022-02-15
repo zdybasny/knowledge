@@ -19,6 +19,7 @@ GitHub udostępnia na świeżej, nowo dostarczonej maszynie wirtualnej następuj
   - [System plików](#System%20plików)
     - [System plików w kontenerze](#System%20plików%20w%20kontenerze)
 - [Self-hosted Runner](#self-hosted-runner)
+	- [Hardering for self-hosted runners](#Hardering%20for%20self-hosted%20runners)
 
 # Użycie runnera w workflow
 
@@ -106,3 +107,11 @@ Mmożna je dodawać na różnych poziomach hierarchii zarządzania:
 Maszyna **runnera** łączy się z GitHub Enterprise Cloud za pomocą aplikacji open-osurce -[actions/runner](https://github.com/actions/runner).
 
 **Self-hosted runner** jest automatycznie usuwany z GitHub Enterprise Cloud, jeśli nie łączy się z GitHub Actions przez ponad 30 dni.
+
+## Hardering for self-hosted runners
+
+ wykonują kod , co oznacza, że nie ma możliwości trwałego naruszenia tego środowiska lub uzyskania dostępu do większej ilości informacji niż ta, która została umieszczona w tym środowisku podczas procesu uruchamiania.
+
+W przeciwieństwie do  **GitHub-hosted** runners, które wykonują kod w efemerycznych, odizolowanych maszynach wirtualnych **self-hosted** mogą zostać trwale skompromitowane przez niezaufany kod w przepływie pracy. 
+
+Dlatego należy dodatkowo wzmocnić bezpieczeństwo runnerów **self-hosted**. Więcej w [**dokumentacji**](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#hardening-for-self-hosted-runners).
