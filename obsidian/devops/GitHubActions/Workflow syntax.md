@@ -246,9 +246,9 @@ on:
 
 ## permissions
 
-#TODO
+Modyfikuje domyślne uprawnienia przyznane [`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN), dodając lub usuwając dostęp w zależności od potrzeb, tak aby umożliwić tylko minimalny wymagany dostęp. 
 
-> Możesz również ustawić uprawnienia na poziomie [Joba](Job.md):  [`jobs.<job_id>.permissions`](#jobs%20job_id%20permissions).
+> Uprawnień można używać zarówno jako klucza najwyższego poziomu, mającego zastosowanie do wszystkich zadań w przepływie, jak i w obrębie określonych zadań: [`jobs.<job_id>.permissions`](#jobs%20job_id%20permissions).
 
 ## env
 
@@ -317,32 +317,34 @@ Większość [atrybutów workflow](#Plik%20workflow) są analogiczne dla opisu [
 
 ### jobs.<job_id>.name
 
-[`name`](#name)
+> [`name`](#name)
 
 > Możesz również nadać nazwę dla **kroku**:  [`jobs.<job_id>.steps[*].name`] [jobs job_id steps name](#jobs%20job_id%20steps%20name).
 
 ### jobs.<job_id>.permissions
 
-[`permissions`](#permissions)
+Określając uprawnienia w ramach definicji [Joba](Job.md), można skonfigurować inny zestaw uprawnień dla [`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) dla każdego [Joba](Job.md), jak aby poszczegulne [Joba](Job.md) otrzymały minimum uprawnień.
+
+> [`permissions`](#permissions)
 
 ### jobs.<job_id>.concurrency
 
-[`concurrency`](#concurrency)
+> [`concurrency`](#concurrency)
 
 ### jobs.<job_id>.outputs
 
-[`on.workflow_call.outputs`](#on%20workflow_call%20outputs)
+> [`on.workflow_call.outputs`](#on%20workflow_call%20outputs)
 
 ### jobs.<job_id>.env
 
-[`env`](#env)
+> [`env`](#env)
 
 > Możesz również ustawić zmienne środowiskowe na poziomie **kroku**:  [`jobs.<job_id>.steps[*]*.env`](#jobs%20job_id%20steps%20env).
 > Zmienne w **kroku** przysłaniają zmienne w [Jobie](Job.md).
 
 ### jobs.<job_id>.defaults
 
-[`defaults`](#defaults)
+> [`defaults`](#defaults)
 
 ## jobs.<job_id>.runs-on
 
@@ -626,7 +628,7 @@ Nie wszystkie **kroki** uruchamiają [Action](Action.md), ale wszystkie [Action]
 
 Jeśli nie podasz `name`, nazwa kroku będzie domyślnie odpowiadać tekstowi podanemu w poleceniu [`jobs.<job_id>.steps[*].run`](#jobs%20job_id%20steps%20run).
 
-[`jobs.<job_id>.name`](#jobs%20job_id%20name)
+> [`jobs.<job_id>.name`](#jobs%20job_id%20name)
 
 ### jobs.<job_id>.steps[*].uses
 
@@ -634,15 +636,15 @@ Inaczej niż w przypadku wywoływania [Workflow](Workflow.md) wielokrotnego uży
 
 ### jobs.<job_id>.steps[*].env
 
-[`jobs.<job_id>.env`](#jobs%20job_id%20env)
+> [`jobs.<job_id>.env`](#jobs%20job_id%20env)
 
 ### jobs.<job_id>.steps[*].continue-on-error
 
-[`jobs.<job_id>.continue-on-error`](#jobs%20job_id%20continue-on-error)
+> [`jobs.<job_id>.continue-on-error`](#jobs%20job_id%20continue-on-error)
 
 ### jobs.<job_id>.steps[*].timeout-minutes
 
-[`jobs.<job_id>.timeout-minutes`](#jobs%20job_id%20timeout-minutes)
+> [`jobs.<job_id>.timeout-minutes`](#jobs%20job_id%20timeout-minutes)
 
 ## jobs.<job_id>.steps[*].run
 

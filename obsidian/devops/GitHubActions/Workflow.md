@@ -110,7 +110,7 @@ Gdy reużywalny **workflow** jest wywoływany przez inny **workflow**, [Context]
 
 Gdy używamy `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) repozytorium do wykonywania zadań, [Eventy](Event.md) wywołane przez `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) nie będą tworzyły nowego **workflow**. Zapobiega to przypadkowemu tworzeniu rekurencyjnych przebiegów pracy.
 
-Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć **PAS** (**Personal Access Token**) zamiast `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena. PAS tworzy się i przechowuje go jako sekret.
+Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć **PAS** ([Personal access token](Security.md#Personal%20access%20token)) zamiast `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena. PAS tworzy się i przechowuje go jako sekret.
 
 ```yaml
 on:
@@ -129,7 +129,7 @@ jobs:
           gh issue edit $ISSUE_URL --add-label "triage"
 ```
 
-> Aby zminimalizować koszty korzystania z Akcji GitHub, upewnij się, że nie tworzysz rekurencyjnych lub niezamierzonych przebiegów pracy. A
+> Aby zminimalizować koszty korzystania z Akcji GitHub, upewnij się, że nie tworzysz rekurencyjnych lub niezamierzonych **workflowów**.
 
 ### Ograniczenia
 

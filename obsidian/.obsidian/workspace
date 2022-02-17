@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/GitHubActions/Security.md",
+            "file": "devops/GitHubActions/Event.md",
             "mode": "source",
             "source": false
           }
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "GITHUB_TOKEN",
+                "query": "\"Personal access token\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -50,7 +50,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "a46c7e129a2dea2f",
@@ -85,7 +86,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/GitHubActions/Security.md",
+                "file": "devops/GitHubActions/Event.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/GitHubActions/Security.md",
+                "file": "devops/GitHubActions/Event.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,15 +145,15 @@
   },
   "active": "432b7a3836542fb5",
   "lastOpenFiles": [
+    "devops/GitHubActions/Event.md",
     "devops/GitHubActions/Security.md",
     "devops/GitHubActions/Workflow.md",
-    "devops/GitHubActions/Environment.md",
-    "devops/GitHubActions/Workflow syntax.md",
-    "devops/GitHubActions/Runner.md",
     "devops/GitHubActions/Action.md",
+    "devops/GitHubActions/Environment.md",
+    "devops/GitHubActions/Runner.md",
+    "devops/GitHubActions/Workflow syntax.md",
     "devops/AWS/AMI.md",
     "devops/AWS/Application Auto Scaling.md",
-    "devops/GitHubActions/Context.md",
-    "devops/GitHubActions/Job.md"
+    "devops/GitHubActions/Context.md"
   ]
 }

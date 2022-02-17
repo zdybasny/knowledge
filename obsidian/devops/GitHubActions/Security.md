@@ -3,9 +3,12 @@
 ##### Spis treści
 
 - [Best practices](#Best%20practices)
-	- [Sekrety](#Sekrety)
-	- [Pozostałe](#Pozostałe)
+  - [Sekrety](#Sekrety)
+  - [Pozostałe](#Pozostałe)
 - [GITHUB_TOKEN](#GITHUB_TOKEN)
+  - [Domyślnie uprawnienia i zakresy](#Domyślnie%20uprawnienia%20i%20zakresy)
+  - [Modyfikacja uprawnień](#Modyfikacja%20uprawnień)
+- [Personal access token](#Personal%20access%20token)
 
 # Best practices
 
@@ -53,4 +56,68 @@ Np. jeśli wszystkie [pliki workflow](Workflow.md#Plik%20workflow) zxnajdują si
 
 # GITHUB_TOKEN
 
-#TODO
+Na początku każdego [Workflow](Workflow.md) GitHub automatycznie tworzy unikalny `secret.GITHUB_TOKEN`, który będzie używany w danym [Workflow](Workflow.md). Dostępny jest również poprzez [Context](Context.md) `github.token`. Token wygasa po zakończeniu zadania. Można go wykorzystać do uwierzytelniania się podczas pracy. Uprawnienia tokena są ograniczone do repozytorium, które zawiera dany [Workflow](Workflow.md) pracy.
+
+Gdy [Workflow](Workflow.md) używa `GITHUB_TOKEN`, [Eventy](Event.md) zdarzenia przez ten `GITHUB_TOKEN` nie będą tworzyły nowego [Workflow](Workflow.md), aby zapobiec przypadkowej rekurencyji. Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć [PAT](#Personal%20access%20token) zamiast `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena.
+
+## Domyślnie uprawnienia i zakresy
+
+Osoby z uprawnieniami administratora dla:
+
+- **enterprise**,
+- **organization**,
+- **repository**
+
+mogą ustawić **domyślne uprawnienia** na:
+
+- **Read and write permissions** (_permisywne_) - uprawnienia odczytu i zapisu w repozytorium dla wszystkich zakresów (`metadata` tylko do odczytu);
+- **Read repository contents permission** (_restrykcyjne_) - uprawnie tylko do odczytu w repozytorium dla zawartości `contents` i `metadata`.
+
+Lista zakresów (scopes) wraz z uprawnieniami znajduje się na stronie: [Permissions for the GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
+
+## Modyfikacja uprawnień
+
+Uprawnienia dla `GITHUB_TOKEN` można modyfikować w [plikach workflow](Workflow.md#Plik%20workflow).
+
+Jeżeli domyślne uprawnienia są _permisywne_, można edytować [plik workflow](Workflow.md#Plik%20workflow), usuwając niektóre z nich z `GITHUB_TOKEN`. Dobrą praktyką bezpieczeństwa jest nadawanie `GITHUB_TOKEN` najmniej wymaganego dostępu.
+
+Jeśli domyślne uprawnienia dla `GITHUB_TOKEN` są _restrykcyjne_, konieczne może być podniesienie poziomu uprawnień, aby umożliwić pomyślne wykonanie niektórych akcji i poleceń. Jeśli potrzebujesz token, który wymaga uprawnień, które nie są dostępne w `GITHUB_TOKEN`, możesz utworzyć [Personal access token](#Personal%20access%20token) i ustawić go jako sekret w swoim repozytorium.
+
+Zmianę uprawnień dla poszczególnych [Workflowów](Workflow.md) i [Jobów](Job.md) dokonuje się z użyciem odpowiednio:
+
+- [`permissions`](Workflow%20syntax.md#permissions),
+- [`jobs.<job_id>.permissions`](Workflow%20syntax.md#jobs%20job_id%20permissions).
+
+Gdy używany jest `permissions`, wszystkie nieokreślone uprawnienia ustawione są na `none`
+(z wyjątkiem zakresu `metadata`, który zawsze otrzymuje dostęp `read`).
+
+Uprawnienia, które posiadał `GITHUB_TOKEN` dla danego [Joba](Job.md), można sprawdzić w sekcji `Set up job` w logach [Workflow](Workflow.md).
+
+# Personal access token
+
+[źródło](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+Personal access tokeny (**PAT**) są alternatywą dla używania haseł do uwierzytelniania w GitHubie podczas korzystania z interfejsu API GitHuba lub wiersza poleceń. **PAT** tworzą się i przechowują je jako sekrety oraz mogą być łatwo usuwane (dostęp tymczasowy) i rotowane.
+
+> Jako środek ostrożności GitHub automatycznie usuwa PAT, które nie były używane od roku. Aby zapewnić dodatkowe bezpieczeństwo, zdecydowanie zalecamy dodanie wygaśnięcia do osobistych tokenów dostępu.
+
+Token bez przypisanych zakresów (**scope**) może uzyskać dostęp tylko do informacji publicznych. Zakresy możliwe do przypisania można znaleść na [**Available scopes**](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes).
+
+Przykład użycia **PAT**:
+
+```yaml
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  label_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh issue edit $ISSUE_URL --add-label "triage"
+```
