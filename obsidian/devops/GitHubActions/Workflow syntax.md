@@ -246,7 +246,7 @@ on:
 
 ## permissions
 
-Modyfikuje domyślne uprawnienia przyznane [`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN), dodając lub usuwając dostęp w zależności od potrzeb, tak aby umożliwić tylko minimalny wymagany dostęp. 
+Modyfikuje domyślne uprawnienia przyznane [`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN), dodając lub usuwając dostęp w zależności od potrzeb, tak aby umożliwić tylko minimalny wymagany dostęp.
 
 > Uprawnień można używać zarówno jako klucza najwyższego poziomu, mającego zastosowanie do wszystkich zadań w przepływie, jak i w obrębie określonych zadań: [`jobs.<job_id>.permissions`](#jobs%20job_id%20permissions).
 
@@ -293,10 +293,24 @@ Użycie **współbieżności** zapewnia, że w danym momencie uruchomione zostan
 
 > Możesz również określić współbieżność na poziomie [Joba](Job.md):  [`jobs.<job_id>.concurrency`](#jobs%20job_id%20concurrency).
 
+Więcej o współbieżności: [**Użycie współbieżności**](CD.md#Użycie%20współbieżności).
+
 Przykład:
 
 ```yaml
 concurrency: ci-${{ github.ref }}
+```
+
+### concurrency.cancel-in-progress
+
+Można również użyć `cancel-in-progress`, aby anulować każde aktualnie uruchomiony [Job](Job.md) lub [Workflow](Workflow.md) w tej samej grupie współbieżności.
+
+```yaml
+name: Deployment
+
+concurrency: 
+  group: production
+  cancel-in-progress: true
 ```
 
 # Składnia Jobs:
@@ -415,6 +429,8 @@ environment:
   name: production_environment
   url: ${{ steps.step_id.outputs.url_output }}
 ```
+
+> Więcej: [**Użycie środowisk w workflow**](Environment.md#Użycie%20środowisk%20w%20workflow).
 
 ## jobs.<job_id>.outputs
 

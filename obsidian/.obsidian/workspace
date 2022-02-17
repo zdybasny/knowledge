@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/GitHubActions/Event.md",
+            "file": "devops/GitHubActions/Action.md",
             "mode": "source",
             "source": false
           }
@@ -50,8 +50,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "a46c7e129a2dea2f",
@@ -86,7 +85,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/GitHubActions/Event.md",
+                "file": "devops/GitHubActions/Action.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/GitHubActions/Event.md",
+                "file": "devops/GitHubActions/Action.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,15 +144,15 @@
   },
   "active": "432b7a3836542fb5",
   "lastOpenFiles": [
-    "devops/GitHubActions/Event.md",
-    "devops/GitHubActions/Security.md",
-    "devops/GitHubActions/Workflow.md",
     "devops/GitHubActions/Action.md",
-    "devops/GitHubActions/Environment.md",
-    "devops/GitHubActions/Runner.md",
+    "devops/GitHubActions/CD.md",
     "devops/GitHubActions/Workflow syntax.md",
-    "devops/AWS/AMI.md",
-    "devops/AWS/Application Auto Scaling.md",
-    "devops/GitHubActions/Context.md"
+    "devops/GitHubActions/Environment.md",
+    "devops/GitHubActions/Context.md",
+    "devops/GitHubActions/Security.md",
+    "devops/GitHubActions/Event.md",
+    "devops/GitHubActions/Workflow.md",
+    "devops/GitHubActions/Runner.md",
+    "devops/AWS/AMI.md"
   ]
 }
