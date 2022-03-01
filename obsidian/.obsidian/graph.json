@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "path:devops",
+  "search": "path:devops/GitHubActions",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -46,6 +46,6 @@
   "repelStrength": 0.431372549019608,
   "linkStrength": 0.519607843137255,
   "linkDistance": 30,
-  "scale": 0.3213363860503593,
+  "scale": 0.7478537827650208,
   "close": true
 }

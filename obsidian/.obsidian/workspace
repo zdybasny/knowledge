@@ -9,9 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/GitHubActions/Action.md",
+            "file": "devops/GitHubActions/Action syntax.md",
             "mode": "source",
-            "source": false
+            "source": true
           }
         }
       }
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"Personal access token\"",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -85,7 +85,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/GitHubActions/Action.md",
+                "file": "devops/GitHubActions/Action syntax.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/GitHubActions/Action.md",
+                "file": "devops/GitHubActions/Action syntax.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,15 +144,15 @@
   },
   "active": "432b7a3836542fb5",
   "lastOpenFiles": [
+    "devops/GitHubActions/Action syntax.md",
     "devops/GitHubActions/Action.md",
-    "devops/GitHubActions/CD.md",
     "devops/GitHubActions/Workflow syntax.md",
     "devops/GitHubActions/Environment.md",
-    "devops/GitHubActions/Context.md",
-    "devops/GitHubActions/Security.md",
-    "devops/GitHubActions/Event.md",
     "devops/GitHubActions/Workflow.md",
-    "devops/GitHubActions/Runner.md",
-    "devops/AWS/AMI.md"
+    "devops/GitHubActions/Job.md",
+    "devops/GitHubActions/Security.md",
+    "devops/GitHubActions/CD.md",
+    "devops/GitHubActions/Context.md",
+    "devops/GitHubActions/Event.md"
   ]
 }

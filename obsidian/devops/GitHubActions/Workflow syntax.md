@@ -1,11 +1,10 @@
 #github #pipelines
 
-[źródło](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
-
 GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workflow.md). Każdy [Workflow](Workflow.md) przechowywany jest jako osobny plik `YAML` w repozytorium kodu, w katalogu o nazwie `.github/workflows`.
 
 ##### Spis treści
 
+- [Expression](#Expression)
 - [Składnia Workflow:](#składnia%20workflow)
   - [name](#name)
   - [on](#on)
@@ -49,20 +48,48 @@ GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workfl
   - [jobs.<job_id>.uses](#jobs%20job_id%20uses)
   - [jobs.<job_id>.with](#jobs%20job_id%20with)
   - [jobs.<job_id>.secrets](#jobs%20job_id%20secrets)
-- [Składnia Steps:](#składnia-steps)
+- [Składnia Steps:](#składnia%20steps)
   - [Atrybuty Steps analogiczne do Jobs:](#atrybuty%20steps%20analogiczne%20do%20jobs)
     - [jobs.<job_id>.steps[*].name](#jobs%20job_id%20steps%20name)
+    - [jobs.<job_id>.steps[*].id](#jobs%20job_id%20steps%20id)
+    - [jobs.<job_id>.steps[*].if](#jobs%20job_id%20steps%20if)
     - [jobs.<job_id>.steps[*].uses](#jobs%20job_id%20steps%20uses)
     - [jobs.<job_id>.steps[*].env](#jobs%20job_id%20steps%20env)
     - [jobs.<job_id>.steps[*].continue-on-error](#jobs%20job_id%20steps%20continue-on-error)
     - [jobs.<job_id>.steps[*].timeout-minutes](#jobs%20job_id%20steps%20timeout-minutes)
   - [jobs.<job_id>.steps[*].run](#jobs%20job_id%20steps%20run)
   - [jobs.<job_id>.steps[*].shell](#jobs%20job_id%20steps%20shell)
+  - [jobs.<job_id>.steps[*].working-directory](#jobs%20job_id%20steps%20working-directory)
   - [jobs.<job_id>.steps[*].with](#jobs%20job_id%20steps%20with)
     - [jobs.<job_id>.steps[*].with.args](#jobs%20job_id%20steps%20with%20args)
     - [jobs.<job_id>.steps[*].with.entrypoint](#jobs%20job_id%20steps%20with%20entrypoint)
 
+# Expression
+
+[źródło](https://docs.github.com/en/actions/learn-github-actions/expressions)
+
+Za pomocą wyrażeń (**expression**) można programowo ustawiać zmienne środowiskowe w [plikach workflow](Workflow.md#Plik%20workflow) i [kontekstach](Context.md). Wyrażenie może być dowolną kombinacją:
+
+- [wartości literalnych](https://docs.github.com/en/actions/learn-github-actions/expressions#literals),
+- odwołań do [kontekstu](Context.md),
+- [funkcji](https://docs.github.com/en/actions/learn-github-actions/expressions#functions),
+
+które można łączyć za pomocą [operatorów](https://docs.github.com/en/actions/learn-github-actions/expressions#operators). Składnia **wyrażenia** to: `${{ }}`.
+
+> Uwaga: Podczas tworzenia [Workflow](Workflow.md) i [Action](Action.md), zawsze należy rozważyć, czy kod może wykonać niezaufane dane wejściowe od potencjalnych atakujących. Pewne [konteksty](Context.md) powinny być traktowane jako niezaufane dane wejściowe, ponieważ atakujący mógłby wstawić własną złośliwą treść.
+> Więcej: [**Best practices**](Security.md#Pozostałe).
+
+Wyrażenia są powszechnie używane wraz z warunkowym słowem kluczowym `if` w celu określenia, czy dany **krok** powinien zostać uruchomiony (jeśli `true`). Kiedy używasz wyrażenia w warunku `if`, możesz pominąć składnię wyrażenia `${{ }}`, ponieważ GitHub automatycznie oceni wyrażenie `if` jako wyrażenie.
+
+```yaml
+steps:
+  - uses: actions/hello-world-javascript-action@v1.1
+    if: ${{ <expression> }}
+```
+
 # Składnia Workflow:
+
+[źródło](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 
 Elementy składni `YAML` dla [Workflow](Workflow.md):
 
@@ -646,9 +673,55 @@ Jeśli nie podasz `name`, nazwa kroku będzie domyślnie odpowiadać tekstowi po
 
 > [`jobs.<job_id>.name`](#jobs%20job_id%20name)
 
+### jobs.<job_id>.steps[*].id
+
+Unikalny identyfikator kroku, który można używać do odwoływania się do kroku w [Context](Context.md).
+
+### jobs.<job_id>.steps[*].if
+
+Warunku `if` można użyć w celu uzależnienia uruchomienia **kroku** od określonego warunku. Do utworzenia warunku można użyć dowolnego obsługiwanego [Context](Context.md) i [Expression](#Expression).
+
+W przypadku użycia [Expression](#Expression) w warunku `if` można pominąć składnię wyrażenia `${{ }}`.
+
+Przykłady:
+
+```yaml
+steps:
+ - name: My first step
+   if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+   run: echo This event is a pull request that had an assignee removed.
+```
+
+```yaml
+steps:
+  - name: My first step
+    uses: octo-org/action-name@main
+  - name: My backup step
+    if: ${{ failure() }}
+    uses: actions/heroku@1.0.0
+```
+
 ### jobs.<job_id>.steps[*].uses
 
-Inaczej niż w przypadku wywoływania [Workflow](Workflow.md) wielokrotnego użytku bezpośrednio przez [Job](Job.md) ([`jobs.<job_id>.uses`](#jobs%20job_id%20uses)), `uses` w **kroku** wywołuje [Action](Action.md).
+Aby dodać [Action](Action.md) do [Workflow](Workflow.md), należy się do niej odwołać z **kroku**.  W zależności od umiejscowienia [Action](Action.md), należy podać:
+
+- **to samo repozytorium:**
+  - ścieżkę względną z tego samego repozytorium: `uses: ./.github/actions/hello-world-action`;
+
+- **inne repozytorium:
+  - repozytorium,
+  - nazwę akcji,
+  - wersję:
+    - tag: `uses: actions/javascript-action@v1.0.1`,
+    - SHA: 0 `uses: actions/javascript-action@172239021f7ba04fe7327647b213799853a9eb89`,
+    - **lub** branch: `uses: actions/javascript-action@main`;
+
+- **rejestr Docker:**
+  - `docker//`,
+  - obraz,
+  - tag: `uses: docker://alpine:3.8`.
+
+> Inaczej niż w przypadku wywoływania [Workflow](Workflow.md) wielokrotnego użytku bezpośrednio przez [Job](Job.md) ([`jobs.<job_id>.uses`](#jobs%20job_id%20uses)), `uses` w **kroku** wywołuje [Action](Action.md).
 
 ### jobs.<job_id>.steps[*].env
 
@@ -687,6 +760,18 @@ Przykład:
 Zastąpuje domyślne ustawienia powłoki w systemie operacyjnym [Runnera](Runner.md).
 
 Polecenie powłoki wykonuje plik tymczasowy, zawierający polecenia określone słowem kluczowym [`jobs.<job_id>.steps[*].run`](#jobs%20job_id%20steps%20run).
+
+## jobs.<job_id>.steps[*].working-directory
+
+Określa katalog roboczy, w którym ma zostać uruchomione polecenie.
+
+Przykład:
+
+```yaml
+- name: Clean temp directory
+  run: rm -rf *
+  working-directory: ./temp
+```
 
 ## jobs.<job_id>.steps[*].with
 
