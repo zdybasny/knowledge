@@ -6,9 +6,9 @@
 
 Użycie **środowisk** pozwala zwiększyć kontrolę nad [wdrożeniami](CD.md) poprzez:
 
-- wymagać zatwierdzenia [Joba](Job.md) aby go wykonać;
-- ograniczać, które gałęzie mogą wyzwalać [Workflow](Workflow.md);
-- lub ograniczać dostęp do sekretów.
+- wymaganie zatwierdzenia [Joba](Job.md) aby go wykonać;
+- ograniczenie, które gałęzie mogą wyzwalać [Workflow](Workflow.md);
+- lub ograniczenie dostępu do sekretów.
 
 > Użucie środowisk jest możliwe tylko dla repozytoriów `public` oraz `enterprise`.
 
@@ -41,7 +41,7 @@ Wymagani recenzenci (**reviewer**) to osoby lub zespoły, które muszą zatwierd
 
 Na liście **recenzentów** można umieścić do sześciu użytkowników lub zespołów. Recenzenci muszą mieć co najmniej dostęp do repozytorium w trybie odczytu. Tylko jeden z wymaganych recenzentów musi zatwierdzić [Job](Job.md), aby był ono kontynuowany.
 
-> Więcej [**About protected branches**](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches).
+> Więcej: [**About protected branches**](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches).
 
 ## Wait timer
 
@@ -59,6 +59,6 @@ Można ograniczyć, które branche mogą zostać wdrożone do **środowiska**. D
 
 # Sekrety środowiska
 
-**Sekrety** przechowywane w **środowisku** są dostępne tylko dla [Jobów](Job.md), które odwołują się do tego **środowiska**. Jeśli środowisko wymaga zatwierdzenia, [Job](Job.md) nie może uzyskać dostępu do **sekretów środowiska**, dopóki nie zatwierdzi go jeden z [wymaganych recenzentów](#Required%20reviewers).
+**Sekrety** przechowywane w **środowisku** są dostępne **TYLKO** dla [Jobów](Job.md), które odwołują się do tego **środowiska**. Jeśli środowisko wymaga zatwierdzenia, [Job](Job.md) nie może uzyskać dostępu do **sekretów środowiska**, dopóki nie zatwierdzi go jeden z [wymaganych recenzentów](#Required%20reviewers).
 
 > **Uwaga**: [Workflow](Workflow.md), który działa na [Self-hosted Runner](Runner.md#Self-hosted%20Runner), nie jest uruchamiany w izolowanym kontenerze, nawet jeśli korzysta ze **środowisk**. Więcej: [**Hardening for self-hosted runners**](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#hardening-for-self-hosted-runners).

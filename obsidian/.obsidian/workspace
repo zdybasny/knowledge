@@ -4,14 +4,26 @@
     "type": "split",
     "children": [
       {
-        "id": "432b7a3836542fb5",
+        "id": "5af208c1c3e7a927",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devops/GitHubActions/Action syntax.md",
+            "file": "devops/GitHubActions/Workflow.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "f5a246d0b59a8b5b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "devops/GitHubActions/Workflow.md",
             "mode": "source",
-            "source": true
+            "source": false
           }
         }
       }
@@ -41,8 +53,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
-                "matchingCase": false,
+                "query": "expression",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
                 "extraContext": false,
@@ -85,7 +97,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devops/GitHubActions/Action syntax.md",
+                "file": "devops/GitHubActions/Workflow.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devops/GitHubActions/Action syntax.md",
+                "file": "devops/GitHubActions/Workflow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,17 +154,17 @@
     "width": 395.65924072265625,
     "collapsed": true
   },
-  "active": "432b7a3836542fb5",
+  "active": "f5a246d0b59a8b5b",
   "lastOpenFiles": [
-    "devops/GitHubActions/Action syntax.md",
-    "devops/GitHubActions/Action.md",
-    "devops/GitHubActions/Workflow syntax.md",
-    "devops/GitHubActions/Environment.md",
     "devops/GitHubActions/Workflow.md",
-    "devops/GitHubActions/Job.md",
-    "devops/GitHubActions/Security.md",
-    "devops/GitHubActions/CD.md",
     "devops/GitHubActions/Context.md",
-    "devops/GitHubActions/Event.md"
+    "devops/GitHubActions/Event.md",
+    "devops/GitHubActions/Workflow syntax.md",
+    "devops/GitHubActions/Action syntax.md",
+    "devops/GitHubActions/CD.md",
+    "devops/AWS/EC2.md",
+    "devops/GitHubActions/Action.md",
+    "devops/GitHubActions/Environment.md",
+    "devops/GitHubActions/Security.md"
   ]
 }

@@ -4,18 +4,39 @@
 
 ##### Spis treści
 
+- [Trigger](#trigger)
 - [Plik workflow](#plik%20workflow)
   - [Workflow syntax](#workflow%20syntax)
   - [Workflow command](#workflow%20command)
     - [Environment file](#environment%20file)
-      - [Toolkit functions](#toolkit%20functions)
-- [Trigger](#trigger)
-- [Reużywanie workflow](#reużywanie%20workflow)
-  - [Sposoby na reużycie workflow](#sposoby%20na%20reużycie%20workflow)
-  - [Dostęp do reużywalnego workflow](#dostęp%20do%20reużywalnego%20workflow)
-    - [Kontekst w wywołanym workflow](#kontekst%20w%20wywołanym%20workflow)
-    - [Token (GITHUB_TOKEN & PAS - personal access token)](#Token%20GITHUB_TOKEN%20PAS%20-%20personal%20access%20token)
-    - [Ograniczenia](#ograniczenia)
+    - [Toolkit functions](#toolkit%20functions)
+- [Reużywanie zasobów](#Reużywanie%20zasobów)
+  - [Reużywanie workflow](#reużywanie%20workflow)
+    - [Sposoby na reużycie workflow](#sposoby%20na%20reużycie%20workflow)
+    - [Dostęp do reużywalnego workflow](#dostęp%20do%20reużywalnego%20workflow)
+      - [Kontekst w wywołanym workflow](#kontekst%20w%20wywołanym%20workflow)
+      - [Token (GITHUB_TOKEN & PAS - personal access token)](#Token%20GITHUB_TOKEN%20PAS%20-%20personal%20access%20token)
+      - [Ograniczenia](#ograniczenia)
+  - [Reużywanie zmiennych środowiskowych](#Reużywanie%20zmiennych%20środowiskowych)
+    - [env](#env)
+    - [$GITHUB_ENV](#GITHUB_ENV)
+    - [$GITHUB_PATH](#GITHUB_PATH)
+  - [Workflow artifact](#Workflow%20artifact)
+    - [upload-artifact](#upload-artifact)
+    - [download-artifact](#download-artifact)
+  - [Cache'owanie zależności](#Cache'owanie%20zależności)
+
+# Trigger
+
+[źródło](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow)
+
+Workflow jest uruchamiany, gdy zostanie wowołany [Event](Event.md) w postaci:
+
+- [Eventu](Event.md) GitHuba odnoszący się do repozytorium [pliku workflow](#Plik%20workflow): [`on`](Workflow%20syntax.md#on),
+- [Event](Event.md) poza GitHubem wywołujący `repository_dispatch`,
+- ręcznie: [`on.workflow_dispatch`](Workflow%20syntax.md#on%20workflow_dispatch),
+- lub według określonego harmonogramu: [`on.schedule`](Workflow%20syntax.md#on%20schedule).
+- Twoje repozytorium może posiadać **wiele przepływów** pracy w repozytorium, z których każdy może wykonywać inny zestaw **kroków**.
 
 # Plik workflow
 
@@ -43,11 +64,15 @@ podczas gdy inne wywoływane są przez zapis do pliku (patrz: [Environment file]
 
 ### Environment file
 
-Podczas wykonywania workflow, [Runner](Runner.md) generuje pliki tymczasowe, które mogą zostać użyte do wykonania pewnych [Actions](Action.md). Ścieżki do tych plików są udostępniane przez zmienne środowiskowe.
+[źródło](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files)
+
+Podczas wykonywania **workflow**, [Runner](Runner.md) generuje pliki tymczasowe, które mogą zostać użyte do wykonania pewnych [Actions](Action.md). Ścieżki do tych plików są udostępniane przez zmienne środowiskowe.
 
 > Wiele poleceń może być zapisanych do tego samego pliku, oddzielonych znakami nowej linii.
 
-#### Toolkit functions
+### Toolkit functions
+
+[źródło]((<https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions>)
 
 [actions/toolkit](https://github.com/actions/toolkit) zawierają liczne funckje, kótre można wywołać z użyciem **workow commands**.
 W tym celu użyj składni `::`, by wysłać komendę do [Runnera](Runner.md) poprzez `stdout`.
@@ -68,49 +93,59 @@ to z użyciem **workflow command**:
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 ```
 
-Dostępne funcje toolkit w ramach workflow znajdują się tu: [Using workflow commands to access toolkit functions](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions).
+| Toolkit function      | Equivalent workflow command                                                |
+| --------------------- | -------------------------------------------------------------------------- |
+| `core.addPath`        | Dostępne przy użyciu [Environment file](#Environment%20file) `GITHUB_PATH` |
+| `core.debug`          | `debug`                                                                    |
+| `core.notice`         | `notice`                                                                   |
+| `core.error`          | `error`                                                                    |
+| `core.endGroup`       | `endgroup`                                                                 |
+| `core.exportVariable` | Dostępne przy użyciu [Environment file](#Environment%20file) `GITHUB_PATH` |
+| `core.getInput`       | Dostępne przy użyciu zmiennej środowiskowej variable `INPUT_{NAME}`        |
+| `core.getState`       | Dostępne przy użyciu zmiennej środowiskowej variable `STATE_{NAME}`        |
+| `core.isDebug`        | Dostępne przy użyciu zmiennej środowiskowej variable `RUNNER_DEBUG`        |
+| `core.saveState`      | `save-state`                                                               |
+| `core.setCommandEcho` | `echo`                                                                     |
+| `core.setFailed`      | Używane jako skrót do `::error` i `exit 1`                                 |
+| `core.setOutput`      | `set-output`                                                               |
+| `core.setSecret`      | `add-mask`                                                                 |
+| `core.startGroup`     | `group`                                                                    |
+| `core.warning`        | `warning`                                                                  |
 
-# Trigger
+# Reużywanie zasobów
 
-[źródło](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow)
+## Reużywanie workflow
 
-Workflow jest uruchamiany, gdy zostanie wowołany [Event](Event.md) w postaci:
+[źródło](https://docs.github.com/en/actions/using-workflows/reusing-workflows)
 
-- [Eventu](Event.md) GitHuba odnoszący się do repozytorium [pliku workflow](#Plik%20workflow): [`on`](Workflow%20syntax.md#on),
-- [Event](Event.md) poza GitHubem wywołujący `repository_dispatch`,
-- ręcznie: [`on.workflow_dispatch`](Workflow%20syntax.md#on%20workflow_dispatch),
-- lub według określonego harmonogramu: [`on.schedule`](Workflow%20syntax.md#on%20schedule).
+![](attachments/WorkflowReusable.png)
 
-Twoje repozytorium może posiadać **wiele przepływów** pracy w repozytorium, z których każdy może wykonywać inny zestaw **kroków**.
-
-# Reużywanie workflow
-
-## Sposoby na reużycie workflow
+### Sposoby na reużycie workflow
 
 Można odwoływać się do workflow w ramach innego przepływu poprzez:
 
 - wygenereowanie [Eventu](Event.md), który oczekuje inny **workflow** (patrz [Token...](#Token%20GITHUB_TOKEN%20PAS%20-%20personal%20access%20token)),
 - bezpośrednie wywołanie [`on.workflow_call`](Workflow%20syntax.md#on%20workflow_call) przez  [`jobs.<job_id>.uses`](Workflow%20syntax.md#jobs%20job_id%20uses).
 
-## Dostęp do reużywalnego workflow
+### Dostęp do reużywalnego workflow
 
 W zależności od widoczności repozytorium, można wywołać **workflow**:
 
-- `private` - tylko na tym samym repozytorium co **workflow** ,wywołujący,
+- `private` - tylko na tym samym repozytorium co **workflow**, wywołujący,
 - `internal` - tylko na repozytoriach w ramach organizacji,
 - `public` - bez ograniczeń.
 
-### Kontekst w wywołanym workflow
+#### Kontekst w wywołanym workflow
 
 Jeśli reużyjemy **workflow** z innego repozytorium, wszelkie [Actions](Action.md) w wywołanym **workflow** uruchamiana są tak, jakby były częścią wywołującego **workflow**.
 
-Gdy reużywalny **workflow** jest wywoływany przez inny **workflow**, [Context](Context.md) `github` jest zawsze skojarzony z **workflow** wywołującym, a wywołany **workflow** automatycznie otrzymuje dostęp do `github.token` oraz `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN).
+Gdy reużywalny **workflow** jest wywoływany przez inny **workflow**, [Context](Context.md) `github` jest zawsze skojarzony z **workflow** wywołującym, a wywołany **workflow** automatycznie otrzymuje dostęp do `github.token` oraz [`secrets.GITHUB_TOKEN`](Security.md#GITHUB_TOKEN).
 
-### Token (GITHUB_TOKEN & PAS - personal access token)
+#### Token (GITHUB_TOKEN & PAS - personal access token)
 
-Gdy używamy `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) repozytorium do wykonywania zadań, [Eventy](Event.md) wywołane przez `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) nie będą tworzyły nowego **workflow**. Zapobiega to przypadkowemu tworzeniu rekurencyjnych przebiegów pracy.
+Gdy używamy [`secrets.GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) repozytorium do wykonywania zadań, [Eventy](Event.md) wywołane przez [`secrets.GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) nie będą tworzyły nowego **workflow**. Zapobiega to przypadkowemu tworzeniu rekurencyjnych przebiegów pracy.
 
-Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć **PAS** ([Personal access token](Security.md#Personal%20access%20token)) zamiast `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena. PAS tworzy się i przechowuje go jako sekret.
+Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć **PAS** ([Personal access token](Security.md#Personal%20access%20token)) zamiast [`secrets.GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena. PAS tworzy się i przechowuje go jako sekret.
 
 ```yaml
 on:
@@ -129,13 +164,99 @@ jobs:
           gh issue edit $ISSUE_URL --add-label "triage"
 ```
 
-> Aby zminimalizować koszty korzystania z Akcji GitHub, upewnij się, że nie tworzysz rekurencyjnych lub niezamierzonych **workflowów**.
+> Aby zminimalizować koszty korzystania z GitHub Actions, upewnij się, że nie tworzysz rekurencyjnych lub niezamierzonych **workflowów**.
 
-### Ograniczenia
+#### Ograniczenia
 
 Reużywalny **workfliow**:
 
-- **nie może** wywoływać innych reużywalnych **workflowów**,
-- jeśli znajduje się w prywatnym repozytorium, może być wywołany tylko z tego samego repozytorium,
-- nie otrzymuje poprzez propagaję zmiennych środowiskowych ustawionych w [Context](Context.md) `env` na poziomie **workflow** wywołującym,
+- **nie może** wywoływać innych reużywalnych **workflowów**;
+- jeśli znajduje się w prywatnym repozytorium, może być wywołany tylko z tego samego repozytorium;
+- nie otrzymuje poprzez propagaję zmiennych środowiskowych ustawionych w [Context](Context.md) `env` na poziomie **workflow** wywołującym
 - nie obsługuje atrybutu [`jobs.<job_id>.strategy`](Workflow%20syntax.md#jobs%20job_id%20strategy) w żadnym [Jobie](Job.md), który go wywołał.
+
+### Przekazywanie danych wejściowych i sekretów
+
+Aby przekazać nazwane dane wejściowe do wywołanego **Workflow** ([`on.workflow_call.inputs`](Workflow%20syntax.md#on%20workflow_call%20inputs)), należy użyć [`jobs.<job_id>.with`](Workflow%20syntax.md#jobs%20job_id%20with). Typ danych musi być zgodny z typem określonym w wywołanym **Workflow** (`boolean`, `number` lub `string`).
+
+Do przekazania nazwanych sekretów  wywołanego **Workflow** ([`on.workflow_call.secrets`](Workflow%20syntax.md#on%20workflow_call%20secrets)), należy użyć [`jobs.<job_id>.secrets`](Workflow%20syntax.md#jobs%20job_id%20secrets).
+
+Przykład:
+
+**Workflow** reużywalne:
+
+```yaml
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
+    secrets:
+		 accessToken:
+			 description: 'A token passed from the caller workflow'
+			 required: false
+
+jobs:
+  pass-secret-to-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pass the received secret to an action
+        uses: ./.github/actions/my-action
+        with:
+			  username: ${{ inputs.username }}
+			  token: ${{ secrets.accessToken }}
+```
+
+**Wrokflow** wywołujące:
+
+```yaml
+jobs:
+  call-workflow-passing-data:
+    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+    with:
+      username: mona
+    secrets:
+      accessToken: ${{ secrets.envPAT }}
+```
+
+## Reużywanie zmiennych środowiskowych
+
+[źródło](https://docs.github.com/en/actions/learn-github-actions/environment-variables)
+
+#TODO
+
+### env
+
+[źródło](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#env)
+
+<https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#env>
+
+<https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv>
+
+### $GITHUB_ENV
+
+[źródło](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-environment-variable)
+
+### $GITHUB_PATH
+
+[źródło](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-system-path)
+
+## Workflow artifact
+
+[źródło](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts)
+
+#TODO
+
+### upload-artifact
+
+### download-artifact
+
+## Cache'owanie zależności
+
+[źródło](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
+
+#TODO

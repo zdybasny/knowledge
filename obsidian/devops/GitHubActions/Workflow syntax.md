@@ -13,6 +13,7 @@ GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workfl
     - [on.schedule](#on%20schedule)
     - [on.workflow_call](#on%20workflow_call)
       - [on.workflow_call.inputs](#on%20workflow_call%20inputs)
+	      - [on.workflow_call.inputs.<inputs_id>.type](#on%20workflow_call%20inputs%20inputs_id%20type)
       - [on.workflow_call.outputs](#on%20workflow_call%20outputs)
       - [on.workflow_call.secrets](#on%20workflow_call%20secrets)
     - [on.workflow_dispatch](#on%20workflow_dispatch)
@@ -27,14 +28,13 @@ GitHub Actions wykorzystują składnię `YAML` do definiowania [Workflow](Workfl
     - [jobs.<job_id>.name](#jobs%20job_id%20name)
     - [jobs.<job_id>.permissions](#jobs%20job_id%20permissions)
     - [jobs.<job_id>.concurrency](#jobs%20job_id%20concurrency)
-    - [jobs.<job_id>.outputs](#jobs%20job_id%20outputs)
     - [jobs.<job_id>.env](#jobs%20job_id%20env)
     - [jobs.<job_id>.defaults](#jobs%20job_id%20defaults)
   - [jobs.<job_id>.runs-on](#jobs%20job_id%20runs-on)
   - [jobs.<job_id>.needs](#jobs%20job_id%20needs)
   - [jobs.<job_id>.if](#jobs%20job_id%20if)
   - [jobs.<job_id>.environment](#jobs%20job_id%20environment)
-  - [jobs.<job_id>.outputs](#jobs%20job_id%20outputs-1)
+  - [jobs.<job_id>.outputs](#jobs%20job_id%20outputs)
   - [jobs.<job_id>.timeout-minutes](#jobs%20job_id%20timeout-minutes)
   - [jobs.<job_id>.strategy](#jobs%20job_id%20strategy)
     - [jobs.<job_id>.strategy.matrix](#jobs%20job_id%20strategy%20matrix)
@@ -165,7 +165,7 @@ Definiuje wejścia, wyjścia i sekrety dla [Workflow](Workflow.md) wielokrotnego
 
 Określa dane wejściowe, które przekazywane są do wywoływanego [Workflow](Workflow.md).
 
-Parametry wymagają podania typu `on.workflow_call.inputs.<input_id>.type`.
+Parametry **wymagają** podania typu `on.workflow_call.inputs.<input_id>.type`.
 
 Jeśli parametr `default` nie jest ustawiony, domyślną wartością wejścia jest:
 
@@ -193,6 +193,14 @@ jobs:
       - name: Print the input name to STDOUT
         run: echo The username is ${{ inputs.username }}
 ```
+
+##### on.workflow_call.inputs.<inputs_id>.type
+
+**Wymagane** jeśli użyto [`on.workflow_call`](#on%20workflow_call%20inputs). Wartość typu  `string` określa typ danych wejściowych:
+
+- `boolean`,
+- `number`,
+- `string`.
 
 #### on.workflow_call.outputs
 
@@ -279,11 +287,13 @@ Modyfikuje domyślne uprawnienia przyznane [`GITHUB_TOKEN`](Security.md#GITHUB_T
 
 ## env
 
-Można również ustawić zmienne środowiskowe, które są dostępne tylko dla:
-
-- kroków wszystkich [Jobów](Job.md) w [Workflow](Workflow.md): `env`,
-- kroków pojedynczego [Joba](Job.md): `jobs.<job_id>.env`,
-- pojedynczego kroku: `jobs.<job_id>.steps[*].env`.
+> Można ustawić zmienne środowiskowe, które są dostępne tylko dla:
+> 
+> - kroków wszystkich [Jobów](Job.md) w [Workflow](Workflow.md): `env`,
+> - kroków pojedynczego [Joba](Job.md): [`jobs.<job_id>.env`](#jobs%20job_id%20env),
+> - pojedynczego kroku: [`jobs.<job_id>.steps[*].env`](#jobs%20job_id%20steps%20env).
+>
+> Zmienne w **kroku** przysłaniają zmienne w [Jobie](Job.md), a te przysłaniają zmienne [Workflow](Workflow.md).
 
 Przykład:
 
@@ -291,13 +301,6 @@ Przykład:
 env:
   SERVER: production
 ```
-
-> Możesz również ustawić zmienne środowiskowe na poziomie:
->
-> - [Joba](Job.md):  [`jobs.<job_id>.env`](#jobs%20job_id%20env),
-> - **kroku**:  [`jobs.<job_id>.steps[*]*.env`](#jobs%20job_id%20steps%20env).
->
-> Zmienne w **kroku** przysłaniają zmienne w [Jobie](Job.md), a te przysłaniają zmienne [Workflow](Workflow.md).
 
 ## defaults
 
@@ -371,10 +374,6 @@ Określając uprawnienia w ramach definicji [Joba](Job.md), można skonfigurowa�
 ### jobs.<job_id>.concurrency
 
 > [`concurrency`](#concurrency)
-
-### jobs.<job_id>.outputs
-
-> [`on.workflow_call.outputs`](#on%20workflow_call%20outputs)
 
 ### jobs.<job_id>.env
 
@@ -487,6 +486,9 @@ jobs:
       - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
 ```
 
+
+> Można również ustawić dane wyjsciowe dla [Workflow](Workflow.md) reużywalnego: [`on.workflow_call.outputs`](#on%20workflow_call%20outputs).
+
 ## jobs.<job_id>.timeout-minutes
 
 Maksymalna liczba minut, przez którą [Job](Job.md) może być wykonywane zanim GitHub automatycznie je anuluje. Domyślnie: `360`.
@@ -501,9 +503,9 @@ Maksymalna liczba minut, przez którą [Job](Job.md) może być wykonywane zanim
 
 Ddefiniuje macierz różnych konfiguracji [Jobów](Job.md). Pozwala na tworzenie wielu [Jobów](Job.md) poprzez wykonanie zastępowania zmiennych w pojedynczej definicji [Joba](Job.md).
 
-> Matryca może wygenerować maksymalnie 256 [Jobów](Job.md) na jeden przebieg [Workflow](Workflow.md).
+> Matryca może wygenerować maksymalnie 256 [Jobów](Job.md) na jeden [Workflow](Workflow.md).
 
-Kolejność, w jakiej definiujesz macierz ma znaczenie. Pierwsza zdefiniowana opcja będzie pierwszym [Jobem](Job.md), które zostanie uruchomione w przepływie pracy.
+Kolejność, w jakiej definiujesz macierz ma znaczenie. Pierwsza zdefiniowana opcja będzie pierwszym [Jobem](Job.md), które zostanie uruchomione w [Workflow](Workflow.md).
 
 #### jobs.<job_id>.strategy.matrix.include
 
@@ -708,7 +710,7 @@ Aby dodać [Action](Action.md) do [Workflow](Workflow.md), należy się do niej 
 - **to samo repozytorium:**
   - ścieżkę względną z tego samego repozytorium: `uses: ./.github/actions/hello-world-action`;
 
-- **inne repozytorium:
+- **inne repozytorium**:
   - repozytorium,
   - nazwę akcji,
   - wersję:
