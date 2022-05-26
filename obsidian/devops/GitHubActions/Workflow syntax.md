@@ -319,7 +319,7 @@ defaults:
 
 ## concurrency
 
-Użycie **współbieżności** zapewnia, że w danym momencie uruchomione zostanie tylko tylko [Job](Job.md) lub [Workflow](Workflow.md) korzystający z tej samej grupy współbieżności. Grupa współbieżności może być dowolnym ciągiem znaków lub [Expression](Action.md#Expression). Wyrażenie może używać tylko [Context](Context.md) `github`.
+Użycie **współbieżności** zapewnia, że w danym momencie uruchomione zostanie tylko tylko [Job](Job.md) lub [Workflow](Workflow.md) korzystający z tej samej grupy współbieżności. Grupa współbieżności może być dowolnym ciągiem znaków lub [Expression](#Expression). Wyrażenie może używać tylko [Context](Context.md) `github`.
 
 > Możesz również określić współbieżność na poziomie [Joba](Job.md):  [`jobs.<job_id>.concurrency`](#jobs%20job_id%20concurrency).
 
@@ -419,7 +419,7 @@ jobs:
 
 [źródło](https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution)
 
-Sprawdza warunek, który decyduje o uruchomieniu [Joba](Job.md). Możesz użyć dowolnego obsługiwanego [Context](Context.md) i [Expression](Action.md#Expression) do utworzenia warunku.
+Sprawdza warunek, który decyduje o uruchomieniu [Joba](Job.md). Możesz użyć dowolnego obsługiwanego [Context](Context.md) i [Expression](#Expression) do utworzenia warunku.
 
 Przykład:
 

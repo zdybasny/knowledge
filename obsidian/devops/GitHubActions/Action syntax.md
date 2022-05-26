@@ -18,6 +18,7 @@ Wszystkie [Actions](Action.md) wymagają pliku metadanych `action.yml` albo `act
   - [outputs](#outputs)
     - [outputs.<output_id>](#outputs%20output_id)
       - [outputs.<output_id>.description](#outputs%20output_id%20description)
+      - [outputs.<output_id>.value](#outputs%20output_id%20value)
   - [runs](#runs)
     - [runs.using](#runs%20using)
   - [branding](#branding)
@@ -117,11 +118,32 @@ Jeśli nie zadeklarowano `outputs`, to nadal można je ustawić i używać w [Wo
 
 Identyfikator typu `string` unikalny w ramach `outputs`.
 
+Przykład:
+
+```yaml
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
+```
+
 #### outputs.<output_id>.description
 
 `wymagany` dla [`outputs.<output_id>`](#outputs%20output_id)
 
 Opis `string` parametru wyjściowego.
+
+#### outputs.<output_id>.value
+
+`wymagany` dla [`outputs.<output_id>`](#outputs%20output_id)
+
+Wartość, na którą zostanie zmapowany parametr wyjściowy. Można ją ustawić na `string` lub [Expression](Workflow%20syntax.md#Expression) z [Context](Context.md).
 
 ## runs
 

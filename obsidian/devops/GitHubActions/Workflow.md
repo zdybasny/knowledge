@@ -237,9 +237,16 @@ jobs:
 
 <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv>
 
+https://docs.github.com/en/actions/using-workflows/reusing-workflows#limitations
+
+env ustawiony w Workflow wywołującym nie przenosi się do `env` Workflow'u reużywanego.
+Dostępny jest natomiast w Action, o czym powinien informować plik `README.md`.
+
 ### $GITHUB_ENV
 
 [źródło](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-environment-variable)
+
+> **Krok**, który tworzy lub aktualizuje zmienną środowiskową, nie ma dostępu do nowej wartości, ale wszystkie kolejne **kroki** w zadaniu będą miały do niej dostęp.
 
 ### $GITHUB_PATH
 

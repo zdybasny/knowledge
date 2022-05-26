@@ -12,7 +12,7 @@
 
 # GITHUB_TOKEN
 
-Na początku każdego [Workflow](Workflow.md) GitHub automatycznie tworzy unikalny `secret.GITHUB_TOKEN`, który będzie używany w danym [Workflow](Workflow.md). Dostępny jest również poprzez [Context](Context.md) `github.token`. Token wygasa po zakończeniu zadania. Można go wykorzystać do uwierzytelniania się podczas pracy. Uprawnienia tokena są ograniczone do repozytorium, które zawiera dany [Workflow](Workflow.md) pracy.
+Na początku każdego [Workflow](Workflow.md) GitHub automatycznie tworzy unikalny `secrets.GITHUB_TOKEN`, który będzie używany w danym [Workflow](Workflow.md). Dostępny jest również poprzez [Context](Context.md) `github.token`. Token wygasa po zakończeniu zadania. Można go wykorzystać do uwierzytelniania się podczas pracy. Uprawnienia tokena są ograniczone do repozytorium, które zawiera dany [Workflow](Workflow.md) pracy.
 
 Gdy [Workflow](Workflow.md) używa `GITHUB_TOKEN`, [Eventy](Event.md) zdarzenia przez ten `GITHUB_TOKEN` nie będą tworzyły nowego [Workflow](Workflow.md), aby zapobiec przypadkowej rekurencyji. Jeśli jednak potrzeba, aby **workflow** uruchomił inny **wrokflow**, należy użyć [PAT](#Personal%20access%20token) zamiast `secrets.`[`GITHUB_TOKEN`](Security.md#GITHUB_TOKEN) do wyzwalania [Eventów](Event.md) wymagających tokena.
 
