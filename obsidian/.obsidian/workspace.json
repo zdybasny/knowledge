@@ -1,0 +1,186 @@
+{
+  "main": {
+    "id": "24496802f748cefb",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b190e174a927928",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "809cb6f802fc9f74",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "obsidian/devops/network/Model OSI.md",
+                "staged": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c007d7ccf3b09f86",
+    "type": "split",
+    "children": [
+      {
+        "id": "b656dc4b213dbaf4",
+        "type": "tabs",
+        "dimension": 55.023364485981304,
+        "children": [
+          {
+            "id": "cfc0449c6654a39e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6f962233089ef0d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "voca",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "a46c7e129a2dea2f",
+        "type": "tabs",
+        "dimension": 44.976635514018696,
+        "children": [
+          {
+            "id": "d02af8d93a934a15",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 299
+  },
+  "right": {
+    "id": "5bbda9cdbf768808",
+    "type": "split",
+    "children": [
+      {
+        "id": "86a5a1461d26a476",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ca1b5537678d40d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1d4411df6d8557e6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6fc9204122b3fb08",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "b6aff98dae38866f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "62d23d8049a8a954",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "a8dd61ecc0f45fd1",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 398
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "publish:Publish changes": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false,
+      "obsidian-rich-links:Rich Links": false
+    }
+  },
+  "active": "809cb6f802fc9f74",
+  "lastOpenFiles": [
+    "Regex rules.md",
+    "README.md",
+    "devops/GitHubActions/Action syntax.md",
+    "devops/network/Model OSI.md",
+    "devops/GitHubActions/Workflow syntax.md",
+    "devops/GitHubActions/Workflow.md",
+    "devops/GitHubActions/Security.md",
+    "devops/Maven/POM.md",
+    "devops/Untitled.md",
+    "vocabulary.md"
+  ]
+}

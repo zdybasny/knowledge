@@ -7,5 +7,9 @@
   "table-editor-obsidian",
   "find-unlinked-files",
   "obsidian-vault-statistics-plugin",
-  "obsidian-code-block-enhancer"
+  "obsidian-code-block-enhancer",
+  "obsidian-git",
+  "obsidian-dictionary-plugin",
+  "obsidian-better-internal-link-inserter",
+  "obsidian-rich-links"
 ]

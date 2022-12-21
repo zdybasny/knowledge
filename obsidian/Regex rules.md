@@ -70,7 +70,7 @@ $1../attachments/$2.png
 ## Obsidian MD to GitHub MD
 
 - make obsidian internal links `[]()` github ones `[]()`
-- `$20` -> `-`
+- `%20` -> `-`
 
 ```
 (\[[^\]]+\]\((?!http)[^\)]*?)%20([^\)]+?)\)
@@ -81,7 +81,7 @@ $1-$2)
 ## GitHub MD to Obsidian MD
 
 - make github internal links `[]()` obsidian ones `[]()`
-- `-` -> `$20`
+- `-` -> `%20`
 
 ```
 (\[[^\]]+\]\((?!http)[^\)]*?)-([^\)]+?)\)
