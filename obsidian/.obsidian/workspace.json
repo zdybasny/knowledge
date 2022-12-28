@@ -4,17 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "4b190e174a927928",
+        "id": "0311506608a98399",
         "type": "tabs",
         "children": [
           {
-            "id": "809cb6f802fc9f74",
+            "id": "a88e17b6b4c79aa9",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": "obsidian/devops/network/Model OSI.md",
-                "staged": false
+                "file": "blog/git/How I work with git.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -92,6 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "blog/git/How I work with git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -122,6 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "blog/git/How I work with git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,17 +173,17 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "809cb6f802fc9f74",
+  "active": "a88e17b6b4c79aa9",
   "lastOpenFiles": [
+    "devops/GitHubActions/Action syntax.md",
+    "blog/git/How I work with git.md",
     "Regex rules.md",
     "README.md",
-    "devops/GitHubActions/Action syntax.md",
     "devops/network/Model OSI.md",
     "devops/GitHubActions/Workflow syntax.md",
     "devops/GitHubActions/Workflow.md",
     "devops/GitHubActions/Security.md",
     "devops/Maven/POM.md",
-    "devops/Untitled.md",
-    "vocabulary.md"
+    "devops/Untitled.md"
   ]
 }
