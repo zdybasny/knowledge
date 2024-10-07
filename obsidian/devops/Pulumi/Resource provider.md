@@ -10,3 +10,10 @@ Wtyczka to plik binarny używany przez [silnik wdrażania](Pulumi.md#Deployment%
 SDK, który zapewnia powiązania dla każdego typu zasobu, którym może zarządzać dostawca.
 
 Po dodaniu tych pakietów do projektu uruchamiają one za kulisami pobieranie i instalację wtyczki 
+
+# Package
+
+[źródło](https://www.pulumi.com/docs/iac/packages-and-automation/pulumi-packages/)
+
+#todo
+
