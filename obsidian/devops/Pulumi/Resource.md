@@ -46,5 +46,4 @@ urn:pulumi:production::acmecorp-website::custom:resources:Resource$aws:s3/bucket
 ```
 
 Każda zmiana URN - np. poprzez zmianę nazwy fizycznej - powoduje usunięcie starego zasobu i utworzenie nowego, jako że stają się niepowiązane.
-
-> Zasoby stworzone jako część komponentu (component resource) powinny zapewnić swoje nazwy unikalne pomiędzy innymi komponentowymi. Do tego celu powinny zostać użyte nazwy komponentów. 
+ 
